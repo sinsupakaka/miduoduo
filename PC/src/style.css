@@ -66,6 +66,26 @@ img {
   background: #eaf3ff;
 }
 
+.hero-carousel,
+.hero-carousel .slick-slider,
+.hero-carousel .slick-list,
+.hero-carousel .slick-track,
+.hero-carousel .slick-slide,
+.hero-carousel .slick-slide > div {
+  min-height: 900px;
+}
+
+.hero-slide.blue {
+  min-height: 900px;
+  background: #eaf3ff;
+  color: #2436bd;
+}
+
+.hero-slide.orange {
+  background: linear-gradient(135deg, #FEF2F1 100%, #FFF7ED 100%);
+  color: #7C2D12;
+}
+
 .hero-inner {
   width: min(1548px, calc(100% - 48px));
   min-height: 900px;
@@ -84,7 +104,6 @@ img {
 
 .hero h1 {
   margin: 0 0 48px;
-  color: #2436bd;
   font-size: clamp(42px, 4vw, 72px);
   line-height: 1.28;
   font-weight: 800;
@@ -97,7 +116,6 @@ img {
   margin: 0 0 54px;
   display: grid;
   gap: 20px;
-  color: #2436bd;
   font-size: clamp(20px, 1.7vw, 30px);
   line-height: 1.2;
 }
@@ -108,20 +126,28 @@ img {
   gap: 19px;
 }
 
-.hero li img {
+.hero-point-icon {
   width: 32px;
   height: 32px;
 }
 
-.hero button,
+.hero-action,
 .cta button {
   width: 240px;
   height: 60px;
   border-radius: 30px;
   color: #fff;
-  background: linear-gradient(90deg, #2633c9 0%, #6176f3 100%);
   font-size: 24px;
   font-weight: 700;
+}
+
+.hero-slide.blue .hero-action,
+.cta button {
+  background: linear-gradient(90deg, #2633c9 0%, #6176f3 100%);
+}
+
+.hero-slide.orange .hero-action {
+  background: linear-gradient(90deg, #f97316 0%, #fb923c 100%);
 }
 
 .hero-art {
@@ -129,6 +155,45 @@ img {
   min-width: 0;
   width: min(58vw, 1058px);
   height: auto;
+}
+
+.hero-carousel .slick-dots {
+  bottom: 31px;
+  gap: 22px;
+  margin: 0;
+}
+
+.hero-carousel .slick-dots li {
+  width: 36px;
+  height: 8px;
+  margin: 0;
+}
+
+.hero-carousel .slick-dots li button {
+  width: 36px;
+  height: 8px;
+  border-radius: 8px;
+  opacity: 1;
+}
+
+.hero-carousel .slick-dots li.slick-active {
+  width: 36px;
+}
+
+.hero-carousel.blue .slick-dots li button {
+  background: #fff;
+}
+
+.hero-carousel.blue .slick-dots li.slick-active button {
+  background: #337ff0;
+}
+
+.hero-carousel.orange .slick-dots li button {
+  background: #ffd8bf;
+}
+
+.hero-carousel.orange .slick-dots li.slick-active button {
+  background: #f97316;
 }
 
 .dots {
@@ -589,13 +654,27 @@ img {
   }
 
   .hero {
-    padding: 88px 0 96px;
+    padding: 0;
+  }
+
+  .hero-carousel,
+  .hero-carousel .slick-slider,
+  .hero-carousel .slick-list,
+  .hero-carousel .slick-track,
+  .hero-carousel .slick-slide,
+  .hero-carousel .slick-slide > div,
+  .hero-slide {
+    min-height: auto;
   }
 
   .hero-inner,
   .cta-inner {
     flex-direction: column;
     align-items: flex-start;
+  }
+
+  .hero-inner {
+    padding: 88px 0 96px;
   }
 
   .hero-copy,
@@ -655,7 +734,7 @@ img {
   }
 
   .hero {
-    padding-top: 56px;
+    padding-top: 0;
   }
 
   .hero-inner,
@@ -680,7 +759,11 @@ img {
     align-items: flex-start;
   }
 
-  .hero button,
+  .hero-inner {
+    padding: 56px 0 64px;
+  }
+
+  .hero-action,
   .cta button {
     width: 180px;
     height: 50px;

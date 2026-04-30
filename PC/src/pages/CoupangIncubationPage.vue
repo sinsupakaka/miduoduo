@@ -3,19 +3,27 @@
     <SiteHeader />
 
     <section class="hero">
-      <div class="hero-inner">
-        <div class="hero-copy">
-          <h1>Coupang韩国市场<br />低成本创业孵化营</h1>
-          <ul>
-            <li v-for="text in heroPoints" :key="text">
-              <img :src="asset('组 11002@2x.png')" alt="" />{{ text }}
-            </li>
-          </ul>
-          <button>立即咨询</button>
+      <Carousel
+        :class="['hero-carousel', currentHeroTone]"
+        autoplay
+        :dots="true"
+        :before-change="handleHeroAfterChange"
+      >
+        <div v-for="slide in heroSlides" :key="slide.title" :class="['hero-slide', slide.tone]">
+          <div class="hero-inner">
+            <div class="hero-copy">
+              <h1>{{ slide.title }}<br />{{ slide.subtitle }}</h1>
+              <ul>
+                <li v-for="text in slide.points" :key="text">
+                  <img class="hero-point-icon" :src="asset(slide.pointIcon)" alt="" />{{ text }}
+                </li>
+              </ul>
+              <button class="hero-action">{{ slide.action }}</button>
+            </div>
+            <img class="hero-art" :src="asset(slide.image)" alt="" />
+          </div>
         </div>
-        <img class="hero-art" :src="asset('蒙版组 276@2x.png')" alt="" />
-      </div>
-      <DotsIndicator />
+      </Carousel>
     </section>
 
     <section class="why section white">
@@ -113,18 +121,51 @@
 </template>
 
 <script setup>
+import { Carousel } from 'ant-design-vue'
+import { computed, ref } from 'vue'
 import DotsIndicator from '../components/DotsIndicator.vue'
 import SectionTitle from '../components/SectionTitle.vue'
 import SiteFooter from '../components/SiteFooter.vue'
 import SiteHeader from '../components/SiteHeader.vue'
 import { asset } from '../utils/assets'
 
-const heroPoints = [
-  '官方绿色通道入驻，专享“无忧启航”权益',
-  '90天内享受酷澎火箭仓仓储物流费用全免',
-  '精品货盘直供，上架即卖',
-  '导师全程陪跑，轻松盈利',
+const heroSlides = [
+  {
+    title: 'Coupang韩国市场',
+    subtitle: '低成本创业孵化营',
+    action: '立即咨询',
+    tone: 'blue',
+    image: '蒙版组 276@2x.png',
+    pointIcon: '组 11002@2x.png',
+    points: [
+      '官方绿色通道入驻，专享“无忧启航”权益',
+      '90天内享受酷澎火箭仓仓储物流费用全免',
+      '精品货盘直供，上架即卖',
+      '导师全程陪跑，轻松盈利',
+    ],
+  },
+  {
+    title: 'TEMU全球开店',
+    subtitle: '低成本创业孵化计划',
+    action: '立即入住',
+    tone: 'orange',
+    image: '色相_饱和度-1@2x.png',
+    pointIcon: '组 11002@2x-orange.png',
+    points: [
+      '低门槛入驻，个人也能快速开店',
+      '官方流量扶持，出单快',
+      '海量爆款货盘，一键铺货',
+      '全程运营指导，轻松赚钱',
+    ],
+  }
 ]
+
+const currentHeroIndex = ref(0)
+const currentHeroTone = computed(() => heroSlides[currentHeroIndex.value]?.tone || 'blue')
+
+const handleHeroAfterChange = (index, nextSlide) => {
+  currentHeroIndex.value = nextSlide
+}
 
 const whyCards = [
   { icon: '组 12125@2x.png', tint: 'blue', title: '市场增量大', text: '韩国第二大电商平台，年增速超30%，蓝海产品多，竞争小，新手入场机会大' },

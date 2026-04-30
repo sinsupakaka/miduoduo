@@ -254,8 +254,46 @@ img {
   line-height: 1.2;
 }
 
-.why .section-title {
+.why {
+  min-height: 815px;
+}
+
+.why.blue {
+  background: #fff;
+}
+
+.why.orange {
+  background: #fffaf6;
+}
+
+.why-carousel,
+.why-carousel .slick-slider,
+.why-carousel .slick-list,
+.why-carousel .slick-track,
+.why-carousel .slick-slide,
+.why-carousel .slick-slide > div,
+.why-slide {
+  min-height: 815px;
+}
+
+.why-slide .section-title {
   padding-top: 134px;
+}
+
+.why-slide.blue .section-title h2 {
+  color: #2d2f36;
+}
+
+.why-slide.blue .section-title p {
+  color: #8c95a8;
+}
+
+.why-slide.orange .section-title h2 {
+  color: #7c2d12;
+}
+
+.why-slide.orange .section-title p {
+  color: #b45309;
 }
 
 .why-grid {
@@ -290,6 +328,26 @@ img {
   background: linear-gradient(135deg, #fff7ee 0%, #fff 100%);
 }
 
+.why-slide.orange .feature-card.orange {
+  border-color: #fed7aa;
+  background: linear-gradient(135deg, #fff7ed 0%, #fff 100%);
+}
+
+.why-slide.orange .feature-card.red {
+  border-color: #fecaca;
+  background: linear-gradient(135deg, #fef2f2 0%, #fff 100%);
+}
+
+.why-slide.orange .feature-card.yellow {
+  border-color: #fde68a;
+  background: linear-gradient(135deg, #fffbeb 0%, #fff 100%);
+}
+
+.why-slide.orange .feature-card.brown {
+  border-color: #fed7aa;
+  background: linear-gradient(135deg, #fff7ed 0%, #fffbf5 100%);
+}
+
 .feature-card img {
   width: 54px;
   height: 54px;
@@ -304,6 +362,10 @@ img {
   font-weight: 800;
 }
 
+.why-slide.orange .feature-card h3 {
+  color: #9a3412;
+}
+
 .feature-card p {
   margin: 0;
   color: #596170;
@@ -311,12 +373,47 @@ img {
   line-height: 1.75;
 }
 
-.why .dots {
-  bottom: 87px;
+.why-slide.orange .feature-card p {
+  color: #7c4a2d;
 }
 
-.why .dots span:not(:first-child) {
+.why-carousel .slick-dots {
+  bottom: 87px;
+  gap: 22px;
+  margin: 0;
+}
+
+.why-carousel .slick-dots li {
+  width: 36px;
+  height: 8px;
+  margin: 0;
+}
+
+.why-carousel .slick-dots li button {
+  width: 36px;
+  height: 8px;
+  border-radius: 8px;
+  opacity: 1;
+}
+
+.why-carousel .slick-dots li.slick-active {
+  width: 36px;
+}
+
+.why-carousel.blue .slick-dots li button {
   background: #cfe0fb;
+}
+
+.why-carousel.blue .slick-dots li.slick-active button {
+  background: #337ff0;
+}
+
+.why-carousel.orange .slick-dots li button {
+  background: #ffd8bf;
+}
+
+.why-carousel.orange .slick-dots li.slick-active button {
+  background: #f97316;
 }
 
 .services .section-title {
@@ -688,6 +785,14 @@ img {
   }
 
   .white,
+  .why,
+  .why-carousel,
+  .why-carousel .slick-slider,
+  .why-carousel .slick-list,
+  .why-carousel .slick-track,
+  .why-carousel .slick-slide,
+  .why-carousel .slick-slide > div,
+  .why-slide,
   .gray,
   .cream,
   .cta,

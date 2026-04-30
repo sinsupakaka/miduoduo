@@ -7,7 +7,7 @@
         :class="['hero-carousel', currentHeroTone]"
         autoplay
         :dots="true"
-        :before-change="handleHeroAfterChange"
+        :before-change="handleHeroBeforeChange"
       >
         <div v-for="slide in heroSlides" :key="slide.title" :class="['hero-slide', slide.tone]">
           <div class="hero-inner">
@@ -26,23 +26,28 @@
       </Carousel>
     </section>
 
-    <section class="why section white">
-      <SectionTitle
-        title="为什么选择Coupang蓝海市场"
-        desc="用户基数多，客户质量高，低门槛入局，高利润回报"
-      />
-      <div class="why-grid">
-        <article
-          v-for="card in whyCards"
-          :key="card.title"
-          :class="['feature-card', card.tint]"
-        >
-          <img :src="asset(card.icon)" alt="" />
-          <h3>{{ card.title }}</h3>
-          <p>{{ card.text }}</p>
-        </article>
-      </div>
-      <DotsIndicator />
+    <section :class="['why', 'section', currentWhyTone]">
+      <Carousel
+        :class="['why-carousel', currentWhyTone]"
+        autoplay
+        :dots="true"
+        :before-change="handleWhyBeforeChange"
+      >
+        <div v-for="slide in whySlides" :key="slide.title" :class="['why-slide', slide.tone]">
+          <SectionTitle :title="slide.title" :desc="slide.desc" />
+          <div class="why-grid">
+            <article
+              v-for="card in slide.cards"
+              :key="card.title"
+              :class="['feature-card', card.tint]"
+            >
+              <img :src="asset(card.icon)" alt="" />
+              <h3>{{ card.title }}</h3>
+              <p>{{ card.text }}</p>
+            </article>
+          </div>
+        </div>
+      </Carousel>
     </section>
 
     <section class="services section gray">
@@ -123,7 +128,6 @@
 <script setup>
 import { Carousel } from 'ant-design-vue'
 import { computed, ref } from 'vue'
-import DotsIndicator from '../components/DotsIndicator.vue'
 import SectionTitle from '../components/SectionTitle.vue'
 import SiteFooter from '../components/SiteFooter.vue'
 import SiteHeader from '../components/SiteHeader.vue'
@@ -163,16 +167,41 @@ const heroSlides = [
 const currentHeroIndex = ref(0)
 const currentHeroTone = computed(() => heroSlides[currentHeroIndex.value]?.tone || 'blue')
 
-const handleHeroAfterChange = (index, nextSlide) => {
-  currentHeroIndex.value = nextSlide
+const handleHeroBeforeChange = (_, nextIndex) => {
+  currentHeroIndex.value = nextIndex
 }
 
-const whyCards = [
-  { icon: '组 12125@2x.png', tint: 'blue', title: '市场增量大', text: '韩国第二大电商平台，年增速超30%，蓝海产品多，竞争小，新手入场机会大' },
-  { icon: '组 12125@2x(2).png', tint: 'green', title: '利润空间高', text: '韩国消费力强，客单价高，平均利润率可达30%-50%，远高于国内电商平台' },
-  { icon: '组 12125@2x(1).png', tint: 'purple', title: '入驻门槛低', text: '无平台押金，前3个月免佣金，开店成本极低' },
-  { icon: '组 12125@2x(3).png', tint: 'orange', title: '运营难度低', text: '平台规则简单，官方扶持力度大，无需复杂运营技巧，新手容易快速出单' },
+const whySlides = [
+  {
+    title: '为什么选择Coupang蓝海市场',
+    desc: '用户基数多，客户质量高，低门槛入局，高利润回报',
+    tone: 'blue',
+    cards: [
+      { icon: '组 12125@2x.png', tint: 'blue', title: '市场增量大', text: '韩国第二大电商平台，年增速超30%，蓝海产品多，竞争小，新手入场机会大' },
+      { icon: '组 12125@2x(2).png', tint: 'green', title: '利润空间高', text: '韩国消费力强，客单价高，平均利润率可达30%-50%，远高于国内电商平台' },
+      { icon: '组 12125@2x(1).png', tint: 'purple', title: '入驻门槛低', text: '无平台押金，前3个月免佣金，开店成本极低' },
+      { icon: '组 12125@2x(3).png', tint: 'orange', title: '运营难度低', text: '平台规则简单，官方扶持力度大，无需复杂运营技巧，新手容易快速出单' },
+    ],
+  },
+  {
+    title: '为什么选择TEMU',
+    desc: '背靠拼多多集团，快速扩张的电商平台，新手创业首选',
+    tone: 'blue',
+    cards: [
+      { icon: '组 12125@2x-2.png', tint: 'orange', title: '全球市场布局', text: '已覆盖全球30+国家，40+站点，海量用户，市场空间巨大，卖家增长空间无限' },
+      { icon: '组 12125@2x(3)-2.png', tint: 'red', title: '模式简单易做', text: '全托管模式，卖家只需供货平台负责 运营、流量、物流售后，省心省力' },
+      { icon: '组 12125@2x(2)-2.png', tint: 'yellow', title: '入住门槛极低', text: '个人/企业均可入驻，无保证金，无平台使用费，无年费' },
+      { icon: '组 12125@2x(1)-2.png', tint: 'brown', title: '官方大力扶持', text: '平台百亿补贴，流量倾斜，新卖家入 驻即享流量扶持，冷启动快，容易出单' },
+    ],
+  },
 ]
+
+const currentWhyIndex = ref(0)
+const currentWhyTone = computed(() => whySlides[currentWhyIndex.value]?.tone || 'blue')
+
+const handleWhyBeforeChange = (_, nextIndex) => {
+  currentWhyIndex.value = nextIndex
+}
 
 const servicePanels = [
   {

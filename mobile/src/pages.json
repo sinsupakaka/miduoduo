@@ -1,0 +1,22 @@
+{
+  "pages": [
+    {
+      "path": "pages/FullChainIncubation",
+      "style": {
+        "navigationStyle": "custom"
+      }
+    },
+    {
+      "path": "pages/CoupangIncubationPage",
+      "style": {
+        "navigationStyle": "custom"
+      }
+    }
+  ],
+  "globalStyle": {
+    "navigationBarTextStyle": "black",
+    "navigationBarTitleText": "Miduo Global",
+    "navigationBarBackgroundColor": "#ffffff",
+    "backgroundColor": "#f5f8fc"
+  }
+}

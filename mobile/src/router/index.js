@@ -1,0 +1,32 @@
+export const routes = {
+  fullChain: {
+    path: '/pages/FullChainIncubation',
+    title: '全链孵化',
+  },
+  coupangIncubation: {
+    path: '/pages/CoupangIncubationPage',
+    title: '跨境创业孵化营',
+  },
+}
+
+export const getRouteHash = (routeKey) => {
+  const route = routes[routeKey]
+  return route ? `#${route.path}` : '#/'
+}
+
+export const goRoute = (routeKey) => {
+  const route = routes[routeKey]
+
+  if (!route) return
+
+  // H5 uses hash routing via manifest.json. uni.redirectTo keeps the same
+  // routing behavior on supported uniapp runtimes.
+  if (typeof uni !== 'undefined' && uni.redirectTo) {
+    uni.redirectTo({ url: route.path })
+    return
+  }
+
+  if (typeof window !== 'undefined') {
+    window.location.hash = route.path
+  }
+}

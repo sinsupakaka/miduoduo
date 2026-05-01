@@ -1,0 +1,17 @@
+{
+  "name": "Miduo Global",
+  "appid": "__UNI__MIDUO_MOBILE",
+  "description": "跨境电商数字化综合服务平台移动端",
+  "versionName": "0.1.0",
+  "versionCode": "100",
+  "transformPx": false,
+  "h5": {
+    "title": "Miduo Global",
+    "router": {
+      "mode": "hash"
+    }
+  },
+  "app-plus": {
+    "usingComponents": true
+  }
+}

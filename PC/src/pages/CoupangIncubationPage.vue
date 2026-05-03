@@ -1,6 +1,6 @@
 <template>
   <div class="page">
-    <SiteHeader />
+    <SiteHeader :active-path="activePath" />
 
     <section class="hero">
       <Carousel
@@ -132,6 +132,13 @@ import SectionTitle from '../components/SectionTitle.vue'
 import SiteFooter from '../components/SiteFooter.vue'
 import SiteHeader from '../components/SiteHeader.vue'
 import { asset } from '../utils/assets'
+
+defineProps({
+  activePath: {
+    type: String,
+    default: '/',
+  },
+})
 
 const heroSlides = [
   {

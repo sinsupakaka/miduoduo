@@ -99,7 +99,7 @@ import IconTextList from '../components/IconTextList.vue'
 import SectionTitle from '../components/SectionTitle.vue'
 import { goRoute } from '../router'
 
-const asset = (name) => new URL(`../../assets/全链孵化三级页面/${name}`, import.meta.url).href
+const asset = (name) => `/assets/全链孵化三级页面/${name}`
 
 const heroPoints = ['0基础从0-1创业', 'AI高效提效', '本土店+货盘配齐', '暴力起店']
 

@@ -119,7 +119,7 @@ import { computed, ref } from 'vue'
 import SectionTitle from '../components/SectionTitle.vue'
 import { goRoute } from '../router'
 
-const asset = (name) => new URL(`../../assets/跨境创业孵化营/${name}`, import.meta.url).href
+const asset = (name) => `/assets/跨境创业孵化营/${name}`
 
 const heroSlides = [
   {

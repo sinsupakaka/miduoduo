@@ -1,3 +1,3 @@
-const base = '/assets/跨境创业孵化营/'
+const defaultFolder = '跨境创业孵化营'
 
-export const asset = (name) => `${base}${name}`
+export const asset = (name, folder = defaultFolder) => `/assets/${folder}/${name}`

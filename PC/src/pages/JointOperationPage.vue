@@ -41,7 +41,7 @@
             </div>
             <div class="panel-list">
               <div v-for="item in panel.items" :key="item[0] + item[1]" class="panel-item">
-                <span class="item-dot"></span>
+                <img class="item-icon" :src="jointAsset(panel.icon)" alt="" />
                 <p><strong v-if="item[0]">{{ item[0] }}：</strong>{{ item[1] }}</p>
               </div>
             </div>
@@ -102,7 +102,7 @@
             </div>
             <div class="panel-list">
               <div v-for="item in panel.items" :key="item[0] + item[1]" class="panel-item">
-                <span class="item-dot"></span>
+                <img class="item-icon" :src="jointAsset(panel.point)" alt="" />
                 <p><strong v-if="item[0]">{{ item[0] }}：</strong>{{ item[1] }}</p>
               </div>
             </div>
@@ -129,7 +129,7 @@
           </article>
         </div>
         <div class="joint-container upgrade-note">
-          <img :src="jointAsset('形状 1@2x.png')" alt="" />
+          <img :src="jointAsset('组 4@2x(18).png')" alt="" />
           <div>
             <h3>联合运营本质升级：“资金共担+整合营销+多渠道运营”三位一体，从单一代理到品牌合伙人。</h3>
             <p>米多多提供全链路运营能力(TikTok/独立站/亚马逊)+内容工业化生产，品牌方聚焦产品与供应链，实现1+1&gt;2的长期增长。</p>
@@ -141,6 +141,7 @@
         <div class="joint-container">
           <h2>成为品牌合伙人，共享全球增长红利</h2>
           <p>从0到1冷启动，从1到N规模化，米多多联合运营以合伙人姿态，共担风险、共享收益。</p>
+          <img :src="jointAsset('形状 1@2x.png')" alt="" />
           <a href="mailto:ilonazhou@fjmidodo.com">商务合作：ilonazhou@fjmidodo.com</a>
         </div>
       </section>
@@ -212,12 +213,12 @@ const stages = [
     period: '6-24个月',
     plans: [
       {
-        icon: '组 4@2x(15).png',
+        icon: '组 4@2x(19).png',
         title: '方案一：规模化盈利',
         text: '结合实际品类增加亚马逊等平台布局，提升内容产出效率，实现月度持续盈利，积累品牌私域流量及粉丝。建立全渠道流量闭环，降低单一平台依赖，实现全域增长。',
       },
       {
-        icon: '组 4@2x(18).png',
+        icon: '组 4@2x(20).png',
         title: '方案二：合资及资本化收购',
         text: '根据品牌盈利率及项目潜力，双方合资成立新公司(品牌/店铺/人员转移至新公司独立运营)，也可根据品牌实际情况收购/并购，实现资本增值与深度绑定。',
       },
@@ -227,8 +228,9 @@ const stages = [
 
 const strategyPanels = [
   {
-    icon: '组 4@2x(26).png',
+    icon: '组 4@2x.png',
     title: '起步阶段矩阵',
+    point: '组 4@2x(2).png',
     tone: 'green',
     items: [
       ['', 'TikTok(短视频/直播/达人联盟)优先启动'],
@@ -240,6 +242,7 @@ const strategyPanels = [
   {
     icon: '组 4@2x(5).png',
     title: '核心目标',
+    point: '组 4@2x(6).png',
     tone: 'orange',
     items: [
       ['', '建立全渠道流量闭环，降低单一平台依赖风险'],
@@ -453,54 +456,15 @@ const rules = [
 
 .panel-item {
   display: grid;
-  grid-template-columns: 32px minmax(0, 1fr);
+  grid-template-columns: 42px minmax(0, 1fr);
   gap: 24px;
   align-items: start;
 }
 
-.item-dot {
-  width: 27px;
-  height: 27px;
+.item-icon {
+  width: 28px;
+  height: 28px;
   margin-top: 2px;
-  border-radius: 50%;
-  background: rgba(42, 113, 218, .42);
-  position: relative;
-}
-
-.item-dot::after {
-  content: "";
-  position: absolute;
-  left: 9px;
-  top: 7px;
-  width: 7px;
-  height: 7px;
-  border-top: 4px solid #4d96ff;
-  border-right: 4px solid #4d96ff;
-  transform: rotate(45deg);
-}
-
-.info-panel.pink .item-dot {
-  background: rgba(198, 67, 153, .42);
-}
-
-.info-panel.pink .item-dot::after {
-  border-color: #ef4eb4;
-}
-
-.info-panel.green .item-dot {
-  background: rgba(37, 154, 102, .36);
-}
-
-.info-panel.green .item-dot::after {
-  border-color: #2bd06f;
-}
-
-.info-panel.orange .item-dot {
-  background: rgba(208, 98, 29, .34);
-}
-
-.info-panel.orange .item-dot::after {
-  border-color: #ff8135;
 }
 
 .panel-item p,

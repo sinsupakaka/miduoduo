@@ -1,9 +1,10 @@
 import CoupangIncubationPage from '../pages/CoupangIncubationPage.vue'
+import BusinessSystemPage from '../pages/BusinessSystemPage.vue'
 import JointOperationPage from '../pages/JointOperationPage.vue'
 
 export const navRoutes = [
   { label: '首页', path: '/', component: CoupangIncubationPage },
-  { label: '业务体系', path: '/business' },
+  { label: '业务体系', path: '/business', component: BusinessSystemPage },
   { label: '技术平台', path: '/technology', component: JointOperationPage },
   { label: '中国跨交会', path: '/cross-border-fair' },
   { label: '行业智库', path: '/industry-think-tank' },

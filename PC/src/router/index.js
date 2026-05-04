@@ -1,6 +1,7 @@
 import CoupangIncubationPage from '../pages/CoupangIncubationPage.vue'
 import BusinessSystemPage from '../pages/BusinessSystemPage.vue'
 import JointOperationPage from '../pages/JointOperationPage.vue'
+import AboutUs from '../pages/AboutUs.vue'
 
 export const navRoutes = [
   { label: '首页', path: '/', component: CoupangIncubationPage },
@@ -9,7 +10,7 @@ export const navRoutes = [
   { label: '中国跨交会', path: '/cross-border-fair' },
   { label: '行业智库', path: '/industry-think-tank' },
   { label: '动态中心', path: '/news' },
-  { label: '关于我们', path: '/about' },
+  { label: '关于我们', path: '/about', component: AboutUs },
   { label: '云建站管理', path: '/cloud-site' },
 ]
 

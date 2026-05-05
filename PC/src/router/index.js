@@ -2,13 +2,14 @@ import CoupangIncubationPage from '../pages/CoupangIncubationPage.vue'
 import BusinessSystemPage from '../pages/BusinessSystemPage.vue'
 import JointOperationPage from '../pages/JointOperationPage.vue'
 import AboutUs from '../pages/AboutUs.vue'
+import DigitalMarketing from '../pages/DigitalMarketing.vue'
 
 export const navRoutes = [
   { label: '首页', path: '/', component: CoupangIncubationPage },
   { label: '业务体系', path: '/business', component: BusinessSystemPage },
   { label: '技术平台', path: '/technology', component: JointOperationPage },
   { label: '中国跨交会', path: '/cross-border-fair' },
-  { label: '行业智库', path: '/industry-think-tank' },
+  { label: '行业智库', path: '/industry-think-tank', component: DigitalMarketing },
   { label: '动态中心', path: '/news' },
   { label: '关于我们', path: '/about', component: AboutUs },
   { label: '云建站管理', path: '/cloud-site' },

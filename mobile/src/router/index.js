@@ -1,6 +1,6 @@
 export const routes = {
   fullChain: {
-    path: '/pages/FullChainIncubation',
+    path: '/pages/FullChainIncubationSub',
     title: '全链孵化',
   },
   coupangIncubation: {

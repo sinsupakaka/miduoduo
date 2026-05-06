@@ -1,5 +1,5 @@
 <template>
-  <div class="digital-page">
+  <div class="digital-page" :style="digitalPageStyle">
     <SiteHeader :active-path="activePath" />
 
     <main>
@@ -139,6 +139,13 @@ defineProps({
 })
 
 const digitalAsset = (name) => asset(name, '数字营销')
+
+const cssUrl = (url) => `url("${url}")`
+
+const digitalPageStyle = {
+  '--digital-hero-bg': cssUrl(digitalAsset('图层 65@2x.png')),
+  '--digital-ad-bg': cssUrl(digitalAsset('图层 43@2x.png')),
+}
 
 const getPortfolioLabelStyle = (labelBg) => ({
   backgroundImage: `url("${digitalAsset(labelBg)}")`,
@@ -295,7 +302,7 @@ const partnerLogos = [
   display: flex;
   align-items: flex-start;
   color: #fff;
-  background: #04183a url("/assets/数字营销/图层 65@2x.png") center center / cover no-repeat;
+  background: #04183a var(--digital-hero-bg) center center / cover no-repeat;
 }
 
 .hero-inner {
@@ -337,7 +344,7 @@ const partnerLogos = [
 
 .ad-section {
   padding: 74px 0 96px;
-  background: #fff url("/assets/数字营销/图层 43@2x.png") center bottom / 100% auto no-repeat;
+  background: #fff var(--digital-ad-bg) center bottom / 100% auto no-repeat;
 }
 
 .ad-inner {

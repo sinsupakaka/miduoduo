@@ -5,10 +5,12 @@
 </template>
 
 <script setup>
+import { asset } from '../utils/assets'
+
 defineProps({
   logoSrc: {
     type: String,
-    default: '/assets/跨境创业孵化营/logo@2x.png',
+    default: () => asset('logo@2x.png', '跨境创业孵化营'),
   },
 })
 </script>

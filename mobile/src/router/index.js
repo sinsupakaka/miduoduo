@@ -11,6 +11,14 @@ export const routes = {
     path: '/pages/CoupangIncubationPage',
     title: '跨境创业孵化营',
   },
+  unionOperation: {
+    path: '/pages/UnionOperation',
+    title: '联合运营',
+  },
+  aboutUs: {
+    path: '/pages/AboutUs',
+    title: '关于我们',
+  },
 }
 
 export const routeEntries = Object.entries(routes).map(([key, route]) => ({

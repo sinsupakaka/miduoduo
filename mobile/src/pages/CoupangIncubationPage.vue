@@ -99,8 +99,9 @@ import { Carousel } from 'ant-design-vue'
 import { computed, ref } from 'vue'
 import MobileTopNav from '../components/MobileTopNav.vue'
 import SectionTitle from '../components/SectionTitle.vue'
+import { asset as resolveAsset } from '../utils/assets'
 
-const asset = (name) => `/assets/跨境创业孵化营/${name}`
+const asset = (name) => resolveAsset(name, '跨境创业孵化营')
 
 const heroSlides = [
   {

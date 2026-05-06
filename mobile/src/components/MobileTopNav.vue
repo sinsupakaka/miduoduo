@@ -1,5 +1,5 @@
 <template>
-  <view class="mobile-nav">
+  <view :class="['mobile-nav', theme]">
     <view class="status">
 
     </view>
@@ -15,7 +15,8 @@
 
       <text class="nav-title">{{ title }}</text>
 
-      <image class="avatar" :src="avatarSrc" mode="aspectFill" />
+      <image v-if="avatarSrc" class="avatar" :src="avatarSrc" mode="aspectFill" />
+      <view v-else class="accent-orb"></view>
     </view>
 
     <view v-if="menuOpen" class="menu-overlay" @click="closeMenu">
@@ -39,6 +40,7 @@
 <script setup>
 import { computed, ref } from 'vue'
 import { goRoute, routeEntries } from '../router'
+import { asset } from '../utils/assets'
 
 const props = defineProps({
   title: {
@@ -51,7 +53,11 @@ const props = defineProps({
   },
   avatarSrc: {
     type: String,
-    default: '/assets/跨境创业孵化营/蒙版组 275@2x.png',
+    default: () => asset('蒙版组 275@2x.png', '跨境创业孵化营'),
+  },
+  theme: {
+    type: String,
+    default: 'light',
   },
 })
 
@@ -81,6 +87,11 @@ const handleSelect = (routeKey) => {
   position: relative;
   background: #ffffff;
   color: #222222;
+}
+
+.mobile-nav.dark {
+  /* background: #000000; */
+  color: #ffffff;
 }
 
 .status {
@@ -182,6 +193,10 @@ const handleSelect = (routeKey) => {
   background: #2f3547;
 }
 
+.dark .menu-lines view {
+  background: #595959;
+}
+
 .nav-title {
   position: absolute;
   left: 50%;
@@ -193,11 +208,25 @@ const handleSelect = (routeKey) => {
   white-space: nowrap;
 }
 
+.dark .nav-title {
+  color: #4d4d4d;
+}
+
 .avatar {
   width: 58rpx;
   height: 58rpx;
   border-radius: 50%;
   flex: none;
+}
+
+.accent-orb {
+  width: 64rpx;
+  height: 64rpx;
+  flex: none;
+  border-radius: 50%;
+  background:
+    linear-gradient(180deg, transparent 0 50%, #5d7bf0 50% 100%),
+    linear-gradient(135deg, #2fd7c4 0%, #35c9eb 45%, #7659f5 100%);
 }
 
 .menu-overlay {

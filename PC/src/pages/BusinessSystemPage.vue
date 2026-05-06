@@ -1,5 +1,5 @@
 <template>
-  <div class="business-page">
+  <div class="business-page" :style="businessPageStyle">
     <SiteHeader :active-path="activePath" />
 
     <main>
@@ -108,6 +108,10 @@ defineProps({
 })
 
 const businessAsset = (name) => asset(name, '业务体系')
+
+const businessPageStyle = {
+  '--business-hero-bg': `url("${businessAsset('图层 21@2x.png')}")`,
+}
 
 const heroTags = ['创业孵化', '平台招商', '供应链对接', '产业带升级']
 
@@ -229,7 +233,7 @@ const schools = [
   display: flex;
   align-items: center;
   color: #fff;
-  background: #2f68e8 url("/assets/业务体系/图层 21@2x.png") center / cover no-repeat;
+  background: #2f68e8 var(--business-hero-bg) center / cover no-repeat;
 }
 
 .hero-content {

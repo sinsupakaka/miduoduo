@@ -92,8 +92,9 @@
 import MobileFooterLogo from '../components/MobileFooterLogo.vue'
 import MobileTopNav from '../components/MobileTopNav.vue'
 import SectionTitle from '../components/SectionTitle.vue'
+import { asset as resolveAsset } from '../utils/assets'
 
-const asset = (name) => `/assets/全链孵化服务/${name}`
+const asset = (name) => resolveAsset(name, '全链孵化服务')
 
 const heroTags = ['创业孵化', '平台招商', '供应链对接', '产业带升级']
 

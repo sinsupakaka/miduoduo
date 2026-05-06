@@ -1,5 +1,5 @@
 <template>
-  <div class="about-page">
+  <div class="about-page" :style="aboutPageStyle">
     <SiteHeader :active-path="activePath" />
 
     <main>
@@ -95,7 +95,10 @@
         <div class="about-container group-inner">
           <h2 class="section-heading light">集团公司</h2>
           <div class="map-note">
-            <img :src="aboutAsset('坐标@2x.png')" alt="" />
+            <span class="map-pins">
+              <img class="map-pin-copy" :src="aboutAsset('坐标 拷贝@2x.png')" alt="" />
+              <img class="map-pin-main" :src="aboutAsset('坐标@2x.png')" alt="" />
+            </span>
             <div>
               <strong>福建总部</strong>
               <span>福建省福州市鼓楼区软件园A区23座</span>
@@ -132,6 +135,14 @@ defineProps({
 })
 
 const aboutAsset = (name) => asset(name, '关于我们')
+
+const cssUrl = (url) => `url("${url}")`
+
+const aboutPageStyle = {
+  '--about-hero-bg': cssUrl(aboutAsset('椭圆 2 拷贝@2x.png')),
+  '--about-timeline-bg': cssUrl(aboutAsset('图层 9@2x.png')),
+  '--about-group-bg': cssUrl(aboutAsset('图层 10@2x.png')),
+}
 
 const honors = [
   {
@@ -193,7 +204,7 @@ const honors = [
 .about-hero {
   height: 962px;
   position: relative;
-  background: #07131c url("/assets/关于我们/椭圆 2 拷贝@2x.png") center top / cover no-repeat;
+  background: #07131c var(--about-hero-bg) center top / cover no-repeat;
 }
 
 .hero-title {
@@ -316,7 +327,7 @@ const honors = [
 .timeline-section {
   height: 1104px;
   padding-top: 126px;
-  background: #2f6df0 url("/assets/关于我们/图层 9@2x.png") center top / cover no-repeat;
+  background: #2f6df0 var(--about-timeline-bg) center top / cover no-repeat;
 }
 
 .timeline-inner {
@@ -450,7 +461,7 @@ const honors = [
 .group-section {
   height: 957px;
   padding-top: 126px;
-  background: #030b12 url("/assets/关于我们/图层 10@2x.png") center center / cover no-repeat;
+  background: #030b12 var(--about-group-bg) center center / cover no-repeat;
 }
 
 .group-inner {
@@ -463,14 +474,33 @@ const honors = [
   right: 118px;
   top: 368px;
   display: grid;
-  grid-template-columns: 28px minmax(0, 1fr);
+  grid-template-columns: 34px minmax(0, 1fr);
   gap: 12px;
   align-items: start;
 }
 
-.map-note img {
+.map-pins {
+  position: relative;
+  width: 34px;
+  height: 36px;
+  margin-top: 10px;
+  display: block;
+}
+
+.map-pins img {
+  position: absolute;
   width: 20px;
-  margin-top: 16px;
+  max-width: none;
+}
+
+.map-pin-copy {
+  left: 0;
+  top: 0;
+}
+
+.map-pin-main {
+  left: 11px;
+  top: 7px;
 }
 
 .map-note div {

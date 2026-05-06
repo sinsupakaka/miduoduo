@@ -79,8 +79,9 @@ import IconCardGrid from '../components/IconCardGrid.vue'
 import IconTextList from '../components/IconTextList.vue'
 import MobileTopNav from '../components/MobileTopNav.vue'
 import SectionTitle from '../components/SectionTitle.vue'
+import { asset as resolveAsset } from '../utils/assets'
 
-const asset = (name) => `/assets/全链孵化三级页面/${name}`
+const asset = (name) => resolveAsset(name, '全链孵化三级页面')
 
 const heroPoints = ['0基础从0-1创业', 'AI高效提效', '本土店+货盘配齐', '暴力起店']
 

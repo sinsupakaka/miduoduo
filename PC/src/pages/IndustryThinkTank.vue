@@ -1,14 +1,14 @@
 <template>
-  <div class="thinktank-page">
+  <div class="thinktank-page" :style="thinkTankPageStyle">
     <SiteHeader :active-path="activePath" />
 
     <main>
       <section class="thinktank-hero">
         <div class="thinktank-container hero-content">
           <div class="hero-copy">
-            <h1>以研究洞见未来</h1>
-            <h2>米多多行业智库</h2>
-            <p>连续多年参与/主编全行业年度成果，发布跨境电商多个指数与榜单，为中国企业出海提供深度智力支撑</p>
+            <div class="hero-title">以研究洞见未来</div>
+            <div class="hero-sub-title">米多多行业智库</div>
+            <p>连续多年参与/主编全行业年度成果，发布跨境电商多<br/>个指数与榜单，为中国企业出海提供深度智力支撑</p>
           </div>
         </div>
       </section>
@@ -36,13 +36,17 @@
               </div>
 
               <div class="showcase-bottom">
-                <img v-for="item in reportCoversBottom" :key="item" :src="thinkTankAsset(item)" alt="" />
+                <img style="height: 205px;" v-for="item in reportCoversBottom" :key="item" :src="thinkTankAsset(item)" alt="" />
               </div>
             </div>
           </div>
 
           <div class="partner-strip">
-            <img v-for="item in researchPartners" :key="item" :src="thinkTankAsset(item)" alt="" />
+            <template v-for="item in researchPartners" :key="item">
+              <div>
+                <img :src="thinkTankAsset(item)" alt="" />
+              </div>
+            </template>
           </div>
         </div>
       </section>
@@ -91,9 +95,11 @@
             </button>
 
             <div class="media-cards">
-              <img class="media-card left" :src="thinkTankAsset('人民日报1@2x.png')" alt="" />
+              <img class="media-card left" :src="thinkTankAsset('人民网@2x.png')" alt="" />
+              <img class="media-card left2" :src="thinkTankAsset('人民日报1@2x.png')" alt="" />
               <img class="media-card center" :src="thinkTankAsset('人民日报3@2x.png')" alt="" />
               <img class="media-card right" :src="thinkTankAsset('中央电视台 央视新闻报道@2x.png')" alt="" />
+              <img class="media-card right2" :src="thinkTankAsset('新华社、新华网报道@2x.png')" alt="" />
             </div>
 
             <button class="media-arrow right" type="button" aria-label="下一条">
@@ -107,19 +113,6 @@
         <div class="thinktank-container">
           <h2 class="section-title">发布现场</h2>
 
-          <div class="scene-block scene-block-top">
-            <div class="scene-cover">
-              <img :src="thinkTankAsset('图层 6@2x.png')" alt="" />
-            </div>
-            <div class="scene-copy">
-              <h3>《和合共生 耦合发展 · 中国出口跨境电商蓝皮书（2026）》发布现场</h3>
-              <div class="scene-gallery two-up">
-                <img :src="thinkTankAsset('图层 7@2x.png')" alt="" />
-                <img :src="thinkTankAsset('图层 8@2x.png')" alt="" />
-              </div>
-            </div>
-          </div>
-
           <div class="scene-block scene-block-bottom">
             <div class="scene-copy">
               <h3>《“升”而全球 中国出口跨境电商升级发展蓝皮书（2025）》发布现场</h3>
@@ -132,7 +125,22 @@
               <img :src="thinkTankAsset('图层 3@2x.png')" alt="" />
             </div>
           </div>
+        
+
+          <div class="scene-block scene-block-top">
+            <div class="scene-cover">
+              <img :src="thinkTankAsset('图层 6@2x.png')" alt="" />
+            </div>
+            <div class="scene-copy">
+              <h3>《和合共生 耦合发展 · 中国出口跨境电商蓝皮书（2026）》发布现场</h3>
+              <div class="scene-gallery two-up">
+                <img :src="thinkTankAsset('图层 7@2x.png')" alt="" />
+                <img :src="thinkTankAsset('图层 8@2x.png')" alt="" />
+              </div>
+            </div>
+          </div>
         </div>
+
       </section>
 
       <section class="guide-section">
@@ -141,19 +149,19 @@
 
           <div class="guide-panel guide-panel-top">
             <div class="guide-pages">
-              <img :src="thinkTankAsset('图片12@2x.png')" alt="" />
-              <img :src="thinkTankAsset('图片13@2x.png')" alt="" />
+              <img :src="thinkTankAsset('中国出口跨境电商升级发展蓝皮书_03@2x.png')" alt="" />
+              <img :src="thinkTankAsset('中国出口跨境电商升级发展蓝皮书_04@2x.png')" alt="" />
             </div>
             <p>《“升”而全球 · 中国出口跨境电商升级发展蓝皮书（2025）》</p>
           </div>
 
           <div class="guide-panel guide-panel-bottom">
             <div class="guide-bottom-grid">
-              <img class="guide-outline" :src="thinkTankAsset('图片15@2x.png')" alt="" />
+              <img class="guide-outline" :src="thinkTankAsset('中国出口跨境电商蓝皮书-2026_11@2x.png')" alt="" />
               <div class="guide-charts">
-                <img :src="thinkTankAsset('图层 28@2x.png')" alt="" />
-                <img :src="thinkTankAsset('图层 29@2x.png')" alt="" />
-                <img :src="thinkTankAsset('图层 30@2x.png')" alt="" />
+                <img :src="thinkTankAsset('图片12@2x.png')" alt="" />
+                <img :src="thinkTankAsset('图片13@2x.png')" alt="" />
+                <img :src="thinkTankAsset('图片15@2x.png')" alt="" />
               </div>
             </div>
             <p>《和合共生 耦合发展 · 中国出口跨境电商蓝皮书（2026）》</p>
@@ -217,6 +225,13 @@ defineProps({
 
 const thinkTankAsset = (name) => asset(name, '行业智库')
 
+const cssUrl = (url) => `url("${url}")`
+
+const thinkTankPageStyle = {
+  '--thinktank-hero-bg': cssUrl(thinkTankAsset('2022 中国跨境电商企业 出海发展蓝皮书@2x.png')),
+  '--thinktank-media-bg': cssUrl(thinkTankAsset('图层 19@2x.png')),
+}
+
 const researchParticipation = [
   '› 参与上海社科院《中国跨境出口电商发展报告(2021)》编撰工作',
   '› 参与德勤《中国跨境电商企业出海发展蓝皮书(2022)》编撰工作',
@@ -242,21 +257,21 @@ const reportCoversTop = [
 ]
 
 const reportCoversBottom = [
-  '图片5@2x.png',
-  '图片6@2x.png',
-  '图片7@2x.png',
+  '图层 28@2x.png',
+  '图层 29@2x.png',
+  '图层 30@2x.png',
   '图层 21@2x.png',
 ]
 
-const researchPartners = ['图层 9@2x.png', '图层 10@2x.png', '图层 15@2x.png', '图层 18@2x.png']
+const researchPartners = ['图层 15@2x.png', '图层 32@2x.png', '图层 18@2x.png', '图层 33@2x.png']
 
 const editorialBooks = [
-  '中国出口跨境电商升级发展蓝皮书_03@2x.png',
-  '中国出口跨境电商蓝皮书-2026_11@2x.png',
-  '中国出口跨境电商升级发展蓝皮书_04@2x.png',
+  '图片5@2x.png',
+  '图片6@2x.png',
+  '图片7@2x.png',
 ]
 
-const mediaLogos = ['人民网@2x.png', '图层 36@2x.png', 'logo1@2x.png', 'logo2@2x.png', 'logo3@2x.png', 'logo4@2x.png']
+const mediaLogos = ['图层 9@2x.png', '图层 10@2x.png', 'logo1@2x.png', 'logo2@2x.png', 'logo3@2x.png', 'logo4@2x.png']
 
 const cooperationRows = [
   {
@@ -322,7 +337,7 @@ const actionItems = [
 .thinktank-hero {
   min-height: 840px;
   position: relative;
-  background: #051127 url("/assets/行业智库/2022%20中国跨境电商企业%20出海发展蓝皮书@2x.png") center top / cover no-repeat;
+  background: #051127 var(--thinktank-hero-bg) center top / cover no-repeat;
 }
 
 .hero-content {
@@ -334,6 +349,34 @@ const actionItems = [
 .hero-copy {
   width: min(640px, 100%);
   padding-left: 6px;
+  display: flex;
+  flex-direction: column;
+  margin-top: -80px;
+  margin-left: -60px;
+  gap: 30px;
+}
+
+.hero-title {
+  width: 100%;
+  height: 87px;
+  font-family: Source Han Sans CN;
+  font-weight: bold;
+  font-size: 90px;
+  color: #FFFFFF;
+  line-height: 90px;
+  background: linear-gradient(0deg, #B3C8F7 0%, #FFFFFF 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.hero-sub-title {
+  width: 100%;
+  padding-left: 50px;
+  font-family: Source Han Sans CN;
+  font-weight: bold;
+  font-size: 54px;
+  color: #FFFFFF;
+  line-height: 54px;
 }
 
 .hero-copy h1 {
@@ -438,10 +481,18 @@ const actionItems = [
   margin-top: 36px;
 }
 
-.partner-strip img {
-  width: 100%;
+.partner-strip div {
   border: 1px solid #d6e1f0;
   border-radius: 18px;
+  position: relative;
+}
+
+.partner-strip img {
+  height: 50%;
+  position: relative;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .editorial-section {
@@ -507,7 +558,7 @@ const actionItems = [
 
 .media-section {
   padding: 86px 0 108px;
-  background: #050505 url("/assets/行业智库/图层%2019@2x.png") center top / cover no-repeat;
+  background: #050505 var(--thinktank-media-bg) center top / cover no-repeat;
 }
 
 .media-inner {
@@ -537,7 +588,7 @@ const actionItems = [
 
 .media-cards {
   display: grid;
-  grid-template-columns: minmax(280px, 494px) minmax(360px, 660px) minmax(280px, 496px);
+  grid-template-columns: minmax(280px, 371px) minmax(280px, 494px) minmax(360px, 660px) minmax(280px, 496px) minmax(280px, 371px);
   gap: 0;
   align-items: end;
   justify-content: center;
@@ -546,16 +597,30 @@ const actionItems = [
 }
 
 .media-card {
+  border-radius: 10px;
   width: 100%;
   filter: drop-shadow(0 36px 40px rgba(0, 0, 0, 0.42));
+  z-index: 12;
 }
 
 .media-card.left {
-  transform: translate(36px, 22px);
+  transform: translate(66px, -82px);
+  z-index: 10;
+}
+
+.media-card.left2 {
+  transform: translate(16px, -52px);
+  z-index: 11;
 }
 
 .media-card.right {
-  transform: translate(-36px, 22px);
+  transform: translate(-16px, -52px);
+  z-index: 11;
+}
+
+.media-card.right2 {
+  transform: translate(-66px, -62px);
+  z-index: 10;
 }
 
 .media-arrow {
@@ -600,6 +665,13 @@ const actionItems = [
   display: block;
 }
 
+.scene-copy {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+}
+
 .scene-copy h3 {
   margin: 0 0 30px;
   color: #333;
@@ -619,7 +691,7 @@ const actionItems = [
 
 .guide-section {
   padding: 84px 0 98px;
-  background: #152d85;
+  background: linear-gradient(-45deg, #052278, #04152D);
 }
 
 .guide-panel {
@@ -631,6 +703,13 @@ const actionItems = [
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 36px;
   align-items: start;
+}
+
+.guide-charts {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
 }
 
 .guide-pages img,
@@ -656,7 +735,6 @@ const actionItems = [
 }
 
 .guide-charts {
-  display: grid;
   gap: 34px;
 }
 

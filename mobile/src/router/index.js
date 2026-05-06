@@ -1,4 +1,8 @@
 export const routes = {
+  fullChainService: {
+    path: '/pages/FullChainIncubationMain',
+    title: '全链孵化服务',
+  },
   fullChain: {
     path: '/pages/FullChainIncubationSub',
     title: '全链孵化',
@@ -8,6 +12,11 @@ export const routes = {
     title: '跨境创业孵化营',
   },
 }
+
+export const routeEntries = Object.entries(routes).map(([key, route]) => ({
+  key,
+  ...route,
+}))
 
 export const getRouteHash = (routeKey) => {
   const route = routes[routeKey]

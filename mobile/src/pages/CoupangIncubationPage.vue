@@ -1,25 +1,6 @@
 <template>
   <view class="page">
-    <view class="nav">
-      <view class="status">
-        <text>9:41</text>
-        <view class="phone-icons">
-          <view class="signal"></view>
-          <view class="wifi"></view>
-          <view class="battery"></view>
-        </view>
-      </view>
-      <view class="nav-main">
-        <image
-          class="menu"
-          :src="asset('菜单@2x.png')"
-          mode="aspectFit"
-          @click="goRoute('fullChain')"
-        />
-        <text class="nav-title">跨境创业孵化营</text>
-        <image class="avatar" :src="asset('蒙版组 275@2x.png')" mode="aspectFill" />
-      </view>
-    </view>
+    <MobileTopNav title="跨境创业孵化营" active-route-key="coupangIncubation" />
 
     <view class="hero">
       <Carousel
@@ -116,8 +97,8 @@
 <script setup>
 import { Carousel } from 'ant-design-vue'
 import { computed, ref } from 'vue'
+import MobileTopNav from '../components/MobileTopNav.vue'
 import SectionTitle from '../components/SectionTitle.vue'
-import { goRoute } from '../router'
 
 const asset = (name) => `/assets/跨境创业孵化营/${name}`
 

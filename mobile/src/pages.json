@@ -1,7 +1,13 @@
 {
   "pages": [
     {
-      "path": "pages/FullChainIncubation",
+      "path": "pages/FullChainIncubationMain",
+      "style": {
+        "navigationStyle": "custom"
+      }
+    },
+    {
+      "path": "pages/FullChainIncubationSub",
       "style": {
         "navigationStyle": "custom"
       }

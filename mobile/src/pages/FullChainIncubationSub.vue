@@ -1,25 +1,6 @@
 <template>
   <view class="page">
-    <view class="nav">
-      <view class="status">
-        <text>9:41</text>
-        <view class="phone-icons">
-          <view class="signal"></view>
-          <view class="wifi"></view>
-          <view class="battery"></view>
-        </view>
-      </view>
-      <view class="nav-main">
-        <image
-          class="menu"
-          :src="asset('菜单@2x.png')"
-          mode="aspectFit"
-          @click="goRoute('coupangIncubation')"
-        />
-        <text class="nav-title">全链孵化</text>
-        <image class="avatar" :src="asset('蒙版组 275@2x.png')" mode="aspectFill" />
-      </view>
-    </view>
+    <MobileTopNav title="全链孵化" active-route-key="fullChain" />
 
     <view class="hero section-dark">
       <text class="hero-title">小白变高手 | TikTok+AI跨境{{ '\n' }}实战营，新手扶持计划</text>
@@ -96,8 +77,8 @@
 import AudiencePanel from '../components/AudiencePanel.vue'
 import IconCardGrid from '../components/IconCardGrid.vue'
 import IconTextList from '../components/IconTextList.vue'
+import MobileTopNav from '../components/MobileTopNav.vue'
 import SectionTitle from '../components/SectionTitle.vue'
-import { goRoute } from '../router'
 
 const asset = (name) => `/assets/全链孵化三级页面/${name}`
 

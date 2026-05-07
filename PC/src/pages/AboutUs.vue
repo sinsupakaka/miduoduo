@@ -101,7 +101,6 @@
               :key="office.key"
               type="button"
               class="group-pin"
-              :class="{ active: hoveredOfficeKey === office.key }"
               :style="{ left: office.left, top: office.top }"
               @mouseenter="setHoveredOffice(office.key)"
               @mouseleave="clearHoveredOffice"
@@ -109,7 +108,7 @@
               @blur="clearHoveredOffice"
               @click="setHoveredOffice(office.key)"
             >
-              <img class="group-map-img" :src="aboutAsset(hoveredOfficeKey === office.key ? '坐标@2x.png' : '坐标 拷贝@2x.png')" alt="" />
+              <img class="group-map-img" :src="aboutAsset('坐标 拷贝@2x.png')" alt="" />
               <span class="sr-only">{{ office.label }}</span>
             </button>
 
@@ -234,8 +233,8 @@ const groupOffices = [
     shortLabel: '苏州',
     label: '苏州分公司',
     address: '江苏省苏州市苏州工业园区苏州大道东265号现代传媒广场22楼2227室',
-    left: '78.2%',
-    top: '34.2%',
+    left: '78.4%',
+    top: '35.5%',
   },
   {
     key: 'nanping',
@@ -250,8 +249,8 @@ const groupOffices = [
     shortLabel: '郑州',
     label: '郑州分公司',
     address: '河南省郑州市管城回族区郑汴路与未来路交叉口绿都广场A栋401室',
-    left: '76.9%',
-    top: '37.8%',
+    left: '77.9%',
+    top: '34.8%',
   },
 ]
 
@@ -607,10 +606,6 @@ const clearHoveredOffice = () => {
   color: inherit;
 }
 
-.group-map-img {
-  scale: 0.35;
-}
-
 .group-map-layer {
   position: absolute;
   inset: 0;
@@ -618,8 +613,8 @@ const clearHoveredOffice = () => {
 
 .group-pin {
   position: absolute;
-  width: 30px;
-  height: 38px;
+  width: 15px;
+  height: 19px;
   padding: 0;
   display: inline-flex;
   align-items: center;
@@ -633,17 +628,10 @@ const clearHoveredOffice = () => {
     filter 0.2s ease;
 }
 
-.group-pin img {
-  width: 100%;
-  max-width: none;
+.group-map-img {
+  scale: 0.7;
+  object-fit: contain;
   display: block;
-}
-
-.group-pin:hover,
-.group-pin:focus-visible,
-.group-pin.active {
-  transform: translate(-50%, -50%) scale(1.08);
-  filter: drop-shadow(0 8px 18px rgba(27, 74, 211, .25));
 }
 
 .sr-only {

@@ -9,7 +9,9 @@
         :class="{ 'has-children': item.children?.length }"
       >
         <a
-          :href="getRouteHash(item.path)"
+          :href="getRouteHref(item)"
+          :target="item.externalUrl ? '_blank' : undefined"
+          :rel="item.externalUrl ? 'noreferrer' : undefined"
           class="menu-link"
           :class="{ active: isNavItemActive(item, activePath) }"
         >
@@ -21,7 +23,9 @@
             <a
               v-for="child in item.children"
               :key="child.path"
-              :href="getRouteHash(child.path)"
+              :href="getRouteHref(child)"
+              :target="child.externalUrl ? '_blank' : undefined"
+              :rel="child.externalUrl ? 'noreferrer' : undefined"
               class="submenu-link"
               :class="{ active: child.path === activePath }"
             >
@@ -36,7 +40,7 @@
 
 <script setup>
 import { asset } from '../utils/assets'
-import { getRouteHash, isNavItemActive, navRoutes } from '../router'
+import { getRouteHref, isNavItemActive, navRoutes } from '../router'
 
 defineProps({
   activePath: {

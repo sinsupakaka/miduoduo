@@ -16,9 +16,24 @@
         <SectionTitle title="卖家孵化服务" desc="系统化孵化体系，让出海更简单" />
         <h3 class="section-subtitle">多平台孵化支持</h3>
         <div class="platform-list">
-          <img class="platform-logo tiktok" :src="businessAsset('矢量智能对象@2x.png')" alt="TEMU" />
-          <img class="platform-logo coupang" :src="businessAsset('形状 12@2x.png')" alt="TEMU" />
-          <img class="platform-logo temu" :src="businessAsset('logo_temu@2x.png')" alt="TEMU" />
+          <img 
+          class="platform-logo tiktok" 
+          :src="businessAsset('矢量智能对象@2x.png')" 
+          alt="TEMU" 
+          @click="goHash('/CrossBorderBootcampPage')"
+          />
+          <img 
+          class="platform-logo coupang" 
+          :src="businessAsset('形状 12@2x.png')" 
+          alt="TEMU" 
+          @click="goHash('/CoupangIncubationPage')"
+          />
+          <img 
+          class="platform-logo temu" 
+          :src="businessAsset('logo_temu@2x.png')" 
+          alt="TEMU" 
+          @click="goHash('/CoupangIncubationPage')"
+          />
         </div>
         <div class="business-container seller-grid">
           <div class="service-stack">
@@ -141,6 +156,17 @@ const sellerServices = [
     text: '整合全球各站点本土优质货源，提供爆款选品推荐、一件代发、仓储配送等一体化供应链服务，无需备货即可轻松出海。',
   },
 ]
+
+const goHash = (hash) => {
+  window.location.hash = hash
+
+  requestAnimationFrame(() => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'instant',
+    })
+  })
+}
 
 const caseCards = [
   { image: 'TikTok运营打法@2x.png', title: 'TikTok运营打法' },
@@ -301,6 +327,7 @@ const schools = [
 }
 
 .platform-logo {
+  cursor: pointer;
   height: 110px;
   min-width: 260px;
   padding: 0 26px;

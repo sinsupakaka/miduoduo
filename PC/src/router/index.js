@@ -10,15 +10,55 @@ import CrossBorderBootcampPage from '../pages/CrossBorderBootcampPage.vue'
 export const navRoutes = [
   { label: '首页', path: '/', component: CoupangIncubationPage },
   { label: '业务体系', path: '/business', component: BusinessSystemPage },
-  { label: '技术平台', path: '/technology', component: JointOperationPage },
+  {
+    label: '技术平台',
+    path: '/technology',
+    component: JointOperationPage,
+    children: [
+      { label: '数字营销', path: '/technology/digital-marketing', component: DigitalMarketing },
+      { label: '数字展会', path: '/technology/digital-expo', component: DigitalExpoServicePage },
+      { label: '联合运营', path: '/technology/joint-operation', component: JointOperationPage },
+      { label: '全链孵化', path: '/technology/full-link-incubation', component: CrossBorderBootcampPage },
+    ],
+  },
   { label: '中国跨交会', path: '/cross-border-fair', component: DigitalMarketing },
   { label: '行业智库', path: '/industry-think-tank', component: IndustryThinkTank },
-  { label: '动态中心', path: '/news', component: DigitalExpoServicePage },
-  { label: '关于我们', path: '/about', component: AboutUs },
+  {
+    label: '动态中心',
+    path: '/news',
+    component: DigitalExpoServicePage,
+    children: [
+      { label: '活动集锦', path: '/news/events', component: DigitalExpoServicePage },
+      { label: '跨境资讯', path: '/news/insights', component: IndustryThinkTank },
+    ],
+  },
+  {
+    label: '关于我们',
+    path: '/about',
+    component: AboutUs,
+    children: [
+      { label: '企业简介', path: '/about/company', component: AboutUs },
+      { label: '联系我们', path: '/about/contact', component: AboutUs },
+    ],
+  },
   { label: '云建站管理', path: '/cloud-site', component: CrossBorderBootcampPage },
 ]
 
 const defaultRoute = navRoutes[0]
+const flatRoutes = navRoutes.flatMap((route) => {
+  const childRoutes = route.children?.map((child) => ({
+    ...child,
+    parentPath: route.path,
+  })) || []
+
+  return [
+    {
+      ...route,
+      parentPath: route.path,
+    },
+    ...childRoutes,
+  ]
+})
 
 export const getRouteHash = (path) => (path === '/' ? '#/' : `#${path}`)
 
@@ -31,7 +71,13 @@ export const getCurrentPath = () => {
 }
 
 export const resolveRoute = (path) => {
-  const matchedRoute = navRoutes.find((route) => route.path === path)
+  const matchedRoute = flatRoutes.find((route) => route.path === path)
 
   return matchedRoute || defaultRoute
+}
+
+export const isNavItemActive = (item, activePath) => {
+  if (item.path === activePath) return true
+
+  return item.children?.some((child) => child.path === activePath) || false
 }

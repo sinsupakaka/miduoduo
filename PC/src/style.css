@@ -46,7 +46,7 @@ img {
 
 .menu {
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   justify-content: flex-end;
   gap: 18px clamp(24px, 4vw, 80px);
   align-items: center;
@@ -54,14 +54,76 @@ img {
   font-size: clamp(15px, 1.05vw, 20px);
 }
 
-.menu a {
+.menu-item {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.menu-link {
+  min-height: 52px;
+  display: inline-flex;
+  align-items: center;
   color: #333;
   text-decoration: none;
   white-space: nowrap;
+  transition: color 0.2s ease;
 }
 
-.menu a.active {
+.menu-link.active,
+.menu-item:hover > .menu-link,
+.menu-item:focus-within > .menu-link {
   color: #3154e8;
+}
+
+.submenu {
+  position: absolute;
+  top: calc(100% + 10px);
+  left: 50%;
+  z-index: 20;
+  padding: 14px;
+  border-radius: 16px;
+  background: #fff;
+  box-shadow: 0 18px 48px rgba(23, 36, 74, 0.14);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateX(-50%) translateY(10px);
+  transition:
+    opacity 0.2s ease,
+    transform 0.2s ease,
+    visibility 0.2s ease;
+}
+
+.menu-item.has-children:hover .submenu,
+.menu-item.has-children:focus-within .submenu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(-50%) translateY(0);
+}
+
+.submenu-list {
+  min-width: 234px;
+  display: grid;
+  gap: 8px;
+}
+
+.submenu-link {
+  padding: 18px 30px;
+  border-radius: 10px;
+  color: #555;
+  text-decoration: none;
+  font-size: 18px;
+  line-height: 1.35;
+  white-space: nowrap;
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease;
+}
+
+.submenu-link:hover,
+.submenu-link.active {
+  background: #eef1ff;
+  color: #4b67ea;
 }
 
 .hero {
@@ -746,6 +808,15 @@ img {
   .menu {
     gap: 48px;
   }
+
+  .submenu-list {
+    min-width: 212px;
+  }
+
+  .submenu-link {
+    padding: 16px 24px;
+    font-size: 17px;
+  }
 }
 
 @media (max-width: 1200px) {
@@ -757,6 +828,14 @@ img {
   .footer-logo {
     width: 220px;
     height: auto;
+  }
+
+  .menu {
+    flex-wrap: wrap;
+  }
+
+  .submenu {
+    display: none;
   }
 
   .hero,

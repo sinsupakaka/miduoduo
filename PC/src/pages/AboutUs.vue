@@ -94,14 +94,30 @@
       <section class="group-section">
         <div class="about-container group-inner">
           <h2 class="section-heading light">集团公司</h2>
-          <div class="map-note">
-            <span class="map-pins">
-              <img class="map-pin-copy" :src="aboutAsset('坐标 拷贝@2x.png')" alt="" />
-              <img class="map-pin-main" :src="aboutAsset('坐标@2x.png')" alt="" />
-            </span>
-            <div>
-              <strong>福建总部</strong>
-              <span>福建省福州市鼓楼区软件园A区23座</span>
+
+          <div class="group-map-layer">
+            <button
+              v-for="office in groupOffices"
+              :key="office.key"
+              type="button"
+              class="group-pin"
+              :class="{ active: hoveredOfficeKey === office.key }"
+              :style="{ left: office.left, top: office.top }"
+              @mouseenter="setHoveredOffice(office.key)"
+              @mouseleave="clearHoveredOffice"
+              @focus="setHoveredOffice(office.key)"
+              @blur="clearHoveredOffice"
+              @click="setHoveredOffice(office.key)"
+            >
+              <img class="group-map-img" :src="aboutAsset(hoveredOfficeKey === office.key ? '坐标@2x.png' : '坐标 拷贝@2x.png')" alt="" />
+              <span class="sr-only">{{ office.label }}</span>
+            </button>
+
+            <div v-if="activeOffice" class="map-note" :style="mapNoteStyle">
+              <div>
+                <strong>{{ activeOffice.label }}</strong>
+                <span>地址：{{ activeOffice.address }}</span>
+              </div>
             </div>
           </div>
         </div>
@@ -123,6 +139,7 @@
 </template>
 
 <script setup>
+import { computed, ref } from 'vue'
 import SiteFooter from '../components/SiteFooter.vue'
 import SiteHeader from '../components/SiteHeader.vue'
 import { asset } from '../utils/assets'
@@ -170,6 +187,96 @@ const honors = [
     title: 'TikTok Shop美区跨境POP2025年度商家大会',
   },
 ]
+
+const groupOffices = [
+  {
+    key: 'fuzhou',
+    shortLabel: '总部',
+    label: '福州总部',
+    address: '福建省福州市软件园A区23座米多多数字出海创新中心',
+    left: '80%',
+    top: '38.6%',
+  },
+  {
+    key: 'hangzhou',
+    shortLabel: '杭州',
+    label: '杭州分公司',
+    address: '浙江省杭州市滨江区浙农科创园5号楼2506',
+    left: '79.5%',
+    top: '36.2%',
+  },
+  {
+    key: 'shenzhen',
+    shortLabel: '深圳',
+    label: '深圳分公司',
+    address: '广东省深圳市龙岗区坂田街道环城南路心Tower3 7楼E2',
+    left: '78.4%',
+    top: '39.0%',
+  },
+  {
+    key: 'xiamen',
+    shortLabel: '厦门',
+    label: '厦门分公司',
+    address: '福建省厦门市集美区软件园三期C03栋601-1室米多多',
+    left: '79.4%',
+    top: '40.3%',
+  },
+  {
+    key: 'guangzhou',
+    shortLabel: '广州',
+    label: '广州分公司',
+    address: '广东省广州市海珠区鼎新路8号晋嘉洲大厦2410单元',
+    left: '78.4%',
+    top: '40.8%',
+  },
+  {
+    key: 'suzhou',
+    shortLabel: '苏州',
+    label: '苏州分公司',
+    address: '江苏省苏州市苏州工业园区苏州大道东265号现代传媒广场22楼2227室',
+    left: '78.2%',
+    top: '34.2%',
+  },
+  {
+    key: 'nanping',
+    shortLabel: '南平',
+    label: '南平分公司',
+    address: '福建省南平市顺昌县城南中路1号炼石花苑28幢',
+    left: '79%',
+    top: '37.4%',
+  },
+  {
+    key: 'zhengzhou',
+    shortLabel: '郑州',
+    label: '郑州分公司',
+    address: '河南省郑州市管城回族区郑汴路与未来路交叉口绿都广场A栋401室',
+    left: '76.9%',
+    top: '37.8%',
+  },
+]
+
+const hoveredOfficeKey = ref(null)
+
+const activeOffice = computed(() => {
+  return groupOffices.find((office) => office.key === hoveredOfficeKey.value) || null
+})
+
+const mapNoteStyle = computed(() => {
+  if (!activeOffice.value) return {}
+
+  return {
+    left: activeOffice.value.left,
+    top: `calc(${activeOffice.value.top} - 50px)`,
+  }
+})
+
+const setHoveredOffice = (officeKey) => {
+  hoveredOfficeKey.value = officeKey
+}
+
+const clearHoveredOffice = () => {
+  hoveredOfficeKey.value = null
+}
 </script>
 
 <style scoped>
@@ -181,14 +288,15 @@ const honors = [
 }
 
 .about-container {
-  width: min(1536px, calc(100% - 48px));
+  width: 1540px;
+  max-width: calc(100% - 380px);
   margin: 0 auto;
 }
 
 .section-heading {
   margin: 0;
-  font-size: clamp(34px, 2.45vw, 48px);
-  line-height: 1.15;
+  font-size: clamp(36px, 2.5vw, 48px);
+  line-height: 1.18;
   letter-spacing: 0;
   font-weight: 800;
 }
@@ -210,14 +318,14 @@ const honors = [
 .hero-title {
   position: absolute;
   left: 50%;
-  bottom: 142px;
+  bottom: 136px;
   width: min(920px, calc(100% - 48px));
   transform: translateX(-50%);
   text-align: center;
 }
 
 .hero-title h1 {
-  margin: 0 0 24px;
+  margin: 0 0 26px;
   color: #fff;
   font-size: clamp(48px, 3.8vw, 72px);
   line-height: 1.12;
@@ -233,56 +341,57 @@ const honors = [
 }
 
 .company-section {
-  min-height: 760px;
-  padding: 68px 0 94px;
+  min-height: 812px;
+  padding: 104px 0 126px;
   background: #fff;
 }
 
 .company-grid {
   display: grid;
-  grid-template-columns: minmax(420px, 620px) minmax(520px, 810px);
-  gap: 68px;
+  grid-template-columns: minmax(520px, 676px) minmax(620px, 794px);
+  gap: 70px;
   align-items: start;
 }
 
 .company-copy {
-  padding-top: 44px;
+  padding-top: 74px;
 }
 
 .company-copy h2 {
-  margin: 0 0 34px;
+  margin: 0 0 36px;
   color: #3a3a3a;
-  font-size: clamp(34px, 2.45vw, 48px);
+  font-size: clamp(36px, 2.5vw, 48px);
   line-height: 1.1;
   font-weight: 800;
 }
 
 .company-copy p {
-  margin: 0 0 16px;
+  margin: 0 0 18px;
   color: #555;
-  font-size: 16px;
-  line-height: 1.95;
+  font-size: 18px;
+  line-height: 1.9;
   text-align: justify;
 }
 
 .company-image {
+  z-index: 99;
   width: 100%;
-  margin-top: -188px;
+  margin-top: -170px;
   border-radius: 0 0 64px 0;
   display: block;
   box-shadow: 0 28px 70px rgba(28, 57, 119, .16);
 }
 
 .culture-section {
-  padding: 118px 0 124px;
+  padding: 112px 0 128px;
   background: #f4f7fb;
 }
 
 .culture-grid {
-  margin-top: 68px;
+  margin-top: 72px;
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 36px;
+  gap: 34px;
 }
 
 .culture-card {
@@ -296,18 +405,18 @@ const honors = [
 }
 
 .culture-card h3 {
-  margin: 28px 0 14px;
+  margin: 30px 0 16px;
   color: #333;
-  font-size: 24px;
-  line-height: 1.15;
+  font-size: 28px;
+  line-height: 1.18;
   font-weight: 800;
 }
 
 .culture-card p {
   margin: 0;
   color: #636b78;
-  font-size: 16px;
-  line-height: 1.8;
+  font-size: 17px;
+  line-height: 1.82;
 }
 
 .mission-card {
@@ -325,8 +434,8 @@ const honors = [
 }
 
 .timeline-section {
-  height: 1040px;
-  padding-top: 112px;
+  height: 1064px;
+  padding-top: 116px;
   background: #2f6df0 var(--about-timeline-bg) center top / cover no-repeat;
 }
 
@@ -354,13 +463,13 @@ const honors = [
 }
 
 .timeline-chart {
-  width: min(1430px, 100%);
-  margin: 96px auto 0;
+  width: min(1450px, 100%);
+  margin: 102px auto 0;
   display: block;
 }
 
 .honor-section {
-  padding: 108px 0 124px;
+  padding: 112px 0 128px;
   background: #fff;
 }
 
@@ -374,18 +483,19 @@ const honors = [
 .honor-title {
   position: relative;
   margin: 0;
-  min-width: 360px;
+  min-width: 384px;
+  padding-left: 20px;
   color: #333;
-  font-size: clamp(34px, 2.45vw, 46px);
+  font-size: clamp(36px, 2.5vw, 48px);
   line-height: 1;
   font-weight: 800;
 }
 
 .honor-title img {
   position: absolute;
-  left: -16px;
+  left: 0;
   top: 50%;
-  width: 236px;
+  width: 220px;
   max-width: none;
   transform: translateY(-50%);
   pointer-events: none;
@@ -394,7 +504,7 @@ const honors = [
 .honor-title span {
   position: relative;
   z-index: 1;
-  padding-left: 40px;
+  padding-left: 28px;
 }
 
 .honor-tabs {
@@ -405,9 +515,9 @@ const honors = [
 }
 
 .honor-tabs button {
-  min-width: 164px;
-  height: 44px;
-  padding: 0 26px;
+  min-width: 176px;
+  height: 48px;
+  padding: 0 28px;
   border: 1px solid #d8deeb;
   border-radius: 999px;
   color: #9299a7;
@@ -424,10 +534,10 @@ const honors = [
 }
 
 .honor-grid {
-  margin-top: 52px;
+  margin-top: 58px;
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 24px 26px;
+  gap: 28px 28px;
 }
 
 .honor-card {
@@ -445,22 +555,22 @@ const honors = [
 }
 
 .honor-card p {
-  height: 74px;
+  height: 78px;
   margin: 0;
-  padding: 0 20px;
+  padding: 0 22px;
   display: flex;
   align-items: center;
   color: #606774;
-  font-size: 14px;
-  line-height: 1.35;
+  font-size: 15px;
+  line-height: 1.4;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
 }
 
 .group-section {
-  height: 930px;
-  padding-top: 112px;
+  height: 952px;
+  padding-top: 116px;
   background: #030b12 var(--about-group-bg) center center / cover no-repeat;
 }
 
@@ -469,43 +579,95 @@ const honors = [
   position: relative;
 }
 
-.map-note {
+.group-addresses {
   position: absolute;
-  right: 112px;
-  top: 356px;
-  display: grid;
-  grid-template-columns: 34px minmax(0, 1fr);
-  gap: 12px;
-  align-items: start;
+  left: 24px;
+  bottom: 148px;
+  width: min(736px, calc(100% - 764px));
+  padding: 26px 30px;
+  border-radius: 18px;
+  background: rgba(255, 255, 255, .9);
+  box-shadow: 0 20px 48px rgba(6, 22, 42, .12);
 }
 
-.map-pins {
-  position: relative;
-  width: 34px;
-  height: 36px;
-  margin-top: 10px;
+.group-addresses p {
+  margin: 0;
+  color: #3d68c7;
+  font-size: 18px;
+  line-height: 1.56;
+  font-weight: 600;
+}
+
+.group-addresses p + p {
+  margin-top: 4px;
+}
+
+.group-addresses strong,
+.group-addresses span {
+  color: inherit;
+}
+
+.group-map-img {
+  scale: 0.35;
+}
+
+.group-map-layer {
+  position: absolute;
+  inset: 0;
+}
+
+.group-pin {
+  position: absolute;
+  width: 30px;
+  height: 38px;
+  padding: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  border: 0;
+  transform: translate(-50%, -50%);
+  cursor: pointer;
+  transition:
+    transform 0.2s ease,
+    filter 0.2s ease;
+}
+
+.group-pin img {
+  width: 100%;
+  max-width: none;
   display: block;
 }
 
-.map-pins img {
+.group-pin:hover,
+.group-pin:focus-visible,
+.group-pin.active {
+  transform: translate(-50%, -50%) scale(1.08);
+  filter: drop-shadow(0 8px 18px rgba(27, 74, 211, .25));
+}
+
+.sr-only {
   position: absolute;
-  width: 20px;
-  max-width: none;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
 }
 
-.map-pin-copy {
-  left: 0;
-  top: 0;
-}
-
-.map-pin-main {
-  left: 11px;
-  top: 7px;
+.map-note {
+  position: absolute;
+  z-index: 3;
+  transform: translate(-50%, -100%);
+  pointer-events: none;
 }
 
 .map-note div {
-  width: 320px;
-  padding: 18px 22px;
+  width: 372px;
+  padding: 20px 24px;
   border-radius: 10px;
   color: #323846;
   background: rgba(255, 255, 255, .94);
@@ -514,8 +676,8 @@ const honors = [
 
 .map-note strong {
   display: block;
-  margin-bottom: 8px;
-  font-size: 20px;
+  margin-bottom: 10px;
+  font-size: 22px;
   line-height: 1.2;
   font-weight: 800;
 }
@@ -523,17 +685,17 @@ const honors = [
 .map-note span {
   display: block;
   color: #6b7280;
-  font-size: 14px;
-  line-height: 1.4;
+  font-size: 15px;
+  line-height: 1.5;
 }
 
 .partner-section {
-  padding: 116px 0 122px;
+  padding: 112px 0 132px;
   background: #fff;
 }
 
 .partner-wall {
-  margin-top: 58px;
+  margin-top: 62px;
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 0;
@@ -542,6 +704,13 @@ const honors = [
 .partner-wall img {
   width: 100%;
   display: block;
+}
+
+@media (max-width: 1919px) {
+  .about-container {
+    width: min(1540px, calc(100% - 48px));
+    max-width: none;
+  }
 }
 
 @media (max-width: 1200px) {
@@ -582,9 +751,21 @@ const honors = [
     background-position: center bottom;
   }
 
+  .group-addresses {
+    position: static;
+    width: 100%;
+    margin-top: 48px;
+  }
+
+  .group-map-layer {
+    position: relative;
+    height: 420px;
+    margin-top: 32px;
+  }
+
   .map-note {
     right: 24px;
-    top: 240px;
+    top: 72px;
   }
 }
 
@@ -641,11 +822,22 @@ const honors = [
     padding-top: 74px;
   }
 
+  .group-addresses {
+    padding: 18px 18px 20px;
+  }
+
+  .group-addresses p {
+    font-size: 15px;
+  }
+
+  .group-map-layer {
+    height: 320px;
+  }
+
   .map-note {
     left: 16px;
     right: 16px;
-    top: auto;
-    bottom: 58px;
+    top: 18px;
   }
 
   .map-note div {

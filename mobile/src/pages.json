@@ -25,6 +25,12 @@
       }
     },
     {
+      "path": "pages/DigitalMarketingService",
+      "style": {
+        "navigationStyle": "custom"
+      }
+    },
+    {
       "path": "pages/IndustryThinkTank",
       "style": {
         "navigationStyle": "custom"

@@ -1,6 +1,6 @@
 <template>
   <view class="page">
-    <MobileTopNav title="全链孵化" active-route-key="fullChain" />
+    <MobileTopNav title="跨境电商实战营" active-route-key="fullChain" />
 
     <view class="hero section-dark">
       <text class="hero-title">小白变高手 | TikTok+AI跨境{{ '\n' }}实战营，新手扶持计划</text>

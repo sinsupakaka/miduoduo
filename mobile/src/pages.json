@@ -25,6 +25,12 @@
       }
     },
     {
+      "path": "pages/IndustryThinkTank",
+      "style": {
+        "navigationStyle": "custom"
+      }
+    },
+    {
       "path": "pages/AboutUs",
       "style": {
         "navigationStyle": "custom"

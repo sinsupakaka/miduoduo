@@ -15,6 +15,10 @@ export const routes = {
     path: '/pages/UnionOperation',
     title: '联合运营',
   },
+  industryThinkTank: {
+    path: '/pages/IndustryThinkTank',
+    title: '行业智库',
+  },
   aboutUs: {
     path: '/pages/AboutUs',
     title: '关于我们',

@@ -3,7 +3,9 @@ import BusinessSystemPage from '../pages/BusinessSystemPage.vue'
 import JointOperationPage from '../pages/JointOperationPage.vue'
 import AboutUs from '../pages/AboutUs.vue'
 import DigitalMarketing from '../pages/DigitalMarketing.vue'
+import DigitalExpoServicePage from '../pages/DigitalExpoServicePage.vue'
 import IndustryThinkTank from '../pages/IndustryThinkTank.vue'
+import CrossBorderBootcampPage from '../pages/CrossBorderBootcampPage.vue'
 
 export const navRoutes = [
   { label: '首页', path: '/', component: CoupangIncubationPage },
@@ -11,9 +13,9 @@ export const navRoutes = [
   { label: '技术平台', path: '/technology', component: JointOperationPage },
   { label: '中国跨交会', path: '/cross-border-fair', component: DigitalMarketing },
   { label: '行业智库', path: '/industry-think-tank', component: IndustryThinkTank },
-  { label: '动态中心', path: '/news' },
+  { label: '动态中心', path: '/news', component: DigitalExpoServicePage },
   { label: '关于我们', path: '/about', component: AboutUs },
-  { label: '云建站管理', path: '/cloud-site' },
+  { label: '云建站管理', path: '/cloud-site', component: CrossBorderBootcampPage },
 ]
 
 const defaultRoute = navRoutes[0]

@@ -19,6 +19,10 @@ export const routes = {
     path: '/pages/DigitalMarketingService',
     title: '数字营销服务',
   },
+  digitalExpoService: {
+    path: '/pages/DigitalExpoService',
+    title: '数字展会服务',
+  },
   industryThinkTank: {
     path: '/pages/IndustryThinkTank',
     title: '行业智库',

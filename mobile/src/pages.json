@@ -31,6 +31,12 @@
       }
     },
     {
+      "path": "pages/DigitalExpoService",
+      "style": {
+        "navigationStyle": "custom"
+      }
+    },
+    {
       "path": "pages/IndustryThinkTank",
       "style": {
         "navigationStyle": "custom"

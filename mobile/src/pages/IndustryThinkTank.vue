@@ -3,7 +3,6 @@
     <MobileTopNav
       title="行业智库"
       active-route-key="industryThinkTank"
-      theme="dark"
       :avatar-src="''"
     />
 
@@ -21,7 +20,8 @@
     </view>
 
     <view class="section research-section">
-      <SectionTitle title="专注行业研究，引领行业风向" desc="跨境电商行业深度报告" tone="dark" />
+      <SectionTitle title="专注行业研究，引领行业风向"  tone="dark" />
+      <view class="section-desc">跨境电商行业深度报告</view>
 
       <view class="bullet-list">
         <view v-for="item in researchParticipation" :key="item" class="bullet-item">
@@ -57,9 +57,9 @@
     <view class="section editorial-section">
       <SectionTitle
         title="主编行业年度蓝皮书/白皮书"
-        desc="联合行业影响力人物和机构共创发布"
         tone="dark"
       />
+      <view class="section-desc">联合行业影响力人物和机构共创发布</view>
 
       <view class="media-note-list">
         <view class="media-note">
@@ -82,7 +82,7 @@
         <image v-for="item in editorialBooks" :key="item" :src="asset(item)" mode="aspectFit" />
       </view>
 
-      <text class="center-note">累计影响超30万跨境电商从业者</text>
+      <text class="center-note">累计影响超<text class="number">30</text>万跨境电商从业者</text>
     </view>
 
     <view class="media-section">
@@ -272,17 +272,18 @@ const actionItems = [
 
 .hero-title {
   display: block;
-  font-size: 46rpx;
+  font-size: 52rpx;
   line-height: 1.25;
   font-weight: 800;
 }
 
 .hero-subtitle-row {
-  margin-top: 24rpx;
+  margin-top: 36rpx;
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 20rpx;
+  font-size: 42rpx;
 }
 
 .title-line {
@@ -304,11 +305,11 @@ const actionItems = [
 
 .hero-desc {
   display: block;
-  margin: 28rpx auto 0;
+  margin: 18rpx auto 0;
   max-width: 650rpx;
   color: rgba(255, 255, 255, 0.9);
-  font-size: 26rpx;
-  line-height: 1.72;
+  font-size: 28rpx;
+  line-height: 42rpx;
 }
 
 .hero-art {
@@ -320,6 +321,17 @@ const actionItems = [
 .section {
   padding: 92rpx 36rpx 0;
 }
+
+.section-desc {
+  font-weight: bold;
+  font-size: 36rpx;
+  color: #333333;
+  line-height: 54rpx;
+  text-align: center;
+  margin-top: 30rpx;
+}
+
+
 
 .research-section {
   padding-bottom: 84rpx;
@@ -344,15 +356,16 @@ const actionItems = [
 .bullet-item image {
   width: 26rpx;
   height: 26rpx;
-  margin-top: 9rpx;
+  /* margin-top: 9rpx; */
   flex: none;
 }
 
 .bullet-item text {
   flex: 1;
-  color: #3f4654;
-  font-size: 23rpx;
-  line-height: 1.72;
+  font-size: 22rpx;
+  color: #333333;
+  line-height: 28rpx;
+  /* line-height: 22rpx; */
 }
 
 .book-grid {
@@ -448,10 +461,10 @@ const actionItems = [
 }
 
 .note-desc {
-  margin-top: 14rpx;
-  color: #4f5968;
-  font-size: 25rpx;
-  line-height: 1.66;
+  margin-top: 20rpx;
+  color: #333333;
+  font-size: 26rpx;
+  line-height: 32rpx;
 }
 
 .editorial-books {
@@ -467,11 +480,15 @@ const actionItems = [
 }
 
 .center-note {
-  margin-top: 44rpx;
+  margin-top: 50rpx;
   text-align: center;
-  color: #555f70;
+  color: #333333;
   font-size: 25rpx;
   line-height: 1.6;
+}
+
+.center-note :deep(.number) {
+  font-size: 36rpx;
 }
 
 .media-section {
@@ -571,9 +588,9 @@ const actionItems = [
 }
 
 .guide-section {
-  padding: 94rpx 36rpx 104rpx;
+  padding: 100rpx 40rpx;
   color: #ffffff;
-  background: #041b49;
+  background: linear-gradient( 112deg, #052278 0%, #04152D 100%);
 }
 
 .guide-block {
@@ -646,8 +663,8 @@ const actionItems = [
 }
 
 .action-item image {
-  width: 24rpx;
-  height: 24rpx;
+  width: 40rpx;
+  height: 40rpx;
 }
 
 .action-item text {
@@ -673,9 +690,9 @@ const actionItems = [
 }
 
 .copyright-banner {
-  padding: 76rpx 46rpx 68rpx;
+  padding: 100rpx 70rpx;
   text-align: center;
-  background: #2f68ee url("../../assets/行业智库/底部@2x.png") center / cover no-repeat;
+  background: #2563EB;
 }
 
 .copyright-title {

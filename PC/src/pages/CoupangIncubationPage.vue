@@ -18,7 +18,7 @@
                   <img class="hero-point-icon" :src="asset(slide.pointIcon)" alt="" />{{ text }}
                 </li>
               </ul>
-              <button class="hero-action">{{ slide.action }}</button>
+              <button class="hero-action" @click="jumpToKf()">{{ slide.action }}</button>
             </div>
             <img class="hero-art" :src="asset(slide.image)" alt="" />
           </div>
@@ -111,7 +111,7 @@
             <span class="contact-icon">⌖</span>
             <strong>上课地址： 福建省福州市鼓楼区福州软件园A区23号</strong>
           </div>
-          <button>立即咨询</button>
+          <button @click="jumpToKf()">立即咨询</button>
         </div>
         <div class="qr">
           <img :src="asset('蒙版组 275@2x.png')" alt="" />
@@ -131,7 +131,7 @@ import { computed, ref } from 'vue'
 import SectionTitle from '../components/SectionTitle.vue'
 import SiteFooter from '../components/SiteFooter.vue'
 import SiteHeader from '../components/SiteHeader.vue'
-import { asset } from '../utils/assets'
+import { asset, jumpToKf } from '../utils/assets'
 
 defineProps({
   activePath: {

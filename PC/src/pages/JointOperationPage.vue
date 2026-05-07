@@ -15,7 +15,7 @@
                 <span>{{ item.label }}</span>
               </div>
             </div>
-            <button class="primary-action">探索联合运营方案</button>
+            <button class="primary-action" @click="jumpToKf()">探索联合运营方案</button>
           </div>
           <img class="hero-art" :src="jointAsset('组 4@2x(31).png')" alt="" />
         </div>
@@ -154,7 +154,7 @@
 <script setup>
 import SiteFooter from '../components/SiteFooter.vue'
 import SiteHeader from '../components/SiteHeader.vue'
-import { asset } from '../utils/assets'
+import { asset, jumpToKf } from '../utils/assets'
 
 defineProps({
   activePath: {

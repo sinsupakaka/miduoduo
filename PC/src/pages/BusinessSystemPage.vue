@@ -100,7 +100,7 @@
         <div class="business-container">
           <h2>开启您的跨境出海之旅</h2>
           <p>无论您是想要拓展海外市场的卖家，还是寻求合作的高校、园区或企业，我们都将为您提供专业的全链路服务支持。</p>
-          <button>立即咨询</button>
+          <button @click="jumpToKf()">立即咨询</button>
         </div>
       </section>
     </main>
@@ -113,7 +113,7 @@
 import SectionTitle from '../components/SectionTitle.vue'
 import SiteFooter from '../components/SiteFooter.vue'
 import SiteHeader from '../components/SiteHeader.vue'
-import { asset } from '../utils/assets'
+import { asset, jumpToKf } from '../utils/assets'
 
 defineProps({
   activePath: {
@@ -202,29 +202,29 @@ const educationServices = [
 
 const schools = [
   '福大@2x.png',
-  '福建商学院logo@2x.png',
-  '福建船政交通职业信息学院@2x.png',
-  '福建华南女子职业技术学院@2x.png',
+  '图层 17@2x.png',
   '福建理工大学@2x.png',
   '福建农林大学@2x.png',
   '闽江大学@2x.png',
+  '泉州师范学院@2x.png',
+  '福州外语外贸学院@2x.png',
   '宁夏工商职业技术大学@2x.png',
   '阳光学院校徽及中英文校名组合规范-彩色稿_副本2@2x.png',
+  '福建商学院logo@2x.png',
   '福建师大协和@2x.png',
-  '宁德职业技术学院@2x.png',
-  '福建信息职业技术学院@2x.png',
-  '闽江师范高等专科学校@2x.png',
-  '泉州师范学院@2x.png',
-  '福建农林大学金山学院@2x.png',
+  '图层 18@2x.png',
   '福建江夏学院@2x.png',
-  '福建华南女子职业技术学院@2x.png',
+  '福建农林大学金山学院@2x.png',
+  '福建信息职业技术学院@2x.png',
   '福州职业技术学院@2x.png',
-  '福州理工学院@2x.png',
-  '福州外语外贸学院@2x.png',
+  '闽江师范高等专科学校@2x.png',
+  '福建船政交通职业信息学院@2x.png',
+  '图层 19@2x.png',
+  '宁德职业技术学院@2x.png',
   '福州墨尔本职业技术学院@2x.png',
-  '矢量智能对象@2x.png',
-  '形状 12@2x.png',
-  '福建农林大学@2x.png',
+  '图层 20@2x.png',
+  '福州理工学院@2x.png',
+  '福建华南女子职业技术学院@2x.png',
 ]
 </script>
 
@@ -255,20 +255,21 @@ const schools = [
 }
 
 .business-hero {
-  min-height: 840px;
-  display: flex;
-  align-items: center;
+  min-height: 900px;
   color: #fff;
   background: #2f68e8 var(--business-hero-bg) center / cover no-repeat;
 }
 
 .hero-content {
+  position: relative;
+  left: 0px;
+  top: 180px;
   padding-top: 2px;
 }
 
 .business-hero h1 {
   margin: 0 0 62px;
-  font-size: 64px;
+  font-size: 90px;
   line-height: 1.38;
   letter-spacing: 0;
   font-weight: 800;

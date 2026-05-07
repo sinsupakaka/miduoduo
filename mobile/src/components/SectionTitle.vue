@@ -46,11 +46,16 @@ defineProps({
 }
 
 .dark .section-title-title {
-  color: #2d2f36;
+  font-family: Source Han Sans CN;
+  font-weight: bold;
+  font-size: 44rpx;
+  color: #333333;
+  line-height: 48rpx;
 }
 
 .dark .section-title-desc {
-  color: #8c95a8;
+  font-size: 26rpx;
+  color: #868999;
 }
 
 .orange .section-title-title {

@@ -53,11 +53,11 @@ defineProps({
   border-radius: 12rpx;
   align-items: center;
   gap: 24rpx;
-  background: linear-gradient(100deg, #201736 0%, #3a224d 100%);
+  background: linear-gradient( 124deg, #291C41 0%, #25183A 52.21%, #3F2753 100%);
 }
 
 .course .icon-text-title {
-  font-size: 29rpx;
+  font-size: 28rpx;
   line-height: 1.2;
   font-weight: 800;
   color: #ffffff;

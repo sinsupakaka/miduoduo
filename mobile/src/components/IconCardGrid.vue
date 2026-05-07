@@ -26,7 +26,7 @@ defineProps({
 
 .icon-card {
   height: 224rpx;
-  padding: 42rpx 40rpx 0;
+  padding: 40rpx 30rpx 0rpx 40rpx;
   border-radius: 14rpx;
   background: rgba(76, 49, 113, 0.68);
 }
@@ -44,16 +44,16 @@ defineProps({
 }
 
 .icon-card-title {
-  font-size: 30rpx;
+  font-size: 28rpx;
   line-height: 1.2;
   font-weight: 800;
   color: #ffffff;
 }
 
 .icon-card-desc {
-  margin-top: 18rpx;
+  margin-top: 20rpx;
   color: #d7deed;
-  font-size: 23rpx;
+  font-size: 22rpx;
   line-height: 1.2;
 }
 </style>

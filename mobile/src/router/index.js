@@ -1,35 +1,43 @@
 export const routes = {
   fullChainService: {
     path: '/pages/FullChainIncubationMain',
-    title: '全链孵化服务',
+    title: '全链孵化',
+    isShow: true
   },
   fullChain: {
     path: '/pages/FullChainIncubationSub',
     title: '全链孵化',
+    isShow: false
   },
   coupangIncubation: {
     path: '/pages/CoupangIncubationPage',
     title: '跨境创业孵化营',
+    isShow: false
   },
   unionOperation: {
     path: '/pages/UnionOperation',
     title: '联合运营',
+    isShow: true
   },
   digitalMarketingService: {
     path: '/pages/DigitalMarketingService',
-    title: '数字营销服务',
+    title: '数字营销',
+    isShow: true
   },
   digitalExpoService: {
     path: '/pages/DigitalExpoService',
-    title: '数字展会服务',
+    title: '数字展会',
+    isShow: true
   },
   industryThinkTank: {
     path: '/pages/IndustryThinkTank',
     title: '行业智库',
+    isShow: true
   },
   aboutUs: {
     path: '/pages/AboutUs',
     title: '关于我们',
+    isShow: true
   },
 }
 

@@ -21,7 +21,7 @@ defineProps({
   display: flex;
   align-items: center;
   justify-content: center;
-  background: #ffffff;
+  background: #F0F2F9;
 }
 
 .mobile-footer-logo image {

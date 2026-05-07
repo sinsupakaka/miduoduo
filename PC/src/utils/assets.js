@@ -27,3 +27,8 @@ export const asset = (name, folder = defaultFolder) => {
 
   return assets[key] || ''
 }
+
+
+export const jumpToKf = () => {
+  window.ysf("open");
+};

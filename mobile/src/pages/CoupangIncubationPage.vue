@@ -1,6 +1,6 @@
 <template>
   <view class="page">
-    <MobileTopNav title="跨境创业孵化营" active-route-key="coupangIncubation" />
+    <MobileTopNav title="全链孵化" active-route-key="coupangIncubation" />
 
     <view class="hero">
       <Carousel
@@ -119,9 +119,9 @@ const heroSlides = [
     ],
   },
   {
-    title: 'TEMU 全球开店低成本',
-    subtitle: '创业孵化计划',
-    action: '立即入住',
+    title: 'TEMU 全球开店',
+    subtitle: '低成本创业孵化计划',
+    action: '立即入驻',
     tone: 'orange',
     image: '色相_饱和度-1@2x.png',
     pointIcon: '组 11002@2x-2.png',
@@ -330,13 +330,13 @@ const audienceCards = [
 }
 
 .hero-slide.blue {
-  color: #2436bd;
-  background: #eaf3ff;
+  color: #1E33B6;
+  background: linear-gradient( 0deg, #E6F1FE 0%, #E5EEFF 54.9%, #E5EEFF 100%);
 }
 
 .hero-slide.orange {
   color: #7c2d12;
-  background: linear-gradient(135deg, #fff7ed 0%, #fef2f1 100%);
+  background: linear-gradient( 0deg, #FEF2F1 0%, #FFF7ED 100%);
 }
 
 .hero-title {
@@ -367,7 +367,7 @@ const audienceCards = [
 
 .hero-point text {
   flex: 1;
-  font-size: 30rpx;
+  font-size: 28rpx;
   line-height: 1.35;
 }
 
@@ -524,8 +524,8 @@ const audienceCards = [
 }
 
 .why-card-title {
-  color: #2d2f36;
-  font-size: 30rpx;
+  font-size: 28rpx;
+  color: #333333;
   line-height: 1.25;
   font-weight: 800;
 }
@@ -535,10 +535,10 @@ const audienceCards = [
 }
 
 .why-card-desc {
-  margin-top: 24rpx;
-  color: #596170;
-  font-size: 24rpx;
-  line-height: 1.65;
+  margin-top: 20rpx;
+  font-size: 20rpx;
+  color: #53545C;
+  line-height: 32rpx;
 }
 
 .why-slide.orange .why-card-desc {
@@ -554,8 +554,8 @@ const audienceCards = [
 }
 
 .services {
-  padding: 95rpx 40rpx 94rpx;
-  background: #f5f8fc;
+  padding: 95rpx 40rpx 100rpx;
+  background: #F8FAFC;
 }
 
 .service-list {
@@ -565,9 +565,9 @@ const audienceCards = [
 }
 
 .service-panel {
-  padding: 43rpx 40rpx 39rpx;
+  padding: 43rpx 40rpx 52rpx;
   border: 2rpx solid #d4e7ff;
-  border-radius: 14rpx;
+  border-radius: 16rpx;
   background: #ffffff;
 }
 
@@ -617,19 +617,19 @@ const audienceCards = [
 }
 
 .audience {
-  padding: 95rpx 40rpx 88rpx;
-  background: #fff7ec;
+  padding: 100rpx 40rpx 100rpx;
+  background: #FFF7ED;
 }
 
 .audience-list {
   margin-top: 58rpx;
   display: grid;
-  gap: 24rpx;
+  gap: 18rpx;
 }
 
 .audience-card {
   min-height: 186rpx;
-  padding: 43rpx 32rpx 36rpx;
+  padding: 36rpx 32rpx 44rpx;
   border: 2rpx solid #ffe2bd;
   border-radius: 14rpx;
   background: #ffffff;
@@ -639,7 +639,7 @@ const audienceCards = [
   width: 48rpx;
   height: 48rpx;
   float: left;
-  margin-right: 29rpx;
+  margin-right: 20rpx;
 }
 
 .audience-title,
@@ -649,7 +649,8 @@ const audienceCards = [
 
 .audience-title {
   padding-top: 4rpx;
-  color: #2d2f36;
+  font-size: 28rpx;
+  color: #333333;
   font-size: 30rpx;
   line-height: 1.2;
   font-weight: 800;
@@ -658,15 +659,15 @@ const audienceCards = [
 .audience-desc {
   clear: both;
   padding-top: 29rpx;
-  color: #596170;
-  font-size: 24rpx;
-  line-height: 1.65;
+  font-size: 20rpx;
+  color: #53545C;
+  line-height: 32rpx;
 }
 
 .cta {
-  padding: 91rpx 40rpx 88rpx;
+  padding: 100rpx 40rpx 100rpx;
   text-align: center;
-  background: #eaf3ff;
+  background: #E0ECFE;
 }
 
 .cta-title,
@@ -693,7 +694,7 @@ const audienceCards = [
 }
 
 .qr {
-  margin-top: 55rpx;
+  margin-top: 60rpx;
   width: 412rpx;
   height: 412rpx;
 }
@@ -708,15 +709,15 @@ const audienceCards = [
 
 .qr-subtitle {
   margin-top: 18rpx;
-  color: #596170;
-  font-size: 32rpx;
+  font-size: 28rpx;
+  color: #333333;
   line-height: 1.2;
 }
 
 .contact,
 .address {
-  color: #2d2f36;
   font-size: 28rpx;
+  color: #333333;
   line-height: 1.45;
 }
 

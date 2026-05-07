@@ -39,7 +39,7 @@
               <img :src="aboutAsset('logo来源@2x.png')" alt="" />
               <h3>logo来源</h3>
               <p>
-                米多多logo图形灵感来源自著名典故《棋盘上的米粒》，寓意聚沙成塔、持续增长。
+                米多多logo图形灵感来源自著名典故《棋盘上的米粒》。图形左边由1/4圆组成，形似抽象国际象棋棋盘，左上角置米粒作为点睛之缀。
               </p>
             </article>
 
@@ -75,7 +75,7 @@
               <span>资质/荣誉</span>
             </h2>
           <div class="honor-tabs">
-            <button class="active">专业资质</button>
+            <button class="active">行业奖项</button>
             <button>案例/出海人选</button>
             <button>平台官方资质</button>
             <button>商协会服务</button>
@@ -309,7 +309,7 @@ const clearHoveredOffice = () => {
 }
 
 .about-hero {
-  height: 938px;
+  height: 900px;
   position: relative;
   background: #07131c var(--about-hero-bg) center top / cover no-repeat;
 }
@@ -341,7 +341,7 @@ const clearHoveredOffice = () => {
 
 .company-section {
   min-height: 812px;
-  padding: 104px 0 126px;
+  padding: 14px 0 126px;
   background: #fff;
 }
 
@@ -367,7 +367,7 @@ const clearHoveredOffice = () => {
 .company-copy p {
   margin: 0 0 18px;
   color: #555;
-  font-size: 18px;
+  font-size: 20px;
   line-height: 1.9;
   text-align: justify;
 }
@@ -375,7 +375,7 @@ const clearHoveredOffice = () => {
 .company-image {
   z-index: 99;
   width: 100%;
-  margin-top: -170px;
+  margin-top: -100px;
   border-radius: 0 0 64px 0;
   display: block;
   box-shadow: 0 28px 70px rgba(28, 57, 119, .16);
@@ -398,7 +398,8 @@ const clearHoveredOffice = () => {
 }
 
 .culture-card img {
-  width: 100%;
+  width: 480px;
+  height: 320px;
   border-radius: 16px;
   display: block;
 }
@@ -406,7 +407,7 @@ const clearHoveredOffice = () => {
 .culture-card h3 {
   margin: 30px 0 16px;
   color: #333;
-  font-size: 28px;
+  font-size: 36px;
   line-height: 1.18;
   font-weight: 800;
 }
@@ -414,7 +415,7 @@ const clearHoveredOffice = () => {
 .culture-card p {
   margin: 0;
   color: #636b78;
-  font-size: 17px;
+  font-size: 24px;
   line-height: 1.82;
 }
 
@@ -481,6 +482,9 @@ const clearHoveredOffice = () => {
 
 .honor-title {
   position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   margin: 0;
   min-width: 384px;
   padding-left: 20px;
@@ -503,7 +507,8 @@ const clearHoveredOffice = () => {
 .honor-title span {
   position: relative;
   z-index: 1;
-  padding-left: 28px;
+  padding-left: 8px;
+  font-size: 36px;
 }
 
 .honor-tabs {
@@ -527,8 +532,7 @@ const clearHoveredOffice = () => {
 
 .honor-tabs button.active {
   color: #fff;
-  border-color: #265df0;
-  background: #265df0;
+  background: linear-gradient(90deg, #647FEE, #1E33B6);
   font-weight: 800;
 }
 

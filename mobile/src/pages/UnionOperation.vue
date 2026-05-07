@@ -8,7 +8,8 @@
 
     <view class="hero">
       <view class="hero-copy">
-        <text class="hero-title">米多多联合运营{{ '\n' }}「品牌合伙人」计划</text>
+        <text class="hero-title">米多多联合运营</text>
+        <text class="hero-title2">「品牌合伙人」计划</text>
         <text class="hero-desc">资金共担 + 整合营销 + 多渠道运营{{ '\n' }}深度绑定客户增长，共担风险，共享收益</text>
       </view>
       <view class="hero-stats">
@@ -17,24 +18,23 @@
           <text class="hero-stat-label">{{ item.label }}</text>
         </view>
       </view>
-      <image class="hero-art" :src="asset('img1@2x.png')" mode="widthFix" />
+      <view class="hero_btn">探索联合运营方案</view>
     </view>
+    <image class="hero-art" :src="asset('img1@2x.png')" mode="widthFix" />
 
-    <view class="section model-section">
+    <view class="section model-section" style="padding-bottom: 0;">
       <SectionTitle title="服务设计 · 双向赋能模型" desc="清晰界定产品供应链与联合运营方分工，共同构建全渠道增长飞轮" />
       <view class="panel-list">
         <view v-for="panel in modelPanels" :key="panel.title" :class="['info-panel', panel.tone]">
           <view class="panel-head">
             <image class="panel-icon" :src="asset(panel.icon)" mode="aspectFit" />
-            <view class="panel-title-wrap">
-              <text class="panel-title">{{ panel.title }}</text>
-              <text class="panel-badge">{{ panel.badge }}</text>
-            </view>
+            <text class="panel-title">{{ panel.title }}</text>
           </view>
+          <text class="panel-badge">{{ panel.badge }}</text>
           <view class="point-list">
             <view v-for="item in panel.items" :key="item.label" class="point-item">
               <image class="point-icon" :src="asset(panel.pointIcon)" mode="aspectFit" />
-              <text class="point-text"><text class="point-label">{{ item.label }}：</text>{{ item.text }}</text>
+              <text class="point-text">{{ item.label }}：{{ item.text }}</text>
             </view>
           </view>
         </view>
@@ -56,7 +56,7 @@
             </view>
           </view>
           <view v-if="stage.milestone" class="milestone">
-            <image :src="asset('icon-确认@2x.png')" mode="aspectFit" />
+            <!-- <image :src="asset('icon-确认@2x.png')" mode="aspectFit" /> -->
             <text><text class="stage-line-label">里程碑：</text>{{ stage.milestone }}</text>
           </view>
           <view v-if="stage.plans" class="plan-list">
@@ -80,7 +80,7 @@
             <image class="panel-icon" :src="asset(panel.icon)" mode="aspectFit" />
             <view class="panel-title-wrap">
               <text class="panel-title">{{ panel.title }}</text>
-              <text class="panel-badge">{{ panel.badge }}</text>
+              <!-- <text class="panel-badge">{{ panel.badge }}</text> -->
             </view>
           </view>
           <view class="point-list">
@@ -107,18 +107,23 @@
       </view>
       <view class="upgrade-note">
         <div class="rule-title-area">
-          <image :src="asset('icon-合作@2x.png')" mode="aspectFit" />
-          <text class="upgrade-title">联合运营本质升级：从单一代理到品牌合伙人</text>
+          <view style="width: 50rpx; height: 50rpx;">
+            <image :src="asset('icon-确认@2x.png')" style="width: 50rpx; height: 50rpx;" mode="aspectFit" />
+          </view>
+          <text class="upgrade-title">联合运营本质升级："资金共担+整合营销+多渠道运营"三位一体，从单一代理到品牌合伙人。</text>
         </div>
-        <text class="upgrade-desc">米多多提供全链路运营能力和内容工业化生产，品牌方聚焦产品与供应链，实现长期增长。</text>
+        <text class="upgrade-desc">高潜力品牌可进入第二阶段合资/并购方案，实现品牌价值跃升与资本回报</text>
       </view>
     </view>
 
     <view class="cta">
       <view class="cta-copy">
         <text class="cta-title">成为品牌合伙人，共享全球{{ '\n' }}增长红利</text>
-        <text class="cta-desc">从0到1冷启动，从1到N规模化，米多多联合运营以合伙人姿态，共担风险、共享收益。</text>
-        <text class="cta-mail">商务合作：ilonazhou@fjmidodo.com</text>
+        <text class="cta-desc">从0到1冷启动，从1到N规模化，米多多联合运营<br>以合伙人姿态，共担风险、共享收益。</text>
+        <view class="cta-mail-container">
+          <image class="cta-mail-icon" :src="asset('icon-合作@2x.png')" mode="aspectFit" />
+          <text class="cta-mail">商务合作：ilonazhou@fjmidodo.com</text>
+        </view>
       </view>
       <image class="cta-bg" :src="asset('底部@2x.png')" mode="aspectFill" />
     </view>
@@ -210,7 +215,7 @@ const strategyPanels = [
     ],
   },
   {
-    icon: 'icon-核心目标@2x.png',
+    icon: 'icon-起步阶段矩阵@2x(1).png',
     pointIcon: 'icon-point4@2x.png',
     title: '核心目标',
     badge: '全域增长',
@@ -247,7 +252,7 @@ const rules = [
 
 .hero {
   overflow: hidden;
-  padding: 48rpx 24rpx 0;
+  padding: 70rpx 66rpx;
 }
 
 .hero-copy {
@@ -266,19 +271,32 @@ const rules = [
 .hero-title {
   display: block;
   margin-top: 22rpx;
-  color: #ffffff;
-  font-size: 58rpx;
-  line-height: 1.26;
+  font-size: 52rpx;
+  color: #FFFFFF;
+  line-height: 72rpx;
   font-weight: 800;
   white-space: pre-line;
+  letter-spacing: 6rpx;
+}
+
+.hero-title2 {
+  display: block;
+  font-size: 52rpx;
+  color: #FFFFFF;
+  line-height: 72rpx;
+  font-weight: 800;
+  white-space: pre-line;
+  letter-spacing: 6rpx;
+  margin-left: -46rpx;
 }
 
 .hero-desc {
   display: block;
   margin-top: 28rpx;
-  color: rgba(226, 234, 255, 0.84);
+  font-weight: 400;
   font-size: 28rpx;
-  line-height: 1.72;
+  color: #FFFFFF;
+  line-height: 36rpx;
   white-space: pre-line;
 }
 
@@ -289,6 +307,20 @@ const rules = [
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 10rpx;
+}
+.hero_btn {
+  width: 240rpx;
+  height: 48rpx;
+  background: linear-gradient( 270deg, #647FEE 0%, #1E33B6 100%);
+  border-radius: 24rpx;
+  margin-top: 60rpx;
+  font-family: SourceHanSansCN, SourceHanSansCN;
+  font-weight: 400;
+  font-size: 20rpx;
+  color: #FFFFFF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .hero-stat {
@@ -306,17 +338,17 @@ const rules = [
 }
 
 .hero-stat-value {
-  color: #6da0ff;
-  font-size: 30rpx;
-  line-height: 1.15;
-  font-weight: 800;
+  font-weight: bold;
+  font-size: 32rpx;
+  color: #3C85FC;
+  line-height: 48rpx;
 }
 
 .hero-stat-label {
   margin-top: 14rpx;
-  color: rgba(220, 228, 246, 0.7);
-  font-size: 20rpx;
-  line-height: 1.25;
+  font-size: 18rpx;
+  color: #CBD5E1;
+  line-height: 30rpx;
 }
 
 .hero-art {
@@ -327,7 +359,7 @@ const rules = [
 }
 
 .section {
-  padding: 86rpx 24rpx 0;
+  padding: 120rpx 40rpx 90rpx;
 }
 
 .panel-list,
@@ -356,6 +388,10 @@ const rules = [
   box-shadow: inset 0 1rpx 0 rgba(255, 255, 255, 0.06);
 }
 
+.model-section .info-panel {
+  background: linear-gradient( 180deg, #2F2554 0%, #3E2652 100%);
+}
+
 .stage-card {
   border-radius: 22rpx;
   background: linear-gradient( 180deg, #10182B 0%, #1E293B 100%);
@@ -363,7 +399,7 @@ const rules = [
 }
 
 .info-panel {
-  padding: 30rpx 28rpx 34rpx;
+  padding:40rpx;
 }
 
 .info-panel.pink {
@@ -402,19 +438,19 @@ const rules = [
 .panel-title {
   display: block;
   color: #ffffff;
-  font-size: 32rpx;
+  font-size:28rpx;
   line-height: 1.28;
   font-weight: 800;
 }
 
 .panel-badge {
   display: inline-flex;
-  margin-top: 14rpx;
-  padding: 8rpx 18rpx;
-  border-radius: 999rpx;
-  color: #ffc75f;
-  background: rgba(145, 96, 18, 0.5);
-  font-size: 22rpx;
+  margin-top: 20rpx;
+  padding: 10rpx 22rpx;
+  background: #574423;
+  border-radius: 24rpx;
+  font-size: 20rpx;
+  color: #FFA609;
   line-height: 1;
   font-weight: 700;
 }
@@ -447,6 +483,11 @@ const rules = [
   color: rgba(225, 233, 247, 0.78);
   font-size: 27rpx;
   line-height: 1.68;
+}
+
+.point-text {
+  font-size: 22rpx;
+  color: #CBD5E1;
 }
 
 .point-label,
@@ -482,13 +523,12 @@ const rules = [
 .stage-period {
   min-width: 128rpx;
   padding: 9rpx 18rpx;
-  border-radius: 999rpx;
-  color: #75a7ff;
-  background: rgba(47, 112, 212, 0.3);
+  background: #1E3B6B;
+  border-radius: 24rpx;
+  font-size: 20rpx;
+  color: #3C85FC;
   text-align: center;
-  font-size: 23rpx;
   line-height: 1.15;
-  font-weight: 700;
 }
 
 .stage-lines,
@@ -514,11 +554,12 @@ const rules = [
 .milestone {
   margin-top: 32rpx;
   padding: 22rpx;
+  padding-left: 42rpx;
   display: flex;
   align-items: flex-start;
   gap: 16rpx;
   border-radius: 18rpx;
-  background: rgba(44, 59, 83, 0.74);
+  background: #222E3F;
 }
 
 .milestone image {
@@ -530,7 +571,7 @@ const rules = [
 .plan-card {
   padding: 24rpx 22rpx 26rpx;
   border-radius: 18rpx;
-  background: rgba(42, 57, 84, 0.58);
+  /* background: rgba(42, 57, 84, 0.58); */
 }
 
 .plan-title {
@@ -556,6 +597,14 @@ const rules = [
   padding-top: 96rpx;
 }
 
+.strategy-section {
+  background: linear-gradient( 180deg, #0F172A 0%, #141730 48.15%, #251847 100%);
+}
+
+.rules-section {
+  background: linear-gradient( 180deg, #0F172A 0%, #141730 48.15%, #251847 100%);
+}
+
 .rules-grid {
   margin-top: 48rpx;
   display: grid;
@@ -563,8 +612,8 @@ const rules = [
 }
 
 .rule-card {
-  min-height: 300rpx;
   padding: 26rpx 22rpx 24rpx;
+  padding-bottom: 50rpx;
 }
 
 .rule-card image {
@@ -576,7 +625,7 @@ const rules = [
 .rule-title-area {
   display: flex;
   align-items: center;
-  gap: 16px;
+  gap: 8rpx;
 }
 
 .rule-title {
@@ -589,9 +638,10 @@ const rules = [
 
 .rule-desc {
   display: block;
-  margin-top: 14rpx;
-  font-size: 25rpx;
-  line-height: 1.62;
+  margin-top: 34rpx;
+  font-size: 22rpx;
+  color: #CBD5E1;
+  line-height: 32rpx;
 }
 
 .upgrade-note {
@@ -607,22 +657,25 @@ const rules = [
 .upgrade-title {
   display: block;
   margin-top: 18rpx;
-  color: #ffffff;
-  font-size: 32rpx;
-  line-height: 1.35;
+  font-size: 24rpx;
+  color: #FFFFFF;
+  line-height: 32rpx;
   font-weight: 800;
 }
 
 .upgrade-desc {
   display: block;
   margin-top: 16rpx;
+  font-size: 22rpx;
+  color: #CBD5E1;
+  line-height: 32rpx;
 }
 
 .cta {
   position: relative;
   min-height: 430rpx;
   overflow: hidden;
-  background: #0f1530;
+  background: linear-gradient( 180deg, #581C87 0%, #312D81 100%);
 }
 
 .cta-bg {
@@ -650,20 +703,34 @@ const rules = [
 
 .cta-desc {
   display: block;
-  margin-top: 26rpx;
-  color: rgba(226, 234, 255, 0.78);
-  font-size: 27rpx;
-  line-height: 1.72;
+  margin-top: 60rpx;
+  font-size: 28rpx;
+  color: #FFFFFF;
+  line-height: 36rpx;
+}
+
+.cta-mail-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* gap: 12rpx; */
+}
+
+.cta-mail-icon {
+  width: 30rpx;
+  height: 30rpx;
+  flex: none;
 }
 
 .cta-mail {
   display: inline-flex;
   max-width: 100%;
-  margin-top: 14rpx;
+  /* margin-top: 14rpx; */
   padding: 18rpx 24rpx;
-  color: gray;
-  font-size: 25rpx;
-  line-height: 1.2;
-  font-weight: 700;
+  padding-left: 6rpx ;
+  font-weight: 400;
+  font-size: 24rpx;
+  color: #CBD5E1;
+  line-height: 24rpx;
 }
 </style>

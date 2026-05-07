@@ -5,6 +5,10 @@
 <script setup>
 import { computed, onBeforeUnmount, onMounted, ref } from 'vue'
 import { getCurrentPath, resolveRoute } from './router'
+import {customerservice} from './utils/customerservice'
+
+// 初始化客服插件
+customerservice();
 
 const currentPath = ref(getCurrentPath())
 

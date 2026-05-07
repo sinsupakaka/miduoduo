@@ -1,6 +1,6 @@
 <template>
   <view class="page">
-    <MobileTopNav title="全链孵化服务" active-route-key="fullChainService" />
+    <MobileTopNav title="全链孵化" active-route-key="fullChainService" />
 
     <view class="hero">
       <view class="hero-copy">
@@ -18,7 +18,7 @@
       <view class="platform-block">
         <text class="platform-title">多平台孵化支持</text>
         <view class="platform-row">
-          <image v-for="item in platformLogos" :key="item" class="platform-logo" :src="asset(item)" mode="aspectFit" />
+          <image v-for="(item, idx) in platformLogos" :key="item" class="platform-logo" :src="asset(item)" mode="aspectFit" @click="toUrl(idx)" />
         </view>
       </view>
 
@@ -51,7 +51,7 @@
       <SectionTitle title="产教融合服务" desc="产业需求反哺教学，构建产学研一体化生态" tone="dark" />
 
       <view class="service-card-list education-list">
-        <view v-for="item in educationServices" :key="item.title" :class="['service-card', item.tone]">
+        <view v-for="item in educationServices" :key="item.title" :class="['service-card', item.tone]" style="background-color: #ffffff; border: 2rpx solid #FFEDD5;">
           <view class="service-card-head">
             <view class="service-icon-wrap">
               <image class="service-icon" :src="asset(item.icon)" mode="aspectFit" />
@@ -73,8 +73,14 @@
       <SectionTitle title="生态协作服务" desc="链接多方资源，共筑跨境产业新生态" tone="dark" />
       <image class="ecosystem-chart" :src="asset('图表@2x.png')" mode="widthFix" />
     </view>
+    
+    <view class="footer">
+      <view class="footer_h">开启您的跨境出海之旅</view>
+      <view class="footer_desc">无论您是想要拓展海外市场的卖家，还是寻求合作的高校、园区或企业，我们都将为您提供专业的全链路服务支持。</view>
+      <view class="footer_btn">合作咨询</view>
+    </view>
 
-    <view class="cta">
+    <!-- <view class="cta">
       <text class="cta-title">抓住流量红利期，开启跨境创业之旅</text>
       <text class="cta-desc">现在报名即可享受早鸟优惠，赠送精品货盘大礼包和运营工具包，前20名报名更可获得导师1对1诊断服务</text>
       <image class="qr" :src="asset('qrcode.png')" mode="aspectFit" />
@@ -82,7 +88,7 @@
       <text class="qr-subtitle">领取免费入驻资料</text>
       <text class="contact">咨询热线：艾老师 18250556206</text>
       <text class="address">上课地址：福建省福州市鼓楼区福州软件园A区23号</text>
-    </view>
+    </view> -->
 
     <MobileFooterLogo />
   </view>
@@ -110,19 +116,19 @@ const sellerServices = [
   {
     title: '资深运营指导课程',
     desc: '行业资深讲师授课，涵盖平台规则、选品策略、运营技巧、广告投放等全维度课程，助力卖家快速掌握运营核心能力。',
-    icon: '形状 16@2x.png',
+    icon: '形状 15@2x.png',
     tone: 'green',
   },
   {
     title: '实战指导手把手陪跑',
     desc: '专属运营顾问1对1指导，全程跟进店铺运营情况，提供针对性解决方案，帮助卖家快速突破运营瓶颈，实现销售额增长。',
-    icon: '形状 15@2x.png',
+    icon: '形状 16@2x.png',
     tone: 'lavender',
   },
   {
     title: '海外本土优质货盘支持',
     desc: '整合全球各站点本土优质货源，提供爆款选品推荐、一件代发、仓储配送等一体化供应链服务，无需备货即可轻松出海。',
-    icon: '形状 20@2x.png',
+    icon: '形状 17@2x.png',
     tone: 'orange',
   },
 ]
@@ -146,22 +152,31 @@ const educationServices = [
   {
     title: '引入真实项目建设实训基地',
     desc: '引入真实项目，打造真实跨境电商运营实训环境，提供全流程实操训练，让学生在实践中掌握运营技能，提升就业竞争力。',
-    icon: '形状 21@2x.png',
+    icon: '形状 19@2x.png',
     tone: 'blue',
   },
   {
     title: '开发实战课程体系',
     desc: '联合行业专家共同开发实战型课程，内容涵盖平台运营、选品、营销等全链条知识，紧贴行业实际需求。',
-    icon: '形状 17@2x.png',
+    icon: '形状 20@2x.png',
     tone: 'green',
   },
   {
     title: '人才精准对接平台',
     desc: '搭建人才供需对接平台，为企业输送高质量跨境电商专业人才，同时为学生提供优质就业渠道，实现校企双赢。',
-    icon: '形状 19@2x.png',
+    icon: '形状 21@2x.png',
     tone: 'lavender',
   },
 ]
+
+const toUrl = (idx) => {
+  if (idx === 0) {
+    uni.navigateTo({url: '/pages/FullChainIncubationSub'})
+  } else {
+    uni.navigateTo({url: '/pages/CoupangIncubationPage'})
+  }
+}
+
 </script>
 
 <style scoped>
@@ -169,6 +184,7 @@ const educationServices = [
   min-height: 100vh;
   color: #2d2f36;
   background: #ffffff;
+  font-family: Source Han Sans CN;
 }
 
 .hero {
@@ -177,39 +193,43 @@ const educationServices = [
 }
 
 .hero-copy {
-  padding: 62rpx 42rpx 0;
+  padding: 86rpx 42rpx 0;
 }
 
 .hero-title {
   display: block;
   color: #ffffff;
-  font-size: 62rpx;
-  line-height: 1.34;
-  font-weight: 800;
+  font-family: Source Han Sans CN;
+  font-weight: bold;
+  font-size: 52rpx;
+  color: #FFFFFF;
+  line-height: 76rpx;
   white-space: pre-line;
 }
 
 .hero-tags {
-  margin-top: 42rpx;
-  display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 16rpx;
+  margin-top: 47rpx;
+  display: flex;
+  /* grid-template-columns: repeat(4, minmax(0, 1fr)); */
+  /* gap: 20rpx; */
 }
 
 .hero-tag {
-  width: 100%;
-  height: 60rpx;
+  width: 140rpx;
+  height: 46rpx;
   padding: 0;
   display: flex;
   align-items: center;
   justify-content: center;
-  border-radius: 999rpx;
+  border-radius: 23rpx;
   background: rgba(255, 255, 255, 0.95);
-  color: #3363ea;
-  font-size: 25rpx;
   line-height: 1;
-  font-weight: 500;
+  font-family: Source Han Sans CN;
+  font-weight: 400;
+  font-size: 22rpx;
+  color: #1E33B6;
   white-space: nowrap;
+  margin-right: 20rpx;
 }
 
 .hero-art {
@@ -219,7 +239,7 @@ const educationServices = [
 }
 
 .section {
-  padding: 94rpx 0 0;
+  padding: 100rpx 0 0;
 }
 
 .seller-section {
@@ -227,20 +247,20 @@ const educationServices = [
 }
 
 .platform-block {
-  margin-top: 54rpx;
+  margin-top: 64rpx;
 }
 
 .platform-title {
   display: block;
   text-align: center;
-  color: #2d2f36;
+  font-weight: 500;
   font-size: 36rpx;
-  line-height: 1.3;
-  font-weight: 700;
+  color: #333333;
+  line-height: 14rpx;
 }
 
 .platform-row {
-  padding: 34rpx 24rpx 0;
+  padding: 34rpx 32rpx 0;
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 18rpx;
@@ -248,18 +268,18 @@ const educationServices = [
 
 .platform-logo {
   width: 100%;
-  height: 120rpx;
+  height: 90rpx;
 }
 
 .service-card-list {
-  padding: 56rpx 24rpx 0;
+  padding: 60rpx 32rpx 0;
   display: grid;
   gap: 26rpx;
 }
 
 .service-card {
-  padding: 32rpx 28rpx 30rpx;
-  border-radius: 24rpx;
+  padding: 32rpx;
+  border-radius: 20rpx;
   border: 1rpx solid transparent;
   background: #ffffff;
 }
@@ -296,48 +316,48 @@ const educationServices = [
 }
 
 .service-icon-wrap {
-  width: 56rpx;
-  height: 56rpx;
+  width: 50rpx;
+  height: 50rpx;
   display: flex;
   align-items: center;
   justify-content: center;
-  border-radius: 16rpx;
-  background: rgba(255, 255, 255, 0.75);
 }
 
 .service-icon {
-  width: 42rpx;
-  height: 42rpx;
+  width: 50rpx;
+  height: 50rpx;
 }
 
 .service-card-title {
   flex: 1;
-  color: #2d2f36;
-  font-size: 32rpx;
-  line-height: 1.35;
-  font-weight: 700;
+  font-weight: bold;
+  font-size: 28rpx;
+  color: #333333;
+  line-height: 14rpx;
 }
 
 .service-card-desc {
   display: block;
-  margin-top: 22rpx;
-  color: #5b6476;
-  font-size: 28rpx;
-  line-height: 1.78;
+  margin-top: 24rpx;
+  font-weight: 400;
+  font-size: 24rpx;
+  color: #53545C;
+  line-height: 36rpx;
 }
 
 .case-section {
-  padding-bottom: 28rpx;
+  /* padding-bottom: 28rpx; */
 }
 
 .case-grid {
-  padding: 52rpx 24rpx 0;
+  padding: 60rpx 24rpx 0;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 26rpx 18rpx;
+  gap: 26rpx 20rpx;
 }
 
 .case-card {
+  width: 340rpx;
   overflow: hidden;
   border-radius: 20rpx;
   border: 1rpx solid #dbe4f0;
@@ -346,26 +366,25 @@ const educationServices = [
 
 .case-image {
   width: 100%;
-  height: 312rpx;
+  height: 275rpx;
   display: block;
 }
 
 .case-copy {
-  padding: 18rpx 18rpx 20rpx;
+  padding: 18rpx 31rpx 20rpx;
 }
 
 .case-copy text {
   display: block;
-  color: #2d2f36;
-  font-size: 28rpx;
-  line-height: 1.35;
-  font-weight: 600;
+  font-weight: bold;
+  font-size: 22rpx;
+  color: #333333;
 }
 
 .education-section {
-  margin-top: 32rpx;
-  padding-bottom: 44rpx;
-  background: #fff7ec;
+  margin-top: 100rpx;
+  padding-bottom: 100rpx;
+  background: #FFF7ED;
 }
 
 .education-list {
@@ -374,10 +393,10 @@ const educationServices = [
 
 .matrix-panel {
   height: 890rpx;
-  margin: 34rpx 24rpx 0;
+  margin: 24rpx 32rpx 0;
   overflow: hidden;
   border-radius: 24rpx;
-  border: 1rpx solid #e3ebf8;
+  border: 2rpx solid #FFEDD5;
   background: linear-gradient(180deg, #ffffff 0%, #f6faff 100%);
 }
 
@@ -400,11 +419,11 @@ const educationServices = [
 }
 
 .ecosystem-section {
-  padding-bottom: 36rpx;
+  padding-bottom: 100rpx;
 }
 
 .ecosystem-chart {
-  width: calc(100% - 48rpx);
+  width: calc(100% - 50rpx);
   display: block;
   margin: 42rpx auto 0;
 }
@@ -466,5 +485,43 @@ const educationServices = [
 
 .address {
   margin-top: 4rpx;
+}
+.footer {
+  width: 100%;
+  height: 500rpx;
+  background: #2563EB;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding: 100rpx 40rpx 0;
+}
+.footer_h {
+  font-family: Source Han Sans CN;
+  font-weight: bold;
+  font-size: 42rpx;
+  color: #FFFFFF;
+  line-height: 72rpx;
+  margin-bottom: 60rpx;
+}
+.footer_desc {
+  font-family: Source Han Sans CN;
+  font-weight: 400;
+  font-size: 24rpx;
+  color: #FFFFFF;
+  line-height: 42rpx;
+  margin-bottom: 65rpx;
+}
+.footer_btn {
+  width: 240rpx;
+  height: 60rpx;
+  background: #FFFFFF;
+  border-radius: 30rpx;
+  font-weight: 500;
+  font-size: 26rpx;
+  color: #1E33B6;
+  line-height: 24rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 </style>

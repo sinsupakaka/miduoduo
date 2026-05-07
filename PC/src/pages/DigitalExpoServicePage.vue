@@ -5,23 +5,24 @@
     <main>
       <section class="expo-hero">
         <div class="expo-container hero-content">
-          <p class="hero-kicker">数字展会 | 线上线下协同运营</p>
+          <p class="hero-kicker">数字展会 · 商机全年在</p>
           <h1>线下大型展会 &amp; 线上数字运营</h1>
-          <button type="button">合作咨询</button>
+          <p class="hero-subtitle">跨境类目全场景展会解决方案</p>
+          <button type="button" @click="jumpToKf()">方案咨询</button>
           <p class="hero-note">
-            米多多服务大型展会，以线下展会为主场，结合数字化系统与内容运营能力，
-            帮助展会实现精准招商、线上观展、供需匹配和数据沉淀。
+            米多多数字展会，以线下展会为基础，通过数字化能力实现线上线下联动，打造 365 天不落幕的跨境贸易对接场景。<br />
+            从大型峰会、专业展览到产业对接，我们用数字化提升效率，让供需匹配更精准、商机更持久。
           </p>
         </div>
       </section>
 
       <section class="organize-section">
-        <SectionTitle title="全场景线下展会组织" desc="覆盖主办承接、招商邀约、会议论坛、展商服务与数据留存" />
+        <SectionTitle title="全场景线下展会组织" desc="覆盖各类跨境电商展会与行业活动" />
         <div class="expo-container organize-grid">
           <article v-for="item in organizeItems" :key="item.title" class="organize-card">
             <img :src="expoAsset(item.icon)" alt="" />
             <h3>{{ item.title }}</h3>
-            <p>{{ item.text }}</p>
+            <p v-if="item.text">{{ item.text }}</p>
           </article>
         </div>
       </section>
@@ -33,6 +34,7 @@
             <div v-for="(slide, index) in fairSlides" :key="`${slide.title}-${index}`" class="fair-slide">
               <div class="fair-banner">
                 <img :src="expoAsset(slide.image)" alt="" />
+                <div class="fair-desc">{{slide.desc}}</div>
                 <div class="fair-title">
                   <p>{{ slide.title }}</p>
                   <button type="button">{{ slide.buttonText }}</button>
@@ -171,7 +173,7 @@
 
       <section class="expo-cta">
         <h2>让每一场会，都成为持续增长的生意入口</h2>
-        <button type="button">合作咨询</button>
+        <button type="button" @click="jumpToKf()">合作咨询</button>
         <img :src="expoAsset('图层 126@2x.png')" alt="合作咨询二维码" />
       </section>
     </main>
@@ -185,7 +187,7 @@ import { Carousel } from 'ant-design-vue'
 import SectionTitle from '../components/SectionTitle.vue'
 import SiteFooter from '../components/SiteFooter.vue'
 import SiteHeader from '../components/SiteHeader.vue'
-import { asset } from '../utils/assets'
+import { asset, jumpToKf } from '../utils/assets'
 
 defineProps({
   activePath: {
@@ -202,15 +204,16 @@ const expoPageStyle = {
 }
 
 const organizeItems = [
-  { icon: '组 5@2x.png', title: '世界级会务统筹', text: '统筹展会主办、承办、招商与现场执行。' },
-  { icon: '组 5 拷贝@2x.png', title: '全国性行业峰会', text: '策划论坛议程，组织行业嘉宾与主题内容。' },
-  { icon: '组 5 拷贝 2@2x.png', title: '政企资源协同', text: '联动产业带、服务商、平台招商与采购资源。' },
+  { icon: '组 5@2x.png', title: '世界级龙头展览\n（10万人级）' },
+  { icon: '组 5 拷贝@2x.png', title: '全国性行业峰会\n（千人级）' },
+  { icon: '组 5 拷贝 2@2x.png', title: '区域性专题沙龙\n（百人级）' },
 ]
 
 const fairSlides = [
   {
     image: '图层 71@2x.png',
     title: '第六届中国跨境电商交易会',
+    desc: '该展会是全国规模最大、影响力最广的行业活动，自创办以来，连续六届采购商与展位比例都超过20:1这一国际优质专业展标准，被中国贸促会评价为“中国跨境电商第一展”',
     buttonText: '了解更多',
     stats: [
       { value: '10万m²', label: '展会规模' },
@@ -225,6 +228,7 @@ const fairSlides = [
   {
     image: '图层 71@2x.png',
     title: '第六届中国跨境电商交易会',
+    desc: '该展会是全国规模最大、影响力最广的行业活动，自创办以来，连续六届采购商与展位比例都超过20:1这一国际优质专业展标准，被中国贸促会评价为“中国跨境电商第一展”',
     buttonText: '了解更多',
     stats: [
       { value: '10万m²', label: '展会规模' },
@@ -239,6 +243,7 @@ const fairSlides = [
   {
     image: '图层 71@2x.png',
     title: '第六届中国跨境电商交易会',
+    desc: '该展会是全国规模最大、影响力最广的行业活动，自创办以来，连续六届采购商与展位比例都超过20:1这一国际优质专业展标准，被中国贸促会评价为“中国跨境电商第一展”',
     buttonText: '了解更多',
     stats: [
       { value: '10万m²', label: '展会规模' },
@@ -402,37 +407,69 @@ const advantages = [
 }
 
 .expo-hero {
-  min-height: 820px;
+  min-height: 840px;
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   color: #fff;
   background: #0a1b42 var(--expo-hero-bg) center / cover no-repeat;
 }
 
 .hero-content {
-  padding-top: 18px;
+  padding-top: 140px;
   text-align: center;
 }
 
 .hero-kicker {
-  margin: 0 0 16px;
-  color: rgba(255, 255, 255, .8);
-  font-size: 28px;
+  margin: 0 0 34px;
+  color: rgba(255, 255, 255, .92);
+  font-size: 40px;
   line-height: 1.2;
-  font-weight: 500;
+  font-weight: 400;
 }
 
 .hero-content h1 {
-  margin: 0 0 24px;
+  margin: 0 0 26px;
   color: #fff;
-  font-size: clamp(52px, 4vw, 76px);
-  line-height: 1.16;
+  font-size: 64px;
+  line-height: 1.12;
   letter-spacing: 0;
   font-weight: 800;
 }
 
-.hero-content button,
-.fair-title button,
+.hero-subtitle {
+  margin: 0 0 44px;
+  color: #fff600;
+  font-size: 30px;
+  line-height: 1.2;
+  font-weight: 400;
+}
+
+
+.fair-desc {
+  width: 1380px;
+  height: 141px;
+}
+
+.fair-title button {
+  height: 48px;
+  padding: 0 46px;
+  border-radius: 24px;
+  color: #1E33B6;
+  background: #FFFFFF;
+  font-size: 18px;
+  font-weight: 800;
+}
+
+.hero-content button {
+  height: 60px;
+  padding: 0 58px;
+  border-radius: 30px;
+  color: #fff;
+  background: linear-gradient(90deg, #2468ff 0%, #43b7ff 100%);
+  font-size: 20px;
+  font-weight: 800;
+}
+
 .case-hero-card button,
 .expo-cta button {
   height: 48px;
@@ -445,51 +482,77 @@ const advantages = [
 }
 
 .hero-note {
-  width: min(980px, 100%);
-  margin: 74px auto 0;
-  color: rgba(255, 255, 255, .78);
-  font-size: 20px;
-  line-height: 1.85;
+  width: 100vw;
+  height: 180px;
+  margin: 116px 0 0 50%;
+  padding-top: 48px;
+  color: #fff;
+  background: rgba(4, 20, 45, .72);
+  font-size: 24px;
+  line-height: 2;
+  font-weight: 400;
+  transform: translateX(-50%);
 }
 
 .organize-section {
-  padding: 92px 0 132px;
-  background: #f7faff var(--expo-wave-bg) center bottom / 100% auto no-repeat;
+  min-height: 817px;
+  padding: 96px 0 0;
+  background: #f7faff var(--expo-wave-bg) center 335px / 1920px 189px no-repeat;
+}
+
+.organize-section :deep(.section-title h2) {
+  margin: 0;
+  color: #333;
+  font-size: 60px;
+  line-height: 1.18;
+  letter-spacing: 0;
+}
+
+.organize-section :deep(.section-title p) {
+  margin: 24px 0 0;
+  color: #868999;
+  font-size: 30px;
+  line-height: 1.25;
 }
 
 .organize-grid {
-  width: min(1180px, 100%);
-  margin: 58px auto 0;
+  width: min(1170px, 100%);
+  margin: 32px auto 0;
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 82px;
+  gap: 168px;
   align-items: start;
 }
 
 .organize-card {
-  min-height: 190px;
-  padding: 34px 26px 22px;
+  width: 278px;
+  min-height: 260px;
+  padding: 39px 24px 26px;
   text-align: center;
-  border-radius: 16px;
-  background: #fff;
-  box-shadow: 0 24px 56px rgba(31, 91, 183, .08);
+  border: 1px solid rgba(191, 232, 240, .92);
+  border-radius: 18px;
+  background: linear-gradient(180deg, #effcff 0%, #fff 72%);
+  box-shadow: 0 16px 38px rgba(105, 135, 173, .07);
 }
 
 .organize-card:nth-child(1) {
-  margin-top: 72px;
+  margin-top: 140px;
+}
+
+.organize-card:nth-child(2) {
+  margin-top: 58px;
 }
 
 .organize-card:nth-child(3) {
-  margin-top: 20px;
+  margin-top: 0;
 }
 
 .organize-card img {
-  width: 72px;
-  height: 72px;
+  width: 89px;
+  height: 82px;
   object-fit: contain;
 }
 
-.organize-card h3,
 .first-expo-feature h3,
 .case-grid h3,
 .operation-copy h3 {
@@ -498,6 +561,15 @@ const advantages = [
   font-size: 22px;
   line-height: 1.25;
   font-weight: 800;
+}
+
+.organize-card h3 {
+  margin: 22px 0 0;
+  color: #333;
+  font-size: 28px;
+  line-height: 1.42;
+  font-weight: 800;
+  white-space: pre-line;
 }
 
 .organize-card p,

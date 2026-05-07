@@ -47,15 +47,15 @@ defineProps({
 }
 
 .audience-panel + .audience-panel {
-  margin-top: 48rpx;
+  margin-top: 40rpx;
 }
 
 .business {
-  background: linear-gradient(135deg, rgba(33, 45, 88, 0.9), rgba(37, 35, 76, 0.96));
+  background: linear-gradient( 178deg, #1C2241 0%, #18203A 52.21%, #272853 100%);
 }
 
 .personal {
-  background: linear-gradient(135deg, rgba(70, 39, 75, 0.95), rgba(38, 26, 61, 0.96));
+  background: linear-gradient( 178deg, #291C41 0%, #25183A 52.21%, #3F2753 100%);
 }
 
 .audience-head {
@@ -108,7 +108,7 @@ defineProps({
 .audience-desc {
   margin-top: 18rpx;
   color: #d7deed;
-  font-size: 22rpx;
-  line-height: 1.55;
+  font-size: 20rpx;
+  line-height: 32rpx;
 }
 </style>

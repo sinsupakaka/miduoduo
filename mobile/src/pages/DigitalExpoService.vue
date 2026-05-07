@@ -1,6 +1,6 @@
 <template>
   <view class="page">
-    <MobileTopNav title="数字展会服务" active-route-key="digitalExpoService" />
+    <MobileTopNav title="数字展会" active-route-key="digitalExpoService" />
 
     <view class="hero">
       <image class="hero-bg" :src="asset('图层 110@2x.png')" mode="aspectFill" />
@@ -339,12 +339,12 @@ const summitMarquee = {
 
 const operations = [
   {
-    image: '数字展会运营3@2x.png',
+    image: '组 10@2x.png',
     title: '小程序',
     text: '依托小程序，集成展会导览、展商查询、活动预约与在线互动，实现指尖逛展，一键触达，提升观众与展商的双端体验。',
   },
   {
-    image: '组 10@2x.png',
+    image: '组 9 拷贝 2@2x.png',
     title: '线上展会广告',
     text: '借助小程序及自媒体，为参展企业提供品牌展示、产品引流、直播推广等服务，触达潜在客户。',
   },
@@ -354,7 +354,7 @@ const operations = [
     text: '依托小程序，实现企业展示、产品陈列、在线询盘、全年供需对接，让展会价值持续延伸。',
   },
   {
-    image: '组 9 拷贝 2@2x.png',
+    image: '数字展会运营3@2x.png',
     title: 'SCRM客户关系管理系统',
     text: '沉淀展会全流程客户数据，支持行为追踪、标签分层与智能营销，深度运营客户关系。',
   },
@@ -399,8 +399,8 @@ const operations = [
 
 .hero-kicker {
   display: block;
-  color: rgba(255, 255, 255, 0.82);
-  font-size: 29rpx;
+  color: #FFFFFF;
+  font-size: 36rpx;
   line-height: 1.3;
 }
 
@@ -408,7 +408,7 @@ const operations = [
   display: block;
   margin-top: 24rpx;
   color: #ffffff;
-  font-size: 43rpx;
+  font-size: 50rpx;
   line-height: 1.22;
   font-weight: 800;
 }
@@ -416,8 +416,8 @@ const operations = [
 .hero-subtitle {
   display: block;
   margin-top: 22rpx;
-  color: #ffeb3f;
-  font-size: 29rpx;
+  font-size: 30rpx;
+  color: #CACA01;
   line-height: 1.3;
   font-weight: 600;
 }
@@ -426,8 +426,8 @@ const operations = [
 .light-button,
 .outline-button,
 .cta-button {
-  height: 58rpx;
-  padding: 0 48rpx;
+  height: 60rpx;
+  padding: 0 75rpx;
   border: 0;
   border-radius: 999rpx;
   display: inline-flex;
@@ -448,18 +448,20 @@ const operations = [
 .primary-button {
   margin-top: 30rpx;
   color: #ffffff;
-  background: linear-gradient(90deg, #2667ff 0%, #5f78ff 100%);
+  background: linear-gradient(90deg, #647FEE, #1E33B6);
 }
 
 .hero-note {
+  background-color: #020E23;  
   position: absolute;
-  left: 32rpx;
-  right: 32rpx;
-  bottom: 44rpx;
+  padding: 33rpx;
+  width: 100%;
+  left: 0rpx;
+  bottom: 0rpx;
   z-index: 2;
   display: block;
   color: rgba(255, 255, 255, 0.84);
-  font-size: 24rpx;
+  font-size: 22rpx;
   line-height: 1.9;
   text-align: justify;
 }
@@ -491,16 +493,15 @@ const operations = [
 
 .organize-card {
   position: absolute;
-  width: 166rpx;
+  /* width: 166rpx; */
   min-height: 166rpx;
   padding: 24rpx 12rpx 18rpx;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  border-radius: 14rpx;
-  background: #ffffff;
-  box-shadow: 0 18rpx 38rpx rgba(66, 98, 144, 0.1);
+  background: linear-gradient(0deg, #FFFFFF, #EBFBFF);
+  border-radius: 18rpx; 
 }
 
 .organize-card:nth-child(2) {
@@ -520,15 +521,15 @@ const operations = [
 }
 
 .organize-icon {
-  width: 70rpx;
-  height: 70rpx;
+  width: 98rpx;
+  height: 88rpx;
 }
 
 .organize-title {
   display: block;
   margin-top: 14rpx;
   color: #282c35;
-  font-size: 22rpx;
+  font-size: 26rpx;
   line-height: 1.32;
   text-align: center;
   white-space: pre-line;
@@ -951,9 +952,9 @@ const operations = [
 }
 
 .cta {
-  padding: 70rpx 30rpx 78rpx;
+  padding: 100rpx 120rpx;
   text-align: center;
-  background: #2e67e8;
+  background: #2563EB;
 }
 
 .cta-title {

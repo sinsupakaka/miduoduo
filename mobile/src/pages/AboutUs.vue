@@ -31,10 +31,12 @@
 
     <view class="timeline">
       <image class="timeline-image" :src="asset('图层 5@2x(1).png')" mode="widthFix" />
+      <image class="timeline-image" :src="asset('组 5 拷贝 8@2x.png')" mode="aspectFill" />
     </view>
 
     <view class="honor section">
       <view class="honor-title-row">
+        <image class="honor-deco" :src="asset('图层 12 拷贝@2x.png')" mode="aspectFit" />
         <text class="section-heading">资质/荣誉</text>
       </view>
       <scroll-view class="honor-tabs" scroll-x :show-scrollbar="false">
@@ -58,24 +60,23 @@
 
     <view class="group">
       <text class="group-title">集团公司</text>
-      <image class="group-map" :src="asset('组 5 拷贝 8@2x.png')" mode="aspectFill" />
-      <view class="map-card">
+      <image class="group-map" :src="asset('8.png')" mode="aspectFill" />
+      <!-- <view class="map-card">
         <text class="map-city">福州总部</text>
         <text class="map-address">地址：福建省福州市鼓楼区软件园A区23座</text>
-      </view>
-      <image class="pin primary" :src="asset('坐标@2x.png')" mode="aspectFit" />
-      <image class="pin secondary" :src="asset('坐标 拷贝@2x.png')" mode="aspectFit" />
+      </view> -->
+      <!-- <image class="pin primary" :src="asset('坐标@2x.png')" mode="aspectFit" /> -->
+      <!-- <image class="pin secondary" :src="asset('坐标 拷贝@2x.png')" mode="aspectFit" /> -->
     </view>
 
-    <view class="footer-logo">
-      <image :src="asset('图层 12 拷贝@2x.png')" mode="aspectFit" />
-    </view>
+    <MobileFooterLogo />
   </view>
 </template>
 
 <script setup>
 import { ref } from 'vue'
 import MobileTopNav from '../components/MobileTopNav.vue'
+import MobileFooterLogo from '../components/MobileFooterLogo.vue'
 import { asset as resolveAsset } from '../utils/assets'
 
 const asset = (name) => resolveAsset(name, '关于我们')
@@ -150,7 +151,7 @@ const honors = [
 .section-heading {
   display: block;
   color: #333333;
-  font-size: 40rpx;
+  font-size: 44rpx;
   line-height: 1.2;
   font-weight: 800;
 }
@@ -171,7 +172,7 @@ const honors = [
 .hero-title {
   display: block;
   color: #ffffff;
-  font-size: 46rpx;
+  font-size: 52rpx;
   line-height: 1.2;
   font-weight: 800;
 }
@@ -180,7 +181,7 @@ const honors = [
   display: block;
   margin-top: 26rpx;
   color: rgba(255, 255, 255, 0.88);
-  font-size: 32rpx;
+  font-size: 36rpx;
   line-height: 1.45;
 }
 
@@ -199,9 +200,9 @@ const honors = [
 .intro-text {
   display: block;
   margin-bottom: 22rpx;
-  color: #4f545d;
-  font-size: 29rpx;
-  line-height: 1.78;
+  font-size: 28rpx;
+  color: #333333;
+  line-height: 48rpx;
   text-align: justify;
 }
 
@@ -253,11 +254,21 @@ const honors = [
 .timeline {
   margin-top: 38rpx;
   background: #286af2;
+  position: relative;
 }
 
 .timeline-image {
   width: 100%;
   display: block;
+}
+
+.timeline-image + .timeline-image {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 90%;
+  height: 100%;
+  transform: translateX(-50%);
 }
 
 .honor {
@@ -268,17 +279,25 @@ const honors = [
 
 .honor-title-row {
   position: relative;
+  display: flex;
+  align-items: center;
+  gap: 14rpx;
+}
+
+.honor-deco {
+  position: absolute;
+  width: 260rpx;
 }
 
 .honor-title-row::before,
 .honor-title-row::after {
-  content: "";
+  /* content: "";
   position: absolute;
   top: 11rpx;
   width: 22rpx;
   height: 44rpx;
   background: linear-gradient(180deg, #d7a640, #f7d97a);
-  border-radius: 999rpx;
+  border-radius: 999rpx; */
 }
 
 .honor-title-row::before {
@@ -323,7 +342,7 @@ const honors = [
 .honor-tab.active {
   color: #ffffff;
   border-color: #2457e6;
-  background: #2457e6;
+ background: linear-gradient(90deg, #647FEE, #1E33B6);
   font-weight: 700;
 }
 

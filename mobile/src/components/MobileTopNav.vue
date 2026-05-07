@@ -1,8 +1,8 @@
 <template>
   <view :class="['mobile-nav', theme]">
-    <view class="status">
+    <!-- <view class="status">
 
-    </view>
+    </view> -->
 
     <view class="nav-main">
       <button class="menu-button" type="button" @click="toggleMenu" aria-label="打开菜单">
@@ -63,7 +63,7 @@ const props = defineProps({
 
 const menuOpen = ref(false)
 
-const menuItems = computed(() => routeEntries)
+const menuItems = computed(() => routeEntries.filter(val => val.isShow))
 
 const toggleMenu = () => {
   menuOpen.value = !menuOpen.value
@@ -206,6 +206,7 @@ const handleSelect = (routeKey) => {
   line-height: 1.2;
   font-weight: 600;
   white-space: nowrap;
+  color: #333333;
 }
 
 .dark .nav-title {

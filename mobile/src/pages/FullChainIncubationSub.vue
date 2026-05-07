@@ -1,9 +1,9 @@
 <template>
   <view class="page">
-    <MobileTopNav title="跨境电商实战营" active-route-key="fullChain" />
+    <MobileTopNav title="全链孵化" active-route-key="fullChain" />
 
     <view class="hero section-dark">
-      <text class="hero-title">小白变高手 | TikTok+AI跨境{{ '\n' }}实战营，新手扶持计划</text>
+      <text class="hero-title">小白变高手 | TikTok+AI跨境实战营，新手扶持计划</text>
       <view class="hero-points">
         <view v-for="item in heroPoints" :key="item" class="hero-point">
           <image :src="asset('组 11002@2x.png')" mode="aspectFit" />
@@ -229,23 +229,25 @@ const personalAudience = [
 }
 
 .section-dark {
-  background: linear-gradient(180deg, #0f1729 0%, #26184c 100%);
+  background: linear-gradient( 180deg, #0F172A 0%, #251847 52.21%, #0F172A 100%);
 }
 
 .hero {
   padding: 129rpx 40rpx 88rpx;
+  padding-bottom: 0;
 }
 
 .hero-title {
   display: block;
-  font-size: 47rpx;
-  line-height: 1.45;
-  font-weight: 800;
   letter-spacing: 0;
+  font-weight: bold;
+  font-size: 52rpx;
+  color: #FFFFFF;
+  line-height: 76rpx;
 }
 
 .hero-points {
-  margin-top: 40rpx;
+  margin-top: 46rpx;
   display: grid;
   grid-template-columns: 1fr 1fr;
   row-gap: 22rpx;
@@ -274,7 +276,7 @@ const personalAudience = [
   margin: 59rpx 0 57rpx;
   width: 200rpx;
   height: 48rpx;
-  border-radius: 24rpx;
+  border-radius: 264rpx;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -293,7 +295,7 @@ const personalAudience = [
 }
 
 .opportunity {
-  padding-top: 75rpx;
+  padding-top: 160rpx;
   background: linear-gradient(180deg, #26184c 0%, #0d1728 100%);
 }
 
@@ -303,7 +305,7 @@ const personalAudience = [
 
 .courses {
   padding: 92rpx 40rpx 94rpx;
-  background: #0b0010;
+  background: #0F041B;
 }
 
 .course-list {
@@ -312,7 +314,8 @@ const personalAudience = [
 
 .benefits {
   padding: 91rpx 40rpx 86rpx;
-  background: #1e2b3d;
+  padding-bottom: 100rpx;
+  background: #1E293B;
   text-align: center;
 }
 
@@ -322,8 +325,8 @@ const personalAudience = [
   justify-content: center;
   gap: 8rpx;
   color: #facc15;
-  font-size: 24rpx;
-  font-weight: 800;
+  font-size: 28rpx;
+  /* font-weight: 800; */
 }
 
 .gift-line image {
@@ -333,16 +336,16 @@ const personalAudience = [
 
 .benefit-title {
   display: block;
-  margin-top: 24rpx;
-  font-size: 40rpx;
-  line-height: 1.2;
-  font-weight: 800;
+  margin-top: 20rpx;
+  font-weight: bold;
+  font-size: 44rpx;
+  color: #FFFFFF;
 }
 
 .benefit-desc {
   display: block;
   margin-top: 22rpx;
-  color: #d7deed;
+  color: #CBD5E1;
   font-size: 28rpx;
   line-height: 1.2;
 }
@@ -354,18 +357,18 @@ const personalAudience = [
 
 .audience {
   padding: 92rpx 40rpx 88rpx;
-  background: linear-gradient(180deg, #0f1729 0%, #25184c 100%);
+  background: linear-gradient( 180deg, #0F172A 0%, #141730 48.29%, #251847 100%);
 }
 
 .cta {
   padding: 91rpx 40rpx 88rpx;
   text-align: center;
-  background: linear-gradient(180deg, #641b91 0%, #2e327c 100%);
+  background: linear-gradient( 180deg, #581C87 0%, #4F2086 34.49%, #312D81 100%);
 }
 
 .cta-title {
   display: block;
-  font-size: 41rpx;
+  font-size: 42rpx;
   line-height: 1.42;
   font-weight: 800;
 }
@@ -379,7 +382,7 @@ const personalAudience = [
 }
 
 .qr {
-  margin-top: 48rpx;
+  margin-top: 60rpx;
   width: 412rpx;
   height: 412rpx;
 }

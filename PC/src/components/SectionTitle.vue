@@ -17,3 +17,20 @@ defineProps({
   },
 })
 </script>
+
+<style scoped>
+.section-title h2 {
+  font-family: DingTalk JinBuTi;
+  font-weight: 400;
+  font-size: 72px;
+}
+
+.section-title p {
+  font-family: Source Han Sans CN;
+  font-weight: 400;
+  font-size: 36px;
+  color: #868999;
+  line-height: 48px;
+}
+
+</style>

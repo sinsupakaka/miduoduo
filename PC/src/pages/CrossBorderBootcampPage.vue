@@ -13,7 +13,7 @@
             </span>
           </div>
           <img class="hero-visual" :src="bootcampAsset('蒙版组 266@2x.png')" alt="" />
-          <button class="gradient-button">立即锁定名额</button>
+          <button class="gradient-button" @click="jumpToKf()">立即锁定名额</button>
         </div>
       </section>
 
@@ -136,7 +136,7 @@
 import SectionTitle from '../components/SectionTitle.vue'
 import SiteFooter from '../components/SiteFooter.vue'
 import SiteHeader from '../components/SiteHeader.vue'
-import { asset } from '../utils/assets'
+import { asset, jumpToKf } from '../utils/assets'
 
 defineProps({
   activePath: {

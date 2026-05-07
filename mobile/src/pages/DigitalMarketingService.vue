@@ -1,6 +1,6 @@
 <template>
   <view class="page">
-    <MobileTopNav title="数字营销服务" active-route-key="digitalMarketingService" />
+    <MobileTopNav title="数字营销" active-route-key="digitalMarketingService" />
 
     <view class="hero">
       <image class="hero-bg" :src="asset('图层 12@2x.png')" mode="aspectFill" />
@@ -15,7 +15,7 @@
     </view>
 
     <view class="ad-section">
-      <image class="ad-wave" :src="asset('图层 13@2x.png')" mode="aspectFill" />
+      <image class="ad-wave" :src="asset('图层 40@2x.png')" mode="aspectFill" />
       <image class="ad-icon" :src="asset('图层 27@2x.png')" mode="aspectFit" />
       <text class="ad-en">Omni-channel Advertising</text>
       <text class="ad-title">全渠道广告投放</text>
@@ -59,7 +59,7 @@
 
     <view class="partner-section">
       <SectionTitle title="核心合作伙伴" tone="dark" />
-      <image class="partner-map" :src="asset('图层 40@2x.png')" mode="widthFix" />
+      <image class="partner-map" :src="asset('图层 13@2x.png')" mode="widthFix" />
     </view>
 
     <view class="footer-band"></view>
@@ -174,14 +174,14 @@ const portfolioItems = [
 .hero-copy {
   position: relative;
   z-index: 2;
-  padding: 78rpx 42rpx 0;
+  padding: 86px 45rpx 0;
 }
 
 .hero-title {
   display: block;
   color: #ffffff;
-  font-size: 48rpx;
-  line-height: 1.18;
+  font-size: 52rpx;
+  line-height: 76rpx;
   font-weight: 800;
 }
 
@@ -193,9 +193,9 @@ const portfolioItems = [
 }
 
 .hero-links text {
-  color: #75d8f6;
-  font-size: 30rpx;
-  line-height: 1.25;
+  font-size: 32rpx;
+  color: #75D8F6;
+  line-height: 60rpx;
   font-weight: 500;
   white-space: nowrap;
 }
@@ -204,8 +204,8 @@ const portfolioItems = [
   display: block;
   margin-top: 26rpx;
   color: rgba(255, 255, 255, 0.78);
-  font-size: 28rpx;
-  line-height: 1.62;
+  font-size: 24rpx;
+  line-height: 36rpx;
   text-align: justify;
 }
 
@@ -246,14 +246,14 @@ const portfolioItems = [
 
 .ad-en {
   display: block;
-  color: #9aa1b1;
   font-size: 28rpx;
-  line-height: 1.2;
+  color: #86899B;
+  line-height: 48rpx;
 }
 
 .ad-title {
   display: block;
-  margin-top: 18rpx;
+  margin-top: 15rpx;
   color: #333333;
   font-size: 44rpx;
   line-height: 1.2;
@@ -272,10 +272,9 @@ const portfolioItems = [
 .ad-desc {
   display: block;
   margin-top: 34rpx;
-  color: #185dff;
   font-size: 28rpx;
+  color: #212BBD;
   line-height: 1.55;
-  font-weight: 700;
 }
 
 .ad-feature-list {
@@ -376,27 +375,28 @@ const portfolioItems = [
 
 .service-title {
   display: block;
+  font-size: 44rpx;
   color: #333333;
-  font-size: 42rpx;
-  line-height: 1.2;
+  line-height: 48rpx;
   font-weight: 800;
 }
 
 .service-subtitle {
   display: block;
   margin-top: 34rpx;
-  color: #174cff;
-  font-size: 28rpx;
-  line-height: 1.62;
-  font-weight: 800;
+  font-size: 26rpx;
+  color: #212BBD;
+  line-height: 48rpx;
+  font-weight: 500;
+  margin-bottom: 26rpx;
 }
 
 .service-line {
   display: block;
-  margin-top: 26rpx;
-  color: #6f7480;
-  font-size: 28rpx;
-  line-height: 1.55;
+  margin-top: 6rpx;
+  font-size: 23rpx;
+  color: #53545C;
+  line-height: 54rpx;
 }
 
 .portfolio-section {
@@ -428,7 +428,7 @@ const portfolioItems = [
   display: block;
   padding: 20rpx 22rpx 22rpx;
   color: #3a3d45;
-  font-size: 28rpx;
+  font-size: 22rpx;
   line-height: 1.2;
   font-weight: 800;
 }
@@ -445,7 +445,7 @@ const portfolioItems = [
 }
 
 .footer-band {
-  height: 88rpx;
+  height: 156rpx;
   background: #2867ed;
 }
 </style>

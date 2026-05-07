@@ -29,21 +29,25 @@
       <section class="fair-section">
         <div class="expo-container">
           <SectionTitle title="大型展览组织承办" desc="2021-2026年，参与组织承办中国跨境电商交易会及一系列跨境行业活动" />
-          <div class="fair-banner">
-            <img :src="expoAsset('图层 71@2x.png')" alt="" />
-            <div class="fair-title">
-              <p>第六届中国跨境电商交易会</p>
-              <button type="button">了解更多</button>
+          <Carousel class="fair-carousel" autoplay :dots="true">
+            <div v-for="(slide, index) in fairSlides" :key="`${slide.title}-${index}`" class="fair-slide">
+              <div class="fair-banner">
+                <img :src="expoAsset(slide.image)" alt="" />
+                <div class="fair-title">
+                  <p>{{ slide.title }}</p>
+                  <button type="button">{{ slide.buttonText }}</button>
+                </div>
+              </div>
+              <div class="fair-stats" :style="{ backgroundImage: `url('${expoAsset(slide.image)}')` }">
+                <div class="expo-container stats-grid">
+                  <div v-for="item in slide.stats" :key="item.label" class="stat-item">
+                    <strong>{{ item.value }}</strong>
+                    <span>{{ item.label }}</span>
+                  </div>
+                </div>
+              </div>
             </div>
-          </div>
-        </div>
-        <div class="fair-stats" :style="{ backgroundImage: `url('${expoAsset('图层 71@2x.png')}')` }">
-          <div class="expo-container stats-grid">
-            <div v-for="item in stats" :key="item.label" class="stat-item">
-              <strong>{{ item.value }}</strong>
-              <span>{{ item.label }}</span>
-            </div>
-          </div>
+          </Carousel>
         </div>
       </section>
 
@@ -51,15 +55,17 @@
         <SectionTitle title="中国跨境电商第一展" />
         <div class="expo-container first-expo-stage">
           <Carousel class="first-expo-carousel" autoplay :dots="true">
-            <div v-for="item in firstExpoSlides" :key="item.title" class="first-expo-slide">
+            <div v-for="(slide, index) in firstExpoSlides" :key="`${slide.image}-${index}`" class="first-expo-slide">
               <article class="first-expo-card">
                 <div class="first-expo-media">
-                  <img class="first-expo-photo" :src="expoAsset(item.image)" alt="" />
+                  <img class="first-expo-photo" :src="expoAsset(slide.image)" alt="" />
                 </div>
-                <div class="first-expo-feature">
-                  <img :src="expoAsset(item.icon)" alt="" />
-                  <h3>{{ item.title }}</h3>
-                  <p>{{ item.text }}</p>
+                <div class="first-expo-features">
+                  <article v-for="item in slide.features" :key="item.title" class="first-expo-feature">
+                    <img :src="expoAsset(item.icon)" alt="" />
+                    <h3>{{ item.title }}</h3>
+                    <p>{{ item.text }}</p>
+                  </article>
                 </div>
               </article>
             </div>
@@ -201,34 +207,91 @@ const organizeItems = [
   { icon: '组 5 拷贝 2@2x.png', title: '政企资源协同', text: '联动产业带、服务商、平台招商与采购资源。' },
 ]
 
-const stats = [
-  { value: '10万m²', label: '展会规模' },
-  { value: '60+个', label: '平台' },
-  { value: '200+个', label: '服务商' },
-  { value: '50+场', label: '行业论坛' },
-  { value: '80+个', label: '产业带' },
-  { value: '3347+个', label: '参展商' },
-  { value: '115753个', label: '采购商' },
+const fairSlides = [
+  {
+    image: '图层 71@2x.png',
+    title: '第六届中国跨境电商交易会',
+    buttonText: '了解更多',
+    stats: [
+      { value: '10万m²', label: '展会规模' },
+      { value: '60+个', label: '平台' },
+      { value: '200+个', label: '服务商' },
+      { value: '50+场', label: '行业论坛' },
+      { value: '80+个', label: '产业带' },
+      { value: '3347+个', label: '参展商' },
+      { value: '115753个', label: '采购商' },
+    ],
+  },
+  {
+    image: '图层 71@2x.png',
+    title: '第六届中国跨境电商交易会',
+    buttonText: '了解更多',
+    stats: [
+      { value: '10万m²', label: '展会规模' },
+      { value: '60+个', label: '平台' },
+      { value: '200+个', label: '服务商' },
+      { value: '50+场', label: '行业论坛' },
+      { value: '80+个', label: '产业带' },
+      { value: '3347+个', label: '参展商' },
+      { value: '115753个', label: '采购商' },
+    ],
+  },
+  {
+    image: '图层 71@2x.png',
+    title: '第六届中国跨境电商交易会',
+    buttonText: '了解更多',
+    stats: [
+      { value: '10万m²', label: '展会规模' },
+      { value: '60+个', label: '平台' },
+      { value: '200+个', label: '服务商' },
+      { value: '50+场', label: '行业论坛' },
+      { value: '80+个', label: '产业带' },
+      { value: '3347+个', label: '参展商' },
+      { value: '115753个', label: '采购商' },
+    ],
+  },
 ]
 
 const firstExpoSlides = [
   {
     image: '图层 116@2x.png',
-    icon: '图层 109@2x.png',
-    title: '办展规格高',
-    text: '跨境电商同类展会中唯一“中”字头，由商务部外贸发展事务局主办。',
+    features: [
+      {
+        icon: '图层 109@2x.png',
+        title: '办展规格高',
+        text: '是跨境电商同类展会中唯一“中”字头，由商务部外贸发展局主办。',
+      },
+      {
+        icon: '图层 110@2x.png',
+        title: '认证权威',
+        text: '全国跨境电商界首个获得国际展览业协会 UFI 认证，同时获誉“中国跨境电商第一展”。',
+      },
+      {
+        icon: '图层 111@2x.png',
+        title: '影响力广',
+        text: '同类展会中唯一获得中国政府、中国一带一路、人民日报中央电视台、新华社、光明日报、央广网、以及央视社、党报社、共同社、澳洲华字广泛聚焦关注的展会。',
+      },
+    ],
   },
   {
     image: '图层 116@2x.png',
-    icon: '图层 110@2x.png',
-    title: '认证权威',
-    text: '获得国际展览业协会 UFI 认证，被评定为“中国跨境电商第一展”。',
-  },
-  {
-    image: '图层 116@2x.png',
-    icon: '图层 111@2x.png',
-    title: '影响力广',
-    text: '聚合政府、央媒、产业带、平台与服务机构，形成跨境行业高关注场域。',
+    features: [
+      {
+        icon: '图层 109@2x.png',
+        title: '办展规格高',
+        text: '是跨境电商同类展会中唯一“中”字头，由商务部外贸发展局主办。',
+      },
+      {
+        icon: '图层 110@2x.png',
+        title: '认证权威',
+        text: '全国跨境电商界首个获得国际展览业协会 UFI 认证，同时获誉“中国跨境电商第一展”。',
+      },
+      {
+        icon: '图层 111@2x.png',
+        title: '影响力广',
+        text: '同类展会中唯一获得中国政府、中国一带一路、人民日报中央电视台、新华社、光明日报、央广网、以及央视社、党报社、共同社、澳洲华字广泛聚焦关注的展会。',
+      },
+    ],
   },
 ]
 
@@ -339,7 +402,7 @@ const advantages = [
 }
 
 .expo-hero {
-  min-height: 740px;
+  min-height: 820px;
   display: flex;
   align-items: center;
   color: #fff;
@@ -347,22 +410,23 @@ const advantages = [
 }
 
 .hero-content {
-  padding-top: 24px;
+  padding-top: 18px;
   text-align: center;
 }
 
 .hero-kicker {
-  margin: 0 0 12px;
+  margin: 0 0 16px;
   color: rgba(255, 255, 255, .8);
-  font-size: 24px;
-  font-weight: 700;
+  font-size: 28px;
+  line-height: 1.2;
+  font-weight: 500;
 }
 
 .hero-content h1 {
-  margin: 0 0 34px;
+  margin: 0 0 24px;
   color: #fff;
-  font-size: clamp(48px, 4.8vw, 82px);
-  line-height: 1.12;
+  font-size: clamp(52px, 4vw, 76px);
+  line-height: 1.16;
   letter-spacing: 0;
   font-weight: 800;
 }
@@ -382,36 +446,46 @@ const advantages = [
 
 .hero-note {
   width: min(980px, 100%);
-  margin: 68px auto 0;
+  margin: 74px auto 0;
   color: rgba(255, 255, 255, .78);
-  font-size: 18px;
-  line-height: 1.9;
+  font-size: 20px;
+  line-height: 1.85;
 }
 
 .organize-section {
-  padding: 95px 0 120px;
+  padding: 92px 0 132px;
   background: #f7faff var(--expo-wave-bg) center bottom / 100% auto no-repeat;
 }
 
 .organize-grid {
-  margin-top: 64px;
+  width: min(1180px, 100%);
+  margin: 58px auto 0;
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 36px;
+  gap: 82px;
+  align-items: start;
 }
 
 .organize-card {
-  min-height: 230px;
-  padding: 42px 34px 38px;
+  min-height: 190px;
+  padding: 34px 26px 22px;
   text-align: center;
-  border-radius: 8px;
+  border-radius: 16px;
   background: #fff;
   box-shadow: 0 24px 56px rgba(31, 91, 183, .08);
 }
 
+.organize-card:nth-child(1) {
+  margin-top: 72px;
+}
+
+.organize-card:nth-child(3) {
+  margin-top: 20px;
+}
+
 .organize-card img {
-  width: 82px;
-  height: 82px;
+  width: 72px;
+  height: 72px;
   object-fit: contain;
 }
 
@@ -419,9 +493,9 @@ const advantages = [
 .first-expo-feature h3,
 .case-grid h3,
 .operation-copy h3 {
-  margin: 24px 0 16px;
+  margin: 18px 0 12px;
   color: #333;
-  font-size: 26px;
+  font-size: 22px;
   line-height: 1.25;
   font-weight: 800;
 }
@@ -432,25 +506,69 @@ const advantages = [
 .operation-copy p {
   margin: 0;
   color: #697180;
-  font-size: 17px;
-  line-height: 1.8;
+  font-size: 16px;
+  line-height: 1.75;
 }
 
 .fair-section {
-  padding: 108px 0 0;
+  padding: 102px 0 0;
   background: #fff;
+}
+
+.fair-carousel,
+.fair-carousel :deep(.slick-slider),
+.fair-carousel :deep(.slick-list),
+.fair-carousel :deep(.slick-track),
+.fair-carousel :deep(.slick-slide),
+.fair-carousel :deep(.slick-slide > div) {
+  height: 636px;
+}
+
+.fair-carousel {
+  margin-top: 56px;
+}
+
+.fair-carousel :deep(.slick-list) {
+  overflow: hidden;
+}
+
+.fair-carousel :deep(.slick-dots) {
+  bottom: 26px;
+  gap: 18px;
+  margin: 0;
+}
+
+.fair-carousel :deep(.slick-dots li) {
+  width: 64px;
+  height: 4px;
+  margin: 0;
+}
+
+.fair-carousel :deep(.slick-dots li button) {
+  width: 64px;
+  height: 4px;
+  border-radius: 0;
+  background: rgba(255, 255, 255, .42);
+  opacity: 1;
+}
+
+.fair-carousel :deep(.slick-dots li.slick-active button) {
+  background: #fff;
+}
+
+.fair-slide {
+  height: 100%;
 }
 
 .fair-banner {
   position: relative;
-  margin-top: 66px;
   overflow: hidden;
   border-radius: 8px;
 }
 
 .fair-banner > img {
   width: 100%;
-  height: 328px;
+  height: 346px;
   display: block;
   object-fit: cover;
 }
@@ -467,14 +585,14 @@ const advantages = [
 }
 
 .fair-title p {
-  margin: 0 0 30px;
-  font-size: clamp(28px, 3.2vw, 58px);
+  margin: 0 0 24px;
+  font-size: clamp(30px, 3vw, 56px);
   line-height: 1.1;
   font-weight: 800;
 }
 
 .fair-stats {
-  min-height: 312px;
+  min-height: 290px;
   margin-top: 0;
   display: flex;
   align-items: center;
@@ -486,7 +604,7 @@ const advantages = [
 .stats-grid {
   display: grid;
   grid-template-columns: repeat(7, minmax(0, 1fr));
-  gap: 22px;
+  gap: 18px;
 }
 
 .stat-item {
@@ -496,16 +614,16 @@ const advantages = [
 .stat-item strong {
   display: block;
   color: #fff;
-  font-size: clamp(32px, 3vw, 58px);
+  font-size: clamp(28px, 2.55vw, 50px);
   line-height: 1.1;
   font-weight: 800;
 }
 
 .stat-item span {
   display: block;
-  margin-top: 20px;
+  margin-top: 14px;
   color: rgba(255, 255, 255, .74);
-  font-size: 22px;
+  font-size: 18px;
 }
 
 .first-expo-section,
@@ -518,7 +636,7 @@ const advantages = [
 
 .first-expo-stage {
   width: min(1340px, calc(100% - 48px));
-  margin-top: 76px;
+  margin-top: 64px;
 }
 
 .first-expo-carousel :deep(.slick-list) {
@@ -554,10 +672,10 @@ const advantages = [
 }
 
 .first-expo-card {
-  padding: 58px 68px;
+  padding: 42px 46px;
   display: grid;
-  grid-template-columns: minmax(0, 54%) minmax(360px, 1fr);
-  gap: 64px;
+  grid-template-columns: minmax(0, 44%) minmax(0, 1fr);
+  gap: 34px;
   align-items: center;
   border-radius: 8px;
   background: #f5f8fc;
@@ -575,24 +693,33 @@ const advantages = [
   filter: drop-shadow(0 28px 34px rgba(14, 44, 91, .16));
 }
 
+.first-expo-features {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 28px;
+  align-items: start;
+}
+
 .first-expo-feature {
-  max-width: 430px;
+  min-width: 0;
 }
 
 .first-expo-feature img {
-  width: 106px;
-  height: 88px;
+  width: 86px;
+  height: 72px;
   object-fit: contain;
 }
 
 .first-expo-feature h3 {
-  margin-top: 34px;
-  font-size: clamp(34px, 3vw, 52px);
+  margin: 22px 0 16px;
+  font-size: 22px;
+  line-height: 1.25;
+  font-weight: 800;
 }
 
 .first-expo-feature p {
-  font-size: 24px;
-  line-height: 1.75;
+  font-size: 16px;
+  line-height: 1.82;
 }
 
 .case-section {

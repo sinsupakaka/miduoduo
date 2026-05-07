@@ -74,12 +74,12 @@
               <img :src="aboutAsset('组 6@2x.png')" alt="" />
               <span>资质/荣誉</span>
             </h2>
-            <div class="honor-tabs">
-              <button class="active">专业资质</button>
-              <button>案例/出海人选</button>
-              <button>平台官方资质</button>
-              <button>媒体合作</button>
-            </div>
+          <div class="honor-tabs">
+            <button class="active">专业资质</button>
+            <button>案例/出海人选</button>
+            <button>平台官方资质</button>
+            <button>商协会服务</button>
+          </div>
           </div>
 
           <div class="honor-grid">
@@ -187,7 +187,7 @@ const honors = [
 
 .section-heading {
   margin: 0;
-  font-size: clamp(34px, 2.6vw, 52px);
+  font-size: clamp(34px, 2.45vw, 48px);
   line-height: 1.15;
   letter-spacing: 0;
   font-weight: 800;
@@ -202,7 +202,7 @@ const honors = [
 }
 
 .about-hero {
-  height: 962px;
+  height: 938px;
   position: relative;
   background: #07131c var(--about-hero-bg) center top / cover no-repeat;
 }
@@ -210,79 +210,79 @@ const honors = [
 .hero-title {
   position: absolute;
   left: 50%;
-  bottom: 150px;
+  bottom: 142px;
   width: min(920px, calc(100% - 48px));
   transform: translateX(-50%);
   text-align: center;
 }
 
 .hero-title h1 {
-  margin: 0 0 30px;
+  margin: 0 0 24px;
   color: #fff;
-  font-size: clamp(46px, 4.2vw, 74px);
-  line-height: 1.1;
+  font-size: clamp(48px, 3.8vw, 72px);
+  line-height: 1.12;
   font-weight: 800;
 }
 
 .hero-title p {
   margin: 0;
   color: rgba(255, 255, 255, .74);
-  font-size: clamp(28px, 2.8vw, 48px);
+  font-size: clamp(24px, 2.3vw, 42px);
   line-height: 1.2;
   font-weight: 400;
 }
 
 .company-section {
-  min-height: 745px;
-  padding: 76px 0 86px;
+  min-height: 760px;
+  padding: 68px 0 94px;
   background: #fff;
 }
 
 .company-grid {
   display: grid;
-  grid-template-columns: minmax(430px, 658px) minmax(520px, 782px);
-  gap: 82px;
+  grid-template-columns: minmax(420px, 620px) minmax(520px, 810px);
+  gap: 68px;
   align-items: start;
 }
 
 .company-copy {
-  padding-top: 52px;
+  padding-top: 44px;
 }
 
 .company-copy h2 {
-  margin: 0 0 42px;
+  margin: 0 0 34px;
   color: #3a3a3a;
-  font-size: clamp(36px, 2.8vw, 54px);
+  font-size: clamp(34px, 2.45vw, 48px);
   line-height: 1.1;
   font-weight: 800;
 }
 
 .company-copy p {
-  margin: 0 0 19px;
+  margin: 0 0 16px;
   color: #555;
-  font-size: 18px;
-  line-height: 2;
+  font-size: 16px;
+  line-height: 1.95;
   text-align: justify;
 }
 
 .company-image {
   width: 100%;
-  margin-top: -202px;
-  border-radius: 0 0 76px 0;
+  margin-top: -188px;
+  border-radius: 0 0 64px 0;
   display: block;
   box-shadow: 0 28px 70px rgba(28, 57, 119, .16);
 }
 
 .culture-section {
-  padding: 126px 0 132px;
+  padding: 118px 0 124px;
   background: #f4f7fb;
 }
 
 .culture-grid {
-  margin-top: 78px;
+  margin-top: 68px;
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 42px;
+  gap: 36px;
 }
 
 .culture-card {
@@ -291,14 +291,14 @@ const honors = [
 
 .culture-card img {
   width: 100%;
-  border-radius: 14px;
+  border-radius: 16px;
   display: block;
 }
 
 .culture-card h3 {
-  margin: 35px 0 18px;
+  margin: 28px 0 14px;
   color: #333;
-  font-size: 28px;
+  font-size: 24px;
   line-height: 1.15;
   font-weight: 800;
 }
@@ -306,8 +306,8 @@ const honors = [
 .culture-card p {
   margin: 0;
   color: #636b78;
-  font-size: 18px;
-  line-height: 1.85;
+  font-size: 16px;
+  line-height: 1.8;
 }
 
 .mission-card {
@@ -325,8 +325,8 @@ const honors = [
 }
 
 .timeline-section {
-  height: 1104px;
-  padding-top: 126px;
+  height: 1040px;
+  padding-top: 112px;
   background: #2f6df0 var(--about-timeline-bg) center top / cover no-repeat;
 }
 
@@ -345,9 +345,9 @@ const honors = [
   content: "";
   position: absolute;
   left: 50%;
-  bottom: -22px;
-  width: 92px;
-  height: 7px;
+  bottom: -18px;
+  width: 82px;
+  height: 6px;
   border-radius: 8px;
   background: #fff;
   transform: translateX(-50%);
@@ -355,12 +355,12 @@ const honors = [
 
 .timeline-chart {
   width: min(1430px, 100%);
-  margin: 112px auto 0;
+  margin: 96px auto 0;
   display: block;
 }
 
 .honor-section {
-  padding: 115px 0 132px;
+  padding: 108px 0 124px;
   background: #fff;
 }
 
@@ -376,16 +376,16 @@ const honors = [
   margin: 0;
   min-width: 360px;
   color: #333;
-  font-size: clamp(34px, 2.7vw, 50px);
+  font-size: clamp(34px, 2.45vw, 46px);
   line-height: 1;
   font-weight: 800;
 }
 
 .honor-title img {
   position: absolute;
-  left: -20px;
+  left: -16px;
   top: 50%;
-  width: 262px;
+  width: 236px;
   max-width: none;
   transform: translateY(-50%);
   pointer-events: none;
@@ -394,25 +394,25 @@ const honors = [
 .honor-title span {
   position: relative;
   z-index: 1;
-  padding-left: 46px;
+  padding-left: 40px;
 }
 
 .honor-tabs {
   display: flex;
   flex-wrap: wrap;
-  gap: 18px;
+  gap: 16px;
   justify-content: flex-end;
 }
 
 .honor-tabs button {
-  min-width: 154px;
-  height: 42px;
-  padding: 0 24px;
+  min-width: 164px;
+  height: 44px;
+  padding: 0 26px;
   border: 1px solid #d8deeb;
   border-radius: 999px;
   color: #9299a7;
   background: #fff;
-  font-size: 16px;
+  font-size: 18px;
   line-height: 1;
 }
 
@@ -424,16 +424,16 @@ const honors = [
 }
 
 .honor-grid {
-  margin-top: 58px;
+  margin-top: 52px;
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 28px 30px;
+  gap: 24px 26px;
 }
 
 .honor-card {
   overflow: hidden;
   border: 1px solid #e0e5ee;
-  border-radius: 8px;
+  border-radius: 16px;
   background: #fff;
 }
 
@@ -445,13 +445,13 @@ const honors = [
 }
 
 .honor-card p {
-  height: 70px;
+  height: 74px;
   margin: 0;
-  padding: 0 18px;
+  padding: 0 20px;
   display: flex;
   align-items: center;
   color: #606774;
-  font-size: 15px;
+  font-size: 14px;
   line-height: 1.35;
   white-space: nowrap;
   overflow: hidden;
@@ -459,8 +459,8 @@ const honors = [
 }
 
 .group-section {
-  height: 957px;
-  padding-top: 126px;
+  height: 930px;
+  padding-top: 112px;
   background: #030b12 var(--about-group-bg) center center / cover no-repeat;
 }
 
@@ -471,8 +471,8 @@ const honors = [
 
 .map-note {
   position: absolute;
-  right: 118px;
-  top: 368px;
+  right: 112px;
+  top: 356px;
   display: grid;
   grid-template-columns: 34px minmax(0, 1fr);
   gap: 12px;
@@ -504,9 +504,9 @@ const honors = [
 }
 
 .map-note div {
-  width: 318px;
-  padding: 17px 22px;
-  border-radius: 4px;
+  width: 320px;
+  padding: 18px 22px;
+  border-radius: 10px;
   color: #323846;
   background: rgba(255, 255, 255, .94);
   box-shadow: 0 18px 36px rgba(0, 0, 0, .16);
@@ -515,7 +515,7 @@ const honors = [
 .map-note strong {
   display: block;
   margin-bottom: 8px;
-  font-size: 18px;
+  font-size: 20px;
   line-height: 1.2;
   font-weight: 800;
 }
@@ -523,17 +523,17 @@ const honors = [
 .map-note span {
   display: block;
   color: #6b7280;
-  font-size: 13px;
+  font-size: 14px;
   line-height: 1.4;
 }
 
 .partner-section {
-  padding: 124px 0 130px;
+  padding: 116px 0 122px;
   background: #fff;
 }
 
 .partner-wall {
-  margin-top: 72px;
+  margin-top: 58px;
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 0;

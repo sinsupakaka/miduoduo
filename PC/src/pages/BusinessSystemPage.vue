@@ -216,14 +216,14 @@ const schools = [
 }
 
 .section {
-  padding: 128px 0 140px;
+  padding: 126px 0 138px;
 }
 
 .section-subtitle {
-  margin: 60px 0 38px;
+  margin: 54px 0 38px;
   color: #30333a;
   text-align: center;
-  font-size: clamp(28px, 2.2vw, 40px);
+  font-size: 32px;
   line-height: 1.2;
   font-weight: 800;
 }
@@ -241,9 +241,9 @@ const schools = [
 }
 
 .business-hero h1 {
-  margin: 0 0 72px;
-  font-size: clamp(52px, 5.4vw, 82px);
-  line-height: 1.35;
+  margin: 0 0 62px;
+  font-size: 64px;
+  line-height: 1.38;
   letter-spacing: 0;
   font-weight: 800;
 }
@@ -251,26 +251,44 @@ const schools = [
 .hero-tags {
   display: flex;
   flex-wrap: wrap;
-  gap: 24px;
+  gap: 22px;
 }
 
 .hero-tags span {
-  min-width: 190px;
-  height: 72px;
-  padding: 0 36px;
+  min-width: 160px;
+  height: 52px;
+  padding: 0 28px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
   border-radius: 999px;
   color: #243ccc;
   background: #fff;
-  font-size: 26px;
+  font-size: 20px;
   line-height: 1;
   font-weight: 800;
 }
 
 .seller-section {
+  padding-top: 128px;
   background: #fff;
+}
+
+.seller-section :deep(.section-title h2),
+.case-section :deep(.section-title h2),
+.education-section :deep(.section-title h2),
+.schools-section :deep(.section-title h2),
+.ecology-section :deep(.section-title h2) {
+  font-size: 52px;
+  line-height: 1.18;
+}
+
+.seller-section :deep(.section-title p),
+.education-section :deep(.section-title p),
+.ecology-section :deep(.section-title p) {
+  margin-top: 20px;
+  font-size: 24px;
+  line-height: 1.35;
 }
 
 .platform-list {
@@ -279,7 +297,7 @@ const schools = [
   align-items: center;
   flex-wrap: wrap;
   gap: 38px;
-  margin-bottom: 60px;
+  margin-bottom: 64px;
 }
 
 .platform-logo {
@@ -320,14 +338,15 @@ const schools = [
 
 .seller-grid {
   display: grid;
-  grid-template-columns: minmax(440px, 750px) minmax(420px, 750px);
-  gap: 40px;
+  grid-template-columns: 750px 750px;
+  gap: 80px;
   align-items: center;
+  justify-content: center;
 }
 
 .service-stack {
   display: grid;
-  gap: 32px;
+  gap: 34px;
 }
 
 .service-card,
@@ -339,7 +358,7 @@ const schools = [
 
 .service-card {
   min-height: 200px;
-  padding: 31px 30px;
+  padding: 30px 30px;
   display: grid;
   grid-template-columns: 54px minmax(0, 1fr);
   gap: 24px;
@@ -377,7 +396,7 @@ const schools = [
 .case-card h3 {
   margin: 0;
   color: #30333a;
-  font-size: clamp(24px, 1.55vw, 30px);
+  font-size: 28px;
   line-height: 1.2;
   font-weight: 800;
 }
@@ -390,8 +409,8 @@ const schools = [
 .education-card p {
   margin: 0;
   color: #596170;
-  font-size: clamp(18px, 1.2vw, 22px);
-  line-height: 1.75;
+  font-size: 22px;
+  line-height: 1.72;
 }
 
 .seller-visual {
@@ -405,16 +424,22 @@ const schools = [
   background: #f5f8fc;
 }
 
+.case-section {
+  padding-top: 128px;
+  padding-bottom: 140px;
+}
+
 .case-section :deep(.section-title h2),
 .schools-section :deep(.section-title h2) {
   color: #30333a;
 }
 
 .case-grid {
-  margin-top: 82px;
+  width: min(1540px, calc(100% - 48px));
+  margin-top: 84px;
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 32px;
+  gap: 32px 34px;
 }
 
 .case-card {
@@ -426,26 +451,30 @@ const schools = [
 
 .case-card img {
   width: 100%;
-  aspect-ratio: 489 / 280;
+  aspect-ratio: 493 / 410;
   display: block;
   object-fit: cover;
 }
 
 .case-card h3 {
   min-height: 82px;
-  padding: 26px 30px;
+  padding: 25px 30px;
+  font-size: 28px;
 }
 
 .education-section {
+  padding-top: 132px;
+  padding-bottom: 132px;
   background: #fff7ec;
 }
 
 .education-grid {
-  margin-top: 90px;
+  margin-top: 88px;
   display: grid;
-  grid-template-columns: minmax(420px, 680px) minmax(520px, 1fr);
-  gap: 34px;
+  grid-template-columns: 674px 826px;
+  gap: 60px;
   align-items: stretch;
+  justify-content: center;
 }
 
 .talent-panel {
@@ -481,7 +510,7 @@ const schools = [
 }
 
 .education-card {
-  min-height: 130px;
+  min-height: 150px;
   padding: 31px 30px;
   display: grid;
   grid-template-columns: 54px minmax(0, 1fr);
@@ -495,18 +524,19 @@ const schools = [
 }
 
 .schools-section {
+  padding-top: 128px;
   padding-bottom: 156px;
 }
 
 .school-grid {
-  margin-top: 92px;
+  margin-top: 88px;
   display: grid;
   grid-template-columns: repeat(6, minmax(0, 1fr));
-  gap: 24px 20px;
+  gap: 24px 22px;
 }
 
 .school-card {
-  height: 74px;
+  height: 92px;
   padding: 10px 22px;
   border-radius: 12px;
   display: grid;
@@ -516,39 +546,40 @@ const schools = [
 
 .school-card img {
   max-width: 100%;
-  max-height: 54px;
+  max-height: 64px;
   object-fit: contain;
 }
 
 .ecology-section {
   background: #fff;
-  padding-bottom: 120px;
+  padding-top: 132px;
+  padding-bottom: 126px;
 }
 
 .ecology-graph {
   width: min(1516px, calc(100% - 48px));
   display: block;
-  margin: 74px auto 0;
+  margin: 72px auto 0;
 }
 
 .business-cta {
-  padding: 146px 0 151px;
+  padding: 122px 0 128px;
   color: #fff;
   background: #2f68e8;
 }
 
 .business-cta h2 {
-  margin: 0 0 28px;
-  font-size: clamp(40px, 3.5vw, 56px);
+  margin: 0 0 26px;
+  font-size: 42px;
   line-height: 1.2;
   font-weight: 800;
 }
 
 .business-cta p {
   max-width: 1340px;
-  margin: 0 0 60px;
+  margin: 0 0 48px;
   color: rgba(255, 255, 255, .96);
-  font-size: clamp(21px, 1.6vw, 30px);
+  font-size: 20px;
   line-height: 1.55;
 }
 

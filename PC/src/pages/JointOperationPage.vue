@@ -159,7 +159,7 @@ import { asset } from '../utils/assets'
 defineProps({
   activePath: {
     type: String,
-    default: '/business',
+    default: '/technology',
   },
 })
 
@@ -283,14 +283,14 @@ const rules = [
 
 .joint-hero {
   min-height: 980px;
-  padding: 148px 0 96px;
+  padding: 136px 0 92px;
 }
 
 .hero-grid {
   display: grid;
   grid-template-columns: minmax(480px, 680px) minmax(520px, 1fr);
   align-items: center;
-  gap: 70px;
+  gap: 56px;
 }
 
 .hero-copy {
@@ -299,59 +299,59 @@ const rules = [
 }
 
 .hero-kicker {
-  margin: 0 0 34px;
+  margin: 0 0 30px;
   color: rgba(255, 255, 255, .94);
-  font-size: clamp(28px, 2.4vw, 42px);
+  font-size: clamp(28px, 1.8vw, 34px);
   line-height: 1.2;
   font-weight: 500;
 }
 
 .hero-copy h1 {
-  margin: 0 0 38px;
-  font-size: clamp(48px, 5vw, 78px);
-  line-height: 1.18;
+  margin: 0 0 34px;
+  font-size: clamp(48px, 4.25vw, 82px);
+  line-height: 1.14;
   letter-spacing: 0;
   font-weight: 800;
 }
 
 .hero-lead {
-  margin: 0 0 43px;
+  margin: 0 0 38px;
   color: rgba(255, 255, 255, .9);
-  font-size: clamp(22px, 1.7vw, 30px);
-  line-height: 1.7;
+  font-size: clamp(20px, 1.35vw, 26px);
+  line-height: 1.65;
 }
 
 .hero-stats {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 30px 46px;
-  margin-bottom: 65px;
+  gap: 24px 42px;
+  margin-bottom: 58px;
 }
 
 .hero-stats strong {
   display: block;
   color: #4387ff;
-  font-size: clamp(28px, 2.1vw, 40px);
+  font-size: clamp(28px, 1.9vw, 36px);
   line-height: 1.1;
   font-weight: 800;
 }
 
 .hero-stats span {
   display: block;
-  margin-top: 15px;
+  margin-top: 12px;
   color: rgba(230, 237, 255, .72);
-  font-size: clamp(17px, 1.1vw, 22px);
+  font-size: clamp(16px, 1vw, 18px);
   line-height: 1.2;
 }
 
 .primary-action {
   min-width: 270px;
-  height: 60px;
+  height: 58px;
   padding: 0 36px;
   border-radius: 30px;
   color: #fff;
   background: linear-gradient(90deg, #2457db 0%, #6b8bff 100%);
-  font-size: 22px;
+  font-size: 20px;
   font-weight: 800;
 }
 
@@ -362,28 +362,28 @@ const rules = [
 }
 
 .joint-section {
-  padding: 58px 0 92px;
+  padding: 64px 0 96px;
 }
 
 .section-heading {
   width: min(1100px, calc(100% - 48px));
-  margin: 0 auto 86px;
+  margin: 0 auto 74px;
   text-align: center;
 }
 
 .section-heading h2 {
   margin: 0;
   color: #fff;
-  font-size: clamp(42px, 4vw, 64px);
+  font-size: clamp(42px, 3.35vw, 64px);
   line-height: 1.18;
   font-weight: 800;
   letter-spacing: 0;
 }
 
 .section-heading p {
-  margin: 23px 0 0;
+  margin: 18px 0 0;
   color: rgba(206, 213, 235, .58);
-  font-size: clamp(20px, 1.6vw, 28px);
+  font-size: clamp(18px, 1.15vw, 22px);
   line-height: 1.45;
 }
 
@@ -397,14 +397,14 @@ const rules = [
 .stage-card,
 .rule-card {
   border: 2px solid rgba(94, 127, 160, .42);
-  border-radius: 18px;
+  border-radius: 24px;
   background: linear-gradient(180deg, rgba(31, 47, 68, .96) 0%, rgba(17, 31, 52, .96) 100%);
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, .04);
 }
 
 .info-panel {
-  min-height: 512px;
-  padding: 30px 40px 44px;
+  min-height: 466px;
+  padding: 34px 34px 38px;
 }
 
 .panel-head {
@@ -412,58 +412,58 @@ const rules = [
   align-items: center;
   justify-content: space-between;
   gap: 20px;
-  margin-bottom: 52px;
+  margin-bottom: 40px;
 }
 
 .panel-title {
   display: flex;
   align-items: center;
-  gap: 22px;
+  gap: 18px;
   min-width: 0;
 }
 
 .panel-title img,
 .rule-card > img {
-  width: 54px;
-  height: 54px;
-  flex: 0 0 54px;
+  width: 52px;
+  height: 52px;
+  flex: 0 0 52px;
 }
 
 .panel-title h3,
 .rule-card h3 {
   margin: 0;
   color: #fff;
-  font-size: clamp(24px, 1.8vw, 30px);
+  font-size: clamp(22px, 1.45vw, 28px);
   line-height: 1.2;
   font-weight: 800;
 }
 
 .panel-badge {
   flex: 0 0 auto;
-  padding: 11px 27px;
+  padding: 10px 24px;
   border-radius: 999px;
   color: #f9b233;
   background: rgba(145, 96, 18, .72);
-  font-size: 20px;
+  font-size: 18px;
   line-height: 1;
   font-weight: 800;
 }
 
 .panel-list {
   display: grid;
-  gap: 31px;
+  gap: 24px;
 }
 
 .panel-item {
   display: grid;
-  grid-template-columns: 42px minmax(0, 1fr);
-  gap: 24px;
+  grid-template-columns: 34px minmax(0, 1fr);
+  gap: 18px;
   align-items: start;
 }
 
 .item-icon {
-  width: 28px;
-  height: 28px;
+  width: 24px;
+  height: 24px;
   margin-top: 2px;
 }
 
@@ -475,8 +475,8 @@ const rules = [
 .upgrade-note p {
   margin: 0;
   color: rgba(225, 233, 247, .78);
-  font-size: clamp(19px, 1.35vw, 25px);
-  line-height: 1.62;
+  font-size: clamp(17px, 1vw, 19px);
+  line-height: 1.72;
 }
 
 .panel-item strong,
@@ -487,16 +487,16 @@ const rules = [
 }
 
 .path-section {
-  padding-top: 82px;
+  padding-top: 96px;
 }
 
 .stage-list {
   display: grid;
-  gap: 34px;
+  gap: 30px;
 }
 
 .stage-card {
-  padding: 38px 40px 32px;
+  padding: 34px 36px 30px;
 }
 
 .stage-head {
@@ -504,13 +504,13 @@ const rules = [
   align-items: center;
   justify-content: space-between;
   gap: 24px;
-  margin-bottom: 48px;
+  margin-bottom: 38px;
 }
 
 .stage-head h3 {
   margin: 0;
   color: #fff;
-  font-size: clamp(28px, 2.1vw, 38px);
+  font-size: clamp(24px, 1.7vw, 32px);
   line-height: 1.2;
   font-weight: 800;
 }
@@ -518,39 +518,39 @@ const rules = [
 .stage-head span {
   flex: 0 0 auto;
   min-width: 132px;
-  padding: 10px 24px;
+  padding: 11px 24px;
   border-radius: 999px;
   color: #4c8dff;
   background: rgba(47, 112, 212, .34);
   text-align: center;
-  font-size: 25px;
+  font-size: 20px;
   line-height: 1.1;
   font-weight: 700;
 }
 
 .stage-lines {
   display: grid;
-  gap: 22px;
+  gap: 18px;
 }
 
 .stage-line {
   display: grid;
-  grid-template-columns: 44px minmax(0, 1fr);
+  grid-template-columns: 36px minmax(0, 1fr);
   align-items: start;
-  gap: 26px;
+  gap: 18px;
 }
 
 .stage-line img {
-  width: 42px;
-  height: 42px;
+  width: 36px;
+  height: 36px;
 }
 
 .milestone {
-  margin-top: 41px;
-  padding: 26px 30px;
+  margin-top: 32px;
+  padding: 24px 28px;
   display: grid;
-  grid-template-columns: 34px minmax(0, 1fr);
-  gap: 20px;
+  grid-template-columns: 28px minmax(0, 1fr);
+  gap: 16px;
   align-items: center;
   border-radius: 14px;
   background: rgba(47, 62, 84, .72);
@@ -565,39 +565,39 @@ const rules = [
 .stage-plans {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 58px;
+  gap: 44px;
 }
 
 .plan-title {
   display: flex;
   align-items: center;
-  gap: 18px;
-  margin-bottom: 24px;
+  gap: 16px;
+  margin-bottom: 20px;
 }
 
 .plan-title img {
-  width: 42px;
-  height: 42px;
+  width: 38px;
+  height: 38px;
 }
 
 .plan-title h4 {
   margin: 0;
   color: #fff;
-  font-size: clamp(24px, 1.9vw, 32px);
+  font-size: clamp(22px, 1.5vw, 28px);
   line-height: 1.2;
   font-weight: 800;
 }
 
 .strategy-section {
-  padding-top: 132px;
+  padding-top: 116px;
 }
 
 .strategy-section .info-panel {
-  min-height: 446px;
+  min-height: 392px;
 }
 
 .rules-section {
-  padding-top: 74px;
+  padding-top: 82px;
   padding-bottom: 110px;
 }
 
@@ -608,12 +608,12 @@ const rules = [
 }
 
 .rule-card {
-  min-height: 174px;
-  padding: 38px 30px 32px;
+  min-height: 160px;
+  padding: 32px 26px 28px;
   display: grid;
-  grid-template-columns: 54px minmax(0, 1fr);
+  grid-template-columns: 52px minmax(0, 1fr);
   align-items: start;
-  gap: 22px;
+  gap: 18px;
 }
 
 .rule-card.wide {
@@ -621,52 +621,52 @@ const rules = [
 }
 
 .rule-card h3 {
-  margin-bottom: 21px;
+  margin-bottom: 14px;
 }
 
 .upgrade-note {
-  margin-top: 35px;
-  padding: 31px 32px 30px;
+  margin-top: 32px;
+  padding: 28px 30px;
   display: grid;
   grid-template-columns: 25px minmax(0, 1fr);
-  gap: 23px;
+  gap: 18px;
   align-items: start;
-  border-radius: 18px;
+  border-radius: 24px;
   background: rgba(41, 42, 72, .9);
 }
 
 .upgrade-note h3 {
-  margin: 0 0 20px;
+  margin: 0 0 14px;
   color: #fff;
-  font-size: clamp(24px, 1.9vw, 32px);
+  font-size: clamp(22px, 1.45vw, 28px);
   line-height: 1.35;
   font-weight: 800;
 }
 
 .joint-cta {
-  padding: 139px 0 150px;
+  padding: 122px 0 132px;
   text-align: center;
   background: linear-gradient(135deg, #5d24a7 0%, #4e1888 100%);
 }
 
 .joint-cta h2 {
-  margin: 0 0 28px;
+  margin: 0 0 22px;
   color: #fff;
-  font-size: clamp(42px, 4vw, 62px);
+  font-size: clamp(40px, 2.9vw, 56px);
   line-height: 1.2;
   font-weight: 800;
 }
 
 .joint-cta p {
-  margin: 0 0 70px;
+  margin: 0 0 56px;
   color: rgba(255, 255, 255, .92);
-  font-size: clamp(20px, 1.6vw, 28px);
+  font-size: clamp(18px, 1.15vw, 22px);
   line-height: 1.5;
 }
 
 .joint-cta a {
   color: rgba(255, 255, 255, .64);
-  font-size: clamp(20px, 1.5vw, 26px);
+  font-size: clamp(18px, 1.05vw, 20px);
   line-height: 1.2;
   text-decoration: none;
 }

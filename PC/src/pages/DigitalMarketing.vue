@@ -7,25 +7,21 @@
         <div class="digital-container hero-inner">
           <h1>品牌出海营销一站式服务</h1>
 
-          <div class="hero-links">
-            <h5>广告投放</h5>
-            <h5>达人营销</h5>
-            <h5>内容营销</h5>
-            <h5>电商运营</h5>
-          </div>
-
-          <br>
-
           <p>
             依托国际化视野与技术数据双引擎，米多多数字营销覆盖全球主流媒体渠道，
             提供广告投放、内容营销、达人营销、电商运营、社媒运营、品牌策略一体化
             服务。
           </p>
-          <br>
           <p>
             以“技术提效、内容破圈、数据闭环”为方法论，助力品牌跨越文化壁垒，
             实现全球市场的声量与销量双增长。
           </p>
+          <div class="hero-links">
+            <span>「广告投放」</span>
+            <span>「达人营销」</span>
+            <span>「内容营销」</span>
+            <span>「电商运营」</span>
+          </div>
         </div>
       </section>
 
@@ -134,7 +130,7 @@ import { asset } from '../utils/assets'
 defineProps({
   activePath: {
     type: String,
-    default: '/industry-think-tank',
+    default: '/cross-border-fair',
   },
 })
 
@@ -290,14 +286,14 @@ const partnerLogos = [
   margin: 0;
   color: #333;
   text-align: center;
-  font-size: clamp(34px, 2.65vw, 52px);
+  font-size: clamp(34px, 2.45vw, 48px);
   line-height: 1.15;
   letter-spacing: 0;
   font-weight: 800;
 }
 
 .digital-hero {
-  height: 804px;
+  height: 760px;
   position: relative;
   display: flex;
   align-items: flex-start;
@@ -306,52 +302,58 @@ const partnerLogos = [
 }
 
 .hero-inner {
-  padding-top: 218px;
+  padding-top: 168px;
 }
 
 .hero-inner h1 {
-  max-width: 900px;
-  margin: 0 0 48px;
+  max-width: 980px;
+  margin: 0 0 42px;
   color: #fff;
-  font-size: 58px;
-  line-height: 1.08;
+  font-size: 72px;
+  line-height: 1.12;
   letter-spacing: 0;
   font-weight: 800;
 }
 
 .hero-inner p {
-  max-width: 680px;
+  max-width: 950px;
   margin: 0;
   color: rgba(255, 255, 255, .84);
   font-size: 20px;
-  line-height: 2.05;
+  line-height: 1.78;
   font-weight: 400;
+}
+
+.hero-inner p + p {
+  margin-top: 6px;
 }
 
 .hero-links {
   display: flex;
   flex-wrap: wrap;
-  gap: 28px;
+  gap: 34px;
+  margin-top: 34px;
   color: #75D8F6;
-  font-size: 24px;
+  font-size: 22px;
   line-height: 1.2;
   font-weight: 400;
 }
 
-.hero-links span + span::before {
-  content: none;
+.hero-links span {
+  display: inline-flex;
+  white-space: nowrap;
 }
 
 .ad-section {
-  padding: 74px 0 96px;
+  padding: 88px 0 108px;
   background: #fff var(--digital-ad-bg) center bottom / 100% auto no-repeat;
 }
 
 .ad-inner {
-  min-height: 420px;
+  min-height: 452px;
   display: grid;
   grid-template-columns: 420px minmax(0, 1fr);
-  gap: 92px;
+  gap: 106px;
   align-items: end;
 }
 
@@ -360,23 +362,23 @@ const partnerLogos = [
 }
 
 .ad-title img {
-  width: 202px;
-  margin: 0 0 20px 42px;
+  width: 214px;
+  margin: 0 0 18px 38px;
   display: block;
 }
 
 .ad-title span {
   display: block;
-  margin-bottom: 18px;
+  margin-bottom: 16px;
   color: #a4abb7;
-  font-size: 23px;
+  font-size: 20px;
   line-height: 1;
 }
 
 .ad-title h2 {
   margin: 0;
   color: #333;
-  font-size: 46px;
+  font-size: 52px;
   line-height: 1.15;
   font-weight: 800;
 }
@@ -388,36 +390,36 @@ const partnerLogos = [
 .ad-content h3 {
   margin: 0 0 24px;
   color: #333;
-  font-size: 34px;
+  font-size: 56px;
   line-height: 1.18;
   font-weight: 800;
 }
 
 .ad-content > p {
-  margin: 0 0 54px;
+  margin: 0 0 58px;
   color: #1f61e8;
-  font-size: 17px;
-  line-height: 1.6;
+  font-size: 20px;
+  line-height: 1.55;
   font-weight: 800;
 }
 
 .ad-feature-list {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 78px;
+  gap: 54px;
 }
 
 .ad-feature-list img {
-  width: 54px;
-  height: 54px;
+  width: 58px;
+  height: 58px;
   display: block;
   object-fit: contain;
 }
 
 .ad-feature-list h4 {
-  margin: 20px 0 13px;
+  margin: 22px 0 14px;
   color: #333;
-  font-size: 24px;
+  font-size: 26px;
   line-height: 1.2;
   font-weight: 800;
 }
@@ -425,12 +427,12 @@ const partnerLogos = [
 .ad-feature-list p {
   margin: 0;
   color: #697180;
-  font-size: 16px;
-  line-height: 1.5;
+  font-size: 18px;
+  line-height: 1.65;
 }
 
 .services-section {
-  padding: 0 0 130px;
+  padding: 0 0 146px;
   background: #fff;
 }
 
@@ -455,7 +457,7 @@ const partnerLogos = [
 
 .service-image,
 .service-copy {
-  height: 555px;
+  height: 560px;
 }
 
 .service-image {
@@ -472,12 +474,13 @@ const partnerLogos = [
 
 .service-badge {
   position: absolute;
-  left: 47px;
-  top: 37px;
-  min-width: 322px;
-  padding: 22px 31px 24px;
+  left: 34px;
+  top: 28px;
+  min-width: 338px;
+  padding: 18px 26px 20px;
   color: #fff;
   background: rgba(14, 43, 91, .72);
+  border-radius: 0 0 24px 0;
 }
 
 .service-block:nth-child(2) .service-badge {
@@ -487,33 +490,33 @@ const partnerLogos = [
 .service-badge span {
   display: block;
   margin-bottom: 5px;
-  font-size: 22px;
+  font-size: 20px;
   line-height: 1.2;
 }
 
 .service-badge strong {
   display: block;
-  font-size: 38px;
+  font-size: 34px;
   line-height: 1.12;
   font-weight: 800;
 }
 
 .service-copy {
-  padding: 142px 84px 70px;
+  padding: 130px 58px 70px;
   background: #f2f6fb;
 }
 
 .service-copy h2 {
-  margin: 0 0 30px;
+  margin: 0 0 24px;
   color: #333;
-  font-size: 42px;
+  font-size: 62px;
   line-height: 1.18;
   letter-spacing: 0;
   font-weight: 800;
 }
 
 .service-copy h3 {
-  margin: 0 0 44px;
+  margin: 0 0 38px;
   color: #1f61e8;
   font-size: 18px;
   line-height: 1.7;
@@ -528,14 +531,14 @@ const partnerLogos = [
 }
 
 .portfolio-section {
-  padding: 4px 0 126px;
+  padding: 6px 0 132px;
   background: #fff;
 }
 
 .portfolio-stage {
   position: relative;
   width: min(1374px, 100%);
-  margin: 74px auto 0;
+  margin: 66px auto 0;
 }
 
 .portfolio-carousel :deep(.slick-list) {
@@ -543,7 +546,7 @@ const partnerLogos = [
 }
 
 .portfolio-carousel :deep(.slick-dots) {
-  bottom: -41px;
+  bottom: -38px;
   gap: 12px;
   margin: 0;
 }
@@ -568,7 +571,7 @@ const partnerLogos = [
 
 .portfolio-slide {
   height: 646px;
-  padding: 0 0 56px;
+  padding: 0 0 52px;
 }
 
 .portfolio-strip {
@@ -652,8 +655,8 @@ const partnerLogos = [
   position: absolute;
   z-index: 2;
   top: calc(50% - 30px);
-  width: 55px;
-  height: 55px;
+  width: 58px;
+  height: 58px;
   border: 0;
   border-radius: 50%;
   background: rgba(0, 0, 0, .48);
@@ -685,25 +688,25 @@ const partnerLogos = [
 }
 
 .brand-section {
-  padding: 110px 0 116px;
+  padding: 108px 0 122px;
   background: #f5f8fc;
 }
 
 .brand-grid {
   width: min(1260px, 100%);
-  margin: 68px auto 0;
+  margin: 58px auto 0;
   display: grid;
   grid-template-columns: repeat(7, minmax(0, 1fr));
-  gap: 18px;
+  gap: 16px;
 }
 
 .brand-card {
-  height: 116px;
-  padding: 22px;
+  height: 112px;
+  padding: 20px;
   display: flex;
   align-items: center;
   justify-content: center;
-  border-radius: 8px;
+  border-radius: 10px;
   background: #fff;
 }
 
@@ -715,15 +718,15 @@ const partnerLogos = [
 }
 
 .partner-section {
-  padding: 116px 0 130px;
+  padding: 118px 0 136px;
   background: #fff;
 }
 
 .partner-map {
   position: relative;
   width: min(1280px, 100%);
-  height: 646px;
-  margin: 65px auto 0;
+  height: 690px;
+  margin: 58px auto 0;
 }
 
 .partner-bg {
@@ -745,13 +748,13 @@ const partnerLogos = [
 .partner-center {
   left: 50%;
   top: 50%;
-  width: 184px;
-  height: 184px;
+  width: 200px;
+  height: 200px;
   display: flex;
   align-items: center;
   justify-content: center;
   color: #fff;
-  font-size: 34px;
+  font-size: 36px;
   font-weight: 800;
   transform: translate(-50%, -50%);
 }
@@ -770,38 +773,38 @@ const partnerLogos = [
 }
 
 .partner-logo.google {
-  left: 168px;
-  top: 204px;
-  width: 158px;
-  height: 158px;
+  left: 150px;
+  top: 210px;
+  width: 172px;
+  height: 172px;
 }
 
 .partner-logo.tiktok {
-  right: 105px;
-  top: 87px;
-  width: 166px;
-  height: 166px;
+  right: 86px;
+  top: 90px;
+  width: 182px;
+  height: 182px;
 }
 
 .partner-logo.meta {
-  left: 76px;
-  bottom: 110px;
-  width: 128px;
-  height: 128px;
+  left: 96px;
+  bottom: 122px;
+  width: 136px;
+  height: 136px;
 }
 
 .partner-logo.amazon {
-  right: 327px;
-  top: 315px;
-  width: 110px;
-  height: 110px;
+  right: 300px;
+  top: 338px;
+  width: 118px;
+  height: 118px;
 }
 
 .partner-logo.criteo {
-  right: 88px;
-  bottom: 154px;
-  width: 92px;
-  height: 92px;
+  right: 96px;
+  bottom: 164px;
+  width: 100px;
+  height: 100px;
 }
 
 @media (max-width: 1200px) {

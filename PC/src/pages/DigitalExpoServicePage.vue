@@ -37,7 +37,7 @@
                 <div class="fair-desc">{{slide.desc}}</div>
                 <div class="fair-title">
                   <p>{{ slide.title }}</p>
-                  <button type="button">{{ slide.buttonText }}</button>
+                  <button type="button" @click="jumpToKf()">{{ slide.buttonText }}</button>
                 </div>
               </div>
               <div class="fair-stats" :style="{ backgroundImage: `url('${expoAsset(slide.image)}')` }">
@@ -96,7 +96,7 @@
                       </p>
                     </div>
                     <p class="case-meta-text">{{ item.text }}</p>
-                    <button type="button">了解更多</button>
+                    <button type="button" @click="jumpToKf()">了解更多</button>
                   </div>
                 </article>
               </div>
@@ -204,16 +204,16 @@ const expoPageStyle = {
 }
 
 const organizeItems = [
-  { icon: '组 5@2x.png', title: '世界级龙头展览\n（10万人级）' },
-  { icon: '组 5 拷贝@2x.png', title: '全国性行业峰会\n（千人级）' },
-  { icon: '组 5 拷贝 2@2x.png', title: '区域性专题沙龙\n（百人级）' },
+  { icon: '图层 109@2x.png', title: '世界级龙头展览\n（10万人级）' },
+  { icon: '图层 111@2x.png', title: '全国性行业峰会\n（千人级）' },
+  { icon: '图层 110@2x.png', title: '区域性专题沙龙\n（百人级）' },
 ]
 
 const fairSlides = [
   {
     image: '图层 71@2x.png',
     title: '第六届中国跨境电商交易会',
-    desc: '该展会是全国规模最大、影响力最广的行业活动，自创办以来，连续六届采购商与展位比例都超过20:1这一国际优质专业展标准，被中国贸促会评价为“中国跨境电商第一展”',
+    desc: '该展会是全国规模最大、影响力最广的行业活动，自创办以来，连续六届采购商与展位比例都超过20:1\n这一国际优质专业展标准，被中国贸促会评价为“中国跨境电商第一展”',
     buttonText: '了解更多',
     stats: [
       { value: '10万m²', label: '展会规模' },
@@ -228,7 +228,7 @@ const fairSlides = [
   {
     image: '图层 71@2x.png',
     title: '第六届中国跨境电商交易会',
-    desc: '该展会是全国规模最大、影响力最广的行业活动，自创办以来，连续六届采购商与展位比例都超过20:1这一国际优质专业展标准，被中国贸促会评价为“中国跨境电商第一展”',
+    desc: '该展会是全国规模最大、影响力最广的行业活动，自创办以来，连续六届采购商与展位比例都超过20:1\n这一国际优质专业展标准，被中国贸促会评价为“中国跨境电商第一展”',
     buttonText: '了解更多',
     stats: [
       { value: '10万m²', label: '展会规模' },
@@ -243,7 +243,7 @@ const fairSlides = [
   {
     image: '图层 71@2x.png',
     title: '第六届中国跨境电商交易会',
-    desc: '该展会是全国规模最大、影响力最广的行业活动，自创办以来，连续六届采购商与展位比例都超过20:1这一国际优质专业展标准，被中国贸促会评价为“中国跨境电商第一展”',
+    desc: '该展会是全国规模最大、影响力最广的行业活动，自创办以来，连续六届采购商与展位比例都超过20:1\n这一国际优质专业展标准，被中国贸促会评价为“中国跨境电商第一展”',
     buttonText: '了解更多',
     stats: [
       { value: '10万m²', label: '展会规模' },
@@ -262,17 +262,17 @@ const firstExpoSlides = [
     image: '图层 116@2x.png',
     features: [
       {
-        icon: '图层 109@2x.png',
+        icon: '组 5@2x.png',
         title: '办展规格高',
         text: '是跨境电商同类展会中唯一“中”字头，由商务部外贸发展局主办。',
       },
       {
-        icon: '图层 110@2x.png',
+        icon: '组 5 拷贝@2x.png',
         title: '认证权威',
         text: '全国跨境电商界首个获得国际展览业协会 UFI 认证，同时获誉“中国跨境电商第一展”。',
       },
       {
-        icon: '图层 111@2x.png',
+        icon: '组 5 拷贝 2@2x.png',
         title: '影响力广',
         text: '同类展会中唯一获得中国政府、中国一带一路、人民日报中央电视台、新华社、光明日报、央广网、以及央视社、党报社、共同社、澳洲华字广泛聚焦关注的展会。',
       },
@@ -282,17 +282,17 @@ const firstExpoSlides = [
     image: '图层 116@2x.png',
     features: [
       {
-        icon: '图层 109@2x.png',
+        icon: '组 5@2x.png',
         title: '办展规格高',
         text: '是跨境电商同类展会中唯一“中”字头，由商务部外贸发展局主办。',
       },
       {
-        icon: '图层 110@2x.png',
+        icon: '组 5 拷贝@2x.png',
         title: '认证权威',
         text: '全国跨境电商界首个获得国际展览业协会 UFI 认证，同时获誉“中国跨境电商第一展”。',
       },
       {
-        icon: '图层 111@2x.png',
+        icon: '组 5 拷贝 2@2x.png',
         title: '影响力广',
         text: '同类展会中唯一获得中国政府、中国一带一路、人民日报中央电视台、新华社、光明日报、央广网、以及央视社、党报社、共同社、澳洲华字广泛聚焦关注的展会。',
       },
@@ -430,25 +430,21 @@ const advantages = [
 .hero-content h1 {
   margin: 0 0 26px;
   color: #fff;
-  font-size: 64px;
+  font-size: 84px;
   line-height: 1.12;
   letter-spacing: 0;
   font-weight: 800;
 }
 
 .hero-subtitle {
+  font-family: Source Han Sans CN;
   margin: 0 0 44px;
   color: #fff600;
-  font-size: 30px;
+  font-size: 38px;
   line-height: 1.2;
   font-weight: 400;
 }
 
-
-.fair-desc {
-  width: 1380px;
-  height: 141px;
-}
 
 .fair-title button {
   height: 48px;
@@ -465,7 +461,7 @@ const advantages = [
   padding: 0 58px;
   border-radius: 30px;
   color: #fff;
-  background: linear-gradient(90deg, #2468ff 0%, #43b7ff 100%);
+  background: linear-gradient(90deg, #647FEE, #1E33B6);
   font-size: 20px;
   font-weight: 800;
 }
@@ -484,11 +480,11 @@ const advantages = [
 .hero-note {
   width: 100vw;
   height: 180px;
-  margin: 116px 0 0 50%;
+  margin: 170px 0 0 50%;
   padding-top: 48px;
   color: #fff;
   background: rgba(4, 20, 45, .72);
-  font-size: 24px;
+  font-size: 28px;
   line-height: 2;
   font-weight: 400;
   transform: translateX(-50%);
@@ -548,8 +544,8 @@ const advantages = [
 }
 
 .organize-card img {
-  width: 89px;
-  height: 82px;
+  width: 106px;
+  height: 88px;
   object-fit: contain;
 }
 
@@ -583,8 +579,28 @@ const advantages = [
 }
 
 .fair-section {
-  padding: 102px 0 0;
+  padding: 114px 0 0;
   background: #fff;
+}
+
+.fair-section > .expo-container {
+  width: 100%;
+}
+
+.fair-section :deep(.section-title h2),
+.first-expo-section :deep(.section-title h2) {
+  margin: 0;
+  color: #333;
+  font-size: 60px;
+  line-height: 1.18;
+  letter-spacing: 0;
+}
+
+.fair-section :deep(.section-title p) {
+  margin: 22px 0 0;
+  color: #868999;
+  font-size: 20px;
+  line-height: 1.4;
 }
 
 .fair-carousel,
@@ -593,11 +609,11 @@ const advantages = [
 .fair-carousel :deep(.slick-track),
 .fair-carousel :deep(.slick-slide),
 .fair-carousel :deep(.slick-slide > div) {
-  height: 636px;
+  height: 820px;
 }
 
 .fair-carousel {
-  margin-top: 56px;
+  margin-top: 72px;
 }
 
 .fair-carousel :deep(.slick-list) {
@@ -605,22 +621,22 @@ const advantages = [
 }
 
 .fair-carousel :deep(.slick-dots) {
-  bottom: 26px;
-  gap: 18px;
+  bottom: 84px;
+  gap: 0;
   margin: 0;
 }
 
 .fair-carousel :deep(.slick-dots li) {
-  width: 64px;
+  width: 86px;
   height: 4px;
   margin: 0;
 }
 
 .fair-carousel :deep(.slick-dots li button) {
-  width: 64px;
+  width: 86px;
   height: 4px;
   border-radius: 0;
-  background: rgba(255, 255, 255, .42);
+  background: rgba(255, 255, 255, .64);
   opacity: 1;
 }
 
@@ -629,54 +645,87 @@ const advantages = [
 }
 
 .fair-slide {
+  position: relative;
   height: 100%;
 }
 
 .fair-banner {
   position: relative;
   overflow: hidden;
-  border-radius: 8px;
+  height: 100%;
+  border-radius: 0;
 }
 
 .fair-banner > img {
   width: 100%;
-  height: 346px;
+  height: 100%;
   display: block;
   object-fit: cover;
 }
 
-.fair-title {
+.fair-banner::after {
+  content: "";
   position: absolute;
   inset: 0;
+  background: rgba(0, 18, 39, .26);
+}
+
+.fair-desc {
+  white-space: pre-line;
+  position: absolute;
+  left: 270px;
+  top: 248px;
+  z-index: 2;
+  width: 1380px;
+  height: 96px;
+  padding-top: 15px;
+  color: rgba(255, 255, 255, .92);
+  background: rgba(0, 0, 0, .42);
+  font-size: 20px;
+  line-height: 1.7;
+  text-align: center;
+  border-radius: 70px;
+}
+
+.fair-title {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 102px;
+  z-index: 3;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
   color: #fff;
   text-align: center;
 }
 
 .fair-title p {
-  margin: 0 0 24px;
-  font-size: clamp(30px, 3vw, 56px);
+  margin: 0 0 260px;
+  font-size: 56px;
   line-height: 1.1;
   font-weight: 800;
 }
 
 .fair-stats {
-  min-height: 290px;
-  margin-top: 0;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 156px;
+  z-index: 3;
+  min-height: auto;
+  margin: 0;
   display: flex;
   align-items: center;
   color: #fff;
-  background-position: center bottom;
-  background-size: cover;
+  background-image: none !important;
 }
 
 .stats-grid {
+  width: min(1540px, calc(100% - 48px));
   display: grid;
   grid-template-columns: repeat(7, minmax(0, 1fr));
-  gap: 18px;
+  gap: 20px;
 }
 
 .stat-item {
@@ -686,16 +735,18 @@ const advantages = [
 .stat-item strong {
   display: block;
   color: #fff;
-  font-size: clamp(28px, 2.55vw, 50px);
+  font-size: 42px;
   line-height: 1.1;
   font-weight: 800;
+  white-space: nowrap;
 }
 
 .stat-item span {
   display: block;
-  margin-top: 14px;
+  margin-top: 20px;
   color: rgba(255, 255, 255, .74);
-  font-size: 18px;
+  font-size: 22px;
+  line-height: 1.2;
 }
 
 .first-expo-section,
@@ -706,9 +757,13 @@ const advantages = [
   background: #fff;
 }
 
+.first-expo-section {
+  padding: 126px 0 130px;
+}
+
 .first-expo-stage {
-  width: min(1340px, calc(100% - 48px));
-  margin-top: 64px;
+  width: min(1540px, calc(100% - 48px));
+  margin-top: 76px;
 }
 
 .first-expo-carousel :deep(.slick-list) {
@@ -716,20 +771,20 @@ const advantages = [
 }
 
 .first-expo-carousel :deep(.slick-dots) {
-  bottom: -54px;
-  gap: 22px;
+  bottom: -58px;
+  gap: 20px;
   margin: 0;
 }
 
 .first-expo-carousel :deep(.slick-dots li) {
   width: 80px;
-  height: 5px;
+  height: 6px;
   margin: 0;
 }
 
 .first-expo-carousel :deep(.slick-dots li button) {
   width: 80px;
-  height: 5px;
+  height: 6px;
   border-radius: 0;
   background: #c7c7c7;
   opacity: 1;
@@ -741,19 +796,25 @@ const advantages = [
 
 .first-expo-slide {
   padding-bottom: 6px;
+  overflow: hidden;
 }
 
 .first-expo-card {
-  padding: 42px 46px;
+  width: 1340px;
+  min-height: 592px;
+  margin: 0 auto;
+  padding: 62px 60px 58px 0;
   display: grid;
-  grid-template-columns: minmax(0, 44%) minmax(0, 1fr);
-  gap: 34px;
+  grid-template-columns: 580px minmax(0, 1fr);
+  gap: 62px;
   align-items: center;
   border-radius: 8px;
   background: #f5f8fc;
 }
 
 .first-expo-media {
+  width: 650px;
+  margin-left: -192px;
   aspect-ratio: 1404 / 1064;
 }
 
@@ -768,7 +829,7 @@ const advantages = [
 .first-expo-features {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 28px;
+  gap: 70px;
   align-items: start;
 }
 
@@ -783,15 +844,17 @@ const advantages = [
 }
 
 .first-expo-feature h3 {
-  margin: 22px 0 16px;
-  font-size: 22px;
+  margin: 36px 0 24px;
+  color: #333;
+  font-size: 24px;
   line-height: 1.25;
   font-weight: 800;
 }
 
 .first-expo-feature p {
+  color: #6d7380;
   font-size: 16px;
-  line-height: 1.82;
+  line-height: 1.9;
 }
 
 .case-section {

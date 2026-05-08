@@ -95,27 +95,35 @@
         <div class="about-container group-inner">
           <h2 class="section-heading light">集团公司</h2>
 
-          <div class="group-map-layer">
-            <button
-              v-for="office in groupOffices"
-              :key="office.key"
-              type="button"
-              class="group-pin"
-              :style="{ left: office.left, top: office.top }"
-              @mouseenter="setHoveredOffice(office.key)"
-              @mouseleave="clearHoveredOffice"
-              @focus="setHoveredOffice(office.key)"
-              @blur="clearHoveredOffice"
-              @click="setHoveredOffice(office.key)"
-            >
-              <img class="group-map-img" :src="aboutAsset('坐标 拷贝@2x.png')" alt="" />
-              <span class="sr-only">{{ office.label }}</span>
-            </button>
+          <div class="group-map-wrapper">
+            <img
+              class="group-map"
+              :src="aboutAsset('图层 10@2x.png')"
+              alt=""
+            />
 
-            <div v-if="activeOffice" class="map-note" :style="mapNoteStyle">
-              <div>
-                <strong>{{ activeOffice.label }}</strong>
-                <span>地址：{{ activeOffice.address }}</span>
+            <div class="group-map-layer">
+              <button
+                v-for="office in groupOffices"
+                :key="office.key"
+                type="button"
+                class="group-pin"
+                :style="{ left: office.left, top: office.top }"
+                @mouseenter="setHoveredOffice(office.key)"
+                @mouseleave="clearHoveredOffice"
+                @focus="setHoveredOffice(office.key)"
+                @blur="clearHoveredOffice"
+                @click="setHoveredOffice(office.key)"
+              >
+                <img class="group-map-img" :src="aboutAsset('坐标 拷贝@2x.png')" alt="" />
+                <span class="sr-only">{{ office.label }}</span>
+              </button>
+
+              <div v-if="activeOffice" class="map-note" :style="mapNoteStyle">
+                <div>
+                  <strong>{{ activeOffice.label }}</strong>
+                  <span>地址：{{ activeOffice.address }}</span>
+                </div>
               </div>
             </div>
           </div>
@@ -193,64 +201,64 @@ const groupOffices = [
     shortLabel: '总部',
     label: '福州总部',
     address: '福建省福州市软件园A区23座米多多数字出海创新中心',
-    left: '80%',
-    top: '38.6%',
+    left: '76.5%',
+    top: '46.6%',
   },
   {
     key: 'hangzhou',
     shortLabel: '杭州',
     label: '杭州分公司',
     address: '浙江省杭州市滨江区浙农科创园5号楼2506',
-    left: '79.5%',
-    top: '36.2%',
+    left: '76%',
+    top: '44.2%',
   },
   {
     key: 'shenzhen',
     shortLabel: '深圳',
     label: '深圳分公司',
     address: '广东省深圳市龙岗区坂田街道环城南路心Tower3 7楼E2',
-    left: '78.4%',
-    top: '39.0%',
+    left: '74.9%',
+    top: '47.0%',
   },
   {
     key: 'xiamen',
     shortLabel: '厦门',
     label: '厦门分公司',
     address: '福建省厦门市集美区软件园三期C03栋601-1室米多多',
-    left: '79.4%',
-    top: '40.3%',
+    left: '75.8%',
+    top: '48.1%',
   },
   {
     key: 'guangzhou',
     shortLabel: '广州',
     label: '广州分公司',
     address: '广东省广州市海珠区鼎新路8号晋嘉洲大厦2410单元',
-    left: '78.4%',
-    top: '40.8%',
+    left: '74.9%',
+    top: '48.8%',
   },
   {
     key: 'suzhou',
     shortLabel: '苏州',
     label: '苏州分公司',
     address: '江苏省苏州市苏州工业园区苏州大道东265号现代传媒广场22楼2227室',
-    left: '78.4%',
-    top: '35.5%',
+    left: '74.9%',
+    top: '43.5%',
   },
   {
     key: 'nanping',
     shortLabel: '南平',
     label: '南平分公司',
     address: '福建省南平市顺昌县城南中路1号炼石花苑28幢',
-    left: '79%',
-    top: '37.4%',
+    left: '75.5%',
+    top: '45.4%',
   },
   {
     key: 'zhengzhou',
     shortLabel: '郑州',
     label: '郑州分公司',
     address: '河南省郑州市管城回族区郑汴路与未来路交叉口绿都广场A栋401室',
-    left: '77.9%',
-    top: '34.8%',
+    left: '74.1%',
+    top: '41.8%',
   },
 ]
 
@@ -572,14 +580,26 @@ const clearHoveredOffice = () => {
 }
 
 .group-section {
-  height: 952px;
   padding-top: 116px;
-  background: #030b12 var(--about-group-bg) center center / cover no-repeat;
+  background: #030b12;
 }
 
 .group-inner {
   height: 100%;
   position: relative;
+}
+
+.group-map-wrapper {
+  position: relative;
+  width: 100%;
+  margin-top: 64px;
+}
+
+.group-map {
+  width: 100%;
+  display: block;
+  user-select: none;
+  pointer-events: none;
 }
 
 .group-addresses {
@@ -627,13 +647,17 @@ const clearHoveredOffice = () => {
   border: 0;
   transform: translate(-50%, -50%);
   cursor: pointer;
-  transition:
-    transform 0.2s ease,
-    filter 0.2s ease;
+  transition: filter 0.2s ease;
+}
+
+.group-pin:hover .group-map-img,
+.group-pin:focus .group-map-img {
+  transform: scale(1.12);
 }
 
 .group-map-img {
-  scale: 0.7;
+  width: 15px;
+  height: 19px;
   object-fit: contain;
   display: block;
 }

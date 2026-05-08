@@ -93,7 +93,7 @@
 
       <section class="group-section">
         <div class="about-container group-inner">
-          <h2 class="section-heading light">集团公司</h2>
+          <h2 class="section-heading-company light">集团公司</h2>
 
           <div class="group-map-wrapper">
             <img
@@ -300,10 +300,27 @@ const clearHoveredOffice = () => {
   margin: 0 auto;
 }
 
-.section-heading {
+.section-heading-company {
   z-index: 99;
   position: absolute;
   float: left;
+  left: 100px;
+  top: 100px;
+  font-size: clamp(36px, 2.5vw, 48px);
+  letter-spacing: 0;
+  font-weight: 800;
+}
+
+.section-heading-company.dark {
+  color: #333;
+}
+
+.section-heading-company.light {
+  color: #fff;
+}
+
+.section-heading {
+  z-index: 99;
   left: 100px;
   top: 100px;
   font-size: clamp(36px, 2.5vw, 48px);

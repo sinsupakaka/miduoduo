@@ -9,11 +9,7 @@ import CrossBorderBootcampPage from '../pages/CrossBorderBootcampPage.vue'
 
 export const appRoutes = [
   { label: '首页', path: '/', component: BusinessSystemPage},
-  { label: '业务体系', path: '/business'},
-  {
-    label: '技术平台',
-    path: '/technology',
-    component: JointOperationPage,
+  { label: '业务体系',
     children: [
       { label: '数字营销', path: '/technology/digital-marketing', component: DigitalMarketing },
       { label: '数字展会', path: '/technology/digital-expo', component: DigitalExpoServicePage },
@@ -21,21 +17,16 @@ export const appRoutes = [
       { label: '全链孵化', path: '/technology/full-link-incubation', component: BusinessSystemPage },
     ],
   },
-  { label: '中国跨交会', path: '/cross-border-fair'},
+  {
+    label: '技术平台'
+  },
+  { label: '中国跨交会'},
   { label: '行业智库', path: '/industry-think-tank', component: IndustryThinkTank },
   {
-    label: '动态中心',
-    path: '/news',
-    component: DigitalExpoServicePage,
-    children: [
-      { label: '活动集锦', path: '/news/events'},
-      { label: '跨境资讯', path: '/news/insights'},
-    ],
+    label: '动态中心'
   },
   {
     label: '关于我们',
-    path: '/about',
-    component: AboutUs,
     children: [
       { label: '企业简介', path: '/about/company', externalUrl: "https://fjmidodo.com/aboutus"},
       { label: '联系我们', path: '/about/contact', component: AboutUs },
@@ -70,6 +61,7 @@ export const getRouteHash = (path) => (path === '/' ? '#/' : `#${path}`)
 
 export const getRouteHref = (route) => {
   if (route.externalUrl) return route.externalUrl
+  if (route.path === undefined) return null
 
   return getRouteHash(route.path)
 }

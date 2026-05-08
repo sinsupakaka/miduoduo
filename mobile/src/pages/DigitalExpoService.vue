@@ -215,101 +215,37 @@ const organizeItems = [
   { icon: '图层 133@2x.png', title: '全国性行业峰会\n(千人级)' },
 ]
 
+const fairStats = [
+  { value: '10万m²', label: '展会规模' },
+  { value: '60+', label: '平台' },
+  { value: '200+', label: '服务商' },
+  { value: '50+场', label: '行业论坛' },
+  { value: '80+个', label: '产业带' },
+  { value: '3347+', label: '参展商' },
+  { value: '115753+', label: '采购商' },
+]
+
+const fairGeneralDesc = '中国跨境电商交易会持续沉淀产业带、平台、服务商与采购商资源，推动跨境生态高效连接。'
+const fairFirstExpoDesc = '该展会是全国规模最大、影响力最广的行业活动，自创办以来，连续六届采购商与展位比例都超过20:1这一国际优质专业展标准，被中国贸促会评价为“中国跨境电商第一展”。'
+const fairItem = (title, desc = fairGeneralDesc) => ({
+  image: '图层 130@2x.png',
+  title,
+  desc,
+  buttonText: '了解更多',
+  stats: fairStats,
+})
+
 const fairMarquee = {
   autoplay: true,
   interval: 3800,
   duration: 500,
   items: [
-    {
-      image: '图层 130@2x.png',
-      title: '第一届中国跨境电商交易会',
-      desc: '中国跨境电商交易会持续沉淀产业带、平台、服务商与采购商资源，推动跨境生态高效连接。',
-      buttonText: '了解更多',
-      stats: [
-        { value: '10万m²', label: '展会规模' },
-        { value: '60+', label: '平台' },
-        { value: '200+', label: '服务商' },
-        { value: '50+场', label: '行业论坛' },
-        { value: '80+个', label: '产业带' },
-        { value: '3347+', label: '参展商' },
-        { value: '115753+', label: '采购商' },
-      ],
-    },
-    {
-      image: '图层 130@2x.png',
-      title: '第二届中国跨境电商交易会',
-      desc: '中国跨境电商交易会持续沉淀产业带、平台、服务商与采购商资源，推动跨境生态高效连接。',
-      buttonText: '了解更多',
-      stats: [
-        { value: '10万m²', label: '展会规模' },
-        { value: '60+', label: '平台' },
-        { value: '200+', label: '服务商' },
-        { value: '50+场', label: '行业论坛' },
-        { value: '80+个', label: '产业带' },
-        { value: '3347+', label: '参展商' },
-        { value: '115753+', label: '采购商' },
-      ],
-    },
-    {
-      image: '图层 130@2x.png',
-      title: '第三届中国跨境电商交易会',
-      desc: '中国跨境电商交易会持续沉淀产业带、平台、服务商与采购商资源，推动跨境生态高效连接。',
-      buttonText: '了解更多',
-      stats: [
-        { value: '10万m²', label: '展会规模' },
-        { value: '60+', label: '平台' },
-        { value: '200+', label: '服务商' },
-        { value: '50+场', label: '行业论坛' },
-        { value: '80+个', label: '产业带' },
-        { value: '3347+', label: '参展商' },
-        { value: '115753+', label: '采购商' },
-      ],
-    },
-    {
-      image: '图层 130@2x.png',
-      title: '第四届中国跨境电商交易会',
-      desc: '中国跨境电商交易会持续沉淀产业带、平台、服务商与采购商资源，推动跨境生态高效连接。',
-      buttonText: '了解更多',
-      stats: [
-        { value: '10万m²', label: '展会规模' },
-        { value: '60+', label: '平台' },
-        { value: '200+', label: '服务商' },
-        { value: '50+场', label: '行业论坛' },
-        { value: '80+个', label: '产业带' },
-        { value: '3347+', label: '参展商' },
-        { value: '115753+', label: '采购商' },
-      ],
-    },
-    {
-      image: '图层 130@2x.png',
-      title: '第五届中国跨境电商交易会',
-      desc: '该展会是全国规模最大、影响力最广的行业活动，自创办以来，连续六届采购商与展位比例都超过20:1这一国际优质专业展标准，被中国贸促会评价为“中国跨境电商第一展”。',
-      buttonText: '了解更多',
-      stats: [
-        { value: '10万m²', label: '展会规模' },
-        { value: '60+', label: '平台' },
-        { value: '200+', label: '服务商' },
-        { value: '50+场', label: '行业论坛' },
-        { value: '80+个', label: '产业带' },
-        { value: '3347+', label: '参展商' },
-        { value: '115753+', label: '采购商' },
-      ],
-    },
-    {
-      image: '图层 130@2x.png',
-      title: '第六届中国跨境电商交易会',
-      desc: '该展会是全国规模最大、影响力最广的行业活动，自创办以来，连续六届采购商与展位比例都超过20:1这一国际优质专业展标准，被中国贸促会评价为“中国跨境电商第一展”。',
-      buttonText: '了解更多',
-      stats: [
-        { value: '10万m²', label: '展会规模' },
-        { value: '60+', label: '平台' },
-        { value: '200+', label: '服务商' },
-        { value: '50+场', label: '行业论坛' },
-        { value: '80+个', label: '产业带' },
-        { value: '3347+', label: '参展商' },
-        { value: '115753+', label: '采购商' },
-      ],
-    },
+    fairItem('第一届中国跨境电商交易会'),
+    fairItem('第二届中国跨境电商交易会'),
+    fairItem('第三届中国跨境电商交易会'),
+    fairItem('第四届中国跨境电商交易会'),
+    fairItem('第五届中国跨境电商交易会', fairFirstExpoDesc),
+    fairItem('第六届中国跨境电商交易会', fairFirstExpoDesc),
   ],
 }
 

@@ -9,7 +9,7 @@
         :class="{ 'has-children': item.children?.length }"
       >
         <a
-          :href="getRouteHref(item)"
+          :href="getRouteHref(item) || undefined"
           :target="item.externalUrl ? '_blank' : undefined"
           :rel="item.externalUrl ? 'noreferrer' : undefined"
           class="menu-link"
@@ -23,7 +23,7 @@
             <a
               v-for="child in item.children"
               :key="child.path"
-              :href="getRouteHref(child)"
+              :href="getRouteHref(child) || undefined"
               :target="child.externalUrl ? '_blank' : undefined"
               :rel="child.externalUrl ? 'noreferrer' : undefined"
               class="submenu-link"
@@ -49,3 +49,9 @@ defineProps({
   },
 })
 </script>
+
+<style scoped>
+.menu-link {
+  cursor: pointer;
+}
+</style>

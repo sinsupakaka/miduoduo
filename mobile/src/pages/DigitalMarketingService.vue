@@ -61,13 +61,13 @@
       <SectionTitle title="核心合作伙伴" tone="dark" />
       <image class="partner-map" :src="asset('图层 13@2x.png')" mode="widthFix" />
     </view>
-
-    <view class="footer-band"></view>
+    <MobileFooterLogo />
   </view>
 </template>
 
 <script setup>
 import MobileTopNav from '../components/MobileTopNav.vue'
+import MobileFooterLogo from '../components/MobileFooterLogo.vue'
 import SectionTitle from '../components/SectionTitle.vue'
 import { asset as resolveAsset } from '../utils/assets'
 
@@ -442,10 +442,5 @@ const portfolioItems = [
   width: 100%;
   margin-top: 62rpx;
   display: block;
-}
-
-.footer-band {
-  height: 156rpx;
-  background: #2867ed;
 }
 </style>

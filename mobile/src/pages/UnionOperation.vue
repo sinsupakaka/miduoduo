@@ -253,6 +253,7 @@ const rules = [
 .hero {
   overflow: hidden;
   padding: 70rpx 66rpx;
+  padding-right: 50rpx;
 }
 
 .hero-copy {

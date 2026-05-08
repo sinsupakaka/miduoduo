@@ -30,6 +30,7 @@
     </view>
 
     <view class="timeline">
+      <view class="timeline-heading">发展历程</view>
       <image class="timeline-image" :src="asset('图层 5@2x(1).png')" mode="widthFix" />
       <image class="timeline-image" :src="asset('组 5 拷贝 8@2x.png')" mode="aspectFill" />
     </view>
@@ -261,13 +262,24 @@ const honors = [
   width: 100%;
   display: block;
 }
+.timeline-heading {
+  position: absolute;
+  left: 50%;
+  top: 123rpx;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  color: #ffffff;
+  font-size: 42rpx;
+  line-height: 1.2;
+  font-weight: 800;
+}
 
 .timeline-image + .timeline-image {
   position: absolute;
-  top: 0;
+  top: 10%;
   left: 50%;
   width: 90%;
-  height: 100%;
+  height: 90%;
   transform: translateX(-50%);
 }
 

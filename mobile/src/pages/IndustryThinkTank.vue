@@ -210,7 +210,7 @@ const mediaLogos = [
   'icon-logo6@2x.png',
 ]
 
-const papers = ['paper1@2x.png', 'paper2@2x.png', 'paper3@2x.png', 'paper4@2x.png', 'paper5@2x.png']
+const papers = ['paper1@2x.png', 'paper3@2x.png', 'paper2@2x.png', 'paper4@2x.png', 'paper5@2x.png']
 
 const scenes = [
   {
@@ -511,7 +511,7 @@ const actionItems = [
 
 .paper-stack {
   margin-top: 56rpx;
-  min-height: 860rpx;
+  min-height: 700rpx;
   position: relative;
 }
 
@@ -522,34 +522,35 @@ const actionItems = [
 }
 
 .paper-stack image:nth-child(1) {
-  left: 40rpx;
-  top: 0;
-  width: 520rpx;
+  left: 25%;
+  top: 6%;
+  width: 360rpx;
   z-index: 3;
 }
 
 .paper-stack image:nth-child(2) {
   left: 0;
   top: 108rpx;
-  width: 228rpx;
+  width: 318rpx;
   z-index: 2;
 }
 
 .paper-stack image:nth-child(3) {
   right: 0;
   top: 108rpx;
-  width: 228rpx;
+  width: 318rpx;
   z-index: 2;
 }
 
 .paper-stack image:nth-child(4) {
-  left: 30rpx;
+  left: 60rpx;
   top: 520rpx;
   width: 310rpx;
+  z-index: 6;
 }
 
 .paper-stack image:nth-child(5) {
-  right: 14rpx;
+  right: 39rpx;
   top: 490rpx;
   width: 322rpx;
 }

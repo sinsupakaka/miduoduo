@@ -27,7 +27,8 @@
     </view>
 
     <view class="section fair-section">
-      <SectionTitle title="大型展览组织承办" desc="2021-2026年，参与创办并承办国家级跨境电商展会——中国跨境电商交易会" tone="dark" />
+      <SectionTitle title="大型展览组织承办" desc="2021-2026年，参与创办并承办国家级跨境电商展会" tone="dark" />
+      <view class="sub_title">——中国跨境电商交易会</view>
       <swiper
         class="fair-swiper"
         circular
@@ -122,7 +123,7 @@
               </view>
             </view>
             <text class="case-desc">{{ item.text }}</text>
-            <button class="outline-button" type="button">了解更多</button>
+            <button class="outline-button" type="button" @click="openLink(item.link)">了解更多 ></button>
           </view>
         </swiper-item>
       </swiper>
@@ -159,9 +160,17 @@
     <view class="section summit-section">
       <SectionTitle title="行业峰会组织策划" tone="dark" />
       <view class="summit-grid">
-        <view v-for="item in summitMarquee.items" :key="item.title" class="summit-card">
-          <image class="summit-image" :src="asset(item.image)" mode="aspectFill" />
-          <text class="summit-title">{{ item.title }}</text>
+        <view class="summit-column">
+          <view v-for="(item, index) in summitMarquee.items" :key="item.title" v-show="index % 2 === 0" class="summit-card">
+            <image class="summit-image" :src="asset(item.image)" mode="widthFix" />
+            <text class="summit-title">{{ item.title }}</text>
+          </view>
+        </view>
+        <view class="summit-column">
+          <view v-for="(item, index) in summitMarquee.items" :key="item.title" v-show="index % 2 === 1" class="summit-card">
+            <image class="summit-image" :src="asset(item.image)" mode="widthFix" />
+            <text class="summit-title">{{ item.title }}</text>
+          </view>
         </view>
       </view>
     </view>
@@ -183,7 +192,7 @@
 
     <view class="section advantage-section">
       <SectionTitle title="我们的优势" tone="dark" />
-      <image class="advantage-image" :src="asset('组 6 拷贝 5@2x.png')" mode="widthFix" />
+      <image class="advantage-image" :src="asset('组 6 拷贝 5.png')" mode="widthFix" />
     </view>
 
     <view class="cta">
@@ -209,43 +218,118 @@ const activeFairIndex = ref(4)
 const activeFirstExpoIndex = ref(0)
 const activeCaseIndex = ref(0)
 
+const openLink = (url) => {
+  if (url) {
+    window.open(url, '_blank')
+  }
+}
+
 const organizeItems = [
   { icon: '图层 132@2x.png', title: '世界级龙头展览\n(10万人级)' },
   { icon: '图层 134@2x.png', title: '区域性专题沙龙\n(百人级)' },
   { icon: '图层 133@2x.png', title: '全国性行业峰会\n(千人级)' },
 ]
 
-const fairStats = [
-  { value: '10万m²', label: '展会规模' },
-  { value: '60+', label: '平台' },
-  { value: '200+', label: '服务商' },
-  { value: '50+场', label: '行业论坛' },
-  { value: '80+个', label: '产业带' },
-  { value: '3347+', label: '参展商' },
-  { value: '115753+', label: '采购商' },
-]
-
-const fairGeneralDesc = '中国跨境电商交易会持续沉淀产业带、平台、服务商与采购商资源，推动跨境生态高效连接。'
-const fairFirstExpoDesc = '该展会是全国规模最大、影响力最广的行业活动，自创办以来，连续六届采购商与展位比例都超过20:1这一国际优质专业展标准，被中国贸促会评价为“中国跨境电商第一展”。'
-const fairItem = (title, desc = fairGeneralDesc) => ({
-  image: '图层 130@2x.png',
-  title,
-  desc,
-  buttonText: '了解更多',
-  stats: fairStats,
-})
-
 const fairMarquee = {
   autoplay: true,
   interval: 3800,
   duration: 500,
   items: [
-    fairItem('第一届中国跨境电商交易会'),
-    fairItem('第二届中国跨境电商交易会'),
-    fairItem('第三届中国跨境电商交易会'),
-    fairItem('第四届中国跨境电商交易会'),
-    fairItem('第五届中国跨境电商交易会', fairFirstExpoDesc),
-    fairItem('第六届中国跨境电商交易会', fairFirstExpoDesc),
+    {
+      image: '6.png',
+      title: '第六届中国跨境电商交易会',
+      desc: '该展会是全国规模最大、影响力最广的行业活动，自创办以来，连续六届采购商与展位比例都超过20:1这一国际优质专业展标准，被中国贸促会评价为“中国跨境电商第一展”。',
+      buttonText: '了解更多',
+      stats: [
+        { value: '10万m²', label: '展会规模' },
+        { value: '60+', label: '平台' },
+        { value: '200+', label: '服务商' },
+        { value: '50+场', label: '行业论坛' },
+        { value: '80+个', label: '产业带' },
+        { value: '3347+', label: '参展商' },
+        { value: '115753', label: '采购商' },
+      ],
+    },
+    {
+      image: '5.png',
+      title: '第五届中国跨境电商交易会',
+      desc: '该展会是全国规模最大、影响力最广的行业活动，自创办以来，连续六届采购商与展位比例都超过20:1这一国际优质专业展标准，被中国贸促会评价为“中国跨境电商第一展”。',
+      buttonText: '了解更多',
+      stats: [
+        { value: '6万m²', label: '展会规模' },
+        { value: '60+', label: '平台' },
+        { value: '200+', label: '服务商' },
+        { value: '50+场', label: '行业论坛' },
+        { value: '80+个', label: '产业带' },
+        { value: '1800+', label: '参展商' },
+        { value: '9万', label: '采购商' },
+        { value: '超40亿美元', label: '意向成交金额' },
+      ],
+    },
+    {
+      image: '4.png',
+      title: '第四届中国跨境电商交易会',
+      desc: '中国跨境电商交易会持续沉淀产业带、平台、服务商与采购商资源，推动跨境生态高效连接。',
+      buttonText: '了解更多',
+      stats: [
+        { value: '5万m²', label: '展会规模' },
+        { value: '30+', label: '平台' },
+        { value: '200+', label: '服务商' },
+        { value: '50+场', label: '行业论坛' },
+        { value: '80+个', label: '产业带' },
+        { value: '1600+', label: '参展商' },
+        { value: '8.5万', label: '采购商' },
+        { value: '超50亿美元', label: '意向成交金额' }
+      ],
+    },
+    {
+      image: '3.png',
+      title: '第三届中国跨境电商交易会',
+      desc: '中国跨境电商交易会持续沉淀产业带、平台、服务商与采购商资源，推动跨境生态高效连接。',
+      buttonText: '了解更多',
+      stats: [
+        { value: '5万m²', label: '展会规模' },
+        { value: '50+', label: '平台' },
+        { value: '200+', label: '服务商' },
+        { value: '50+场', label: '行业论坛' },
+        { value: '60+个', label: '产业带' },
+        { value: '2000+', label: '参展商' },
+        { value: '8.3万', label: '采购商' },
+        { value: '超40亿美元', label: '意向成交金额' }
+      ],
+    },
+    {
+      image: '2.png',
+      title: '第二届中国跨境电商交易会',
+      desc: '中国跨境电商交易会持续沉淀产业带、平台、服务商与采购商资源，推动跨境生态高效连接。',
+      buttonText: '了解更多',
+      stats: [
+        { value: '7.2万m²', label: '展会规模' },
+        { value: '50+', label: '平台' },
+        { value: '200+', label: '服务商' },
+        { value: '20+场', label: '行业论坛' },
+        { value: '60+个', label: '产业带' },
+        { value: '2000+', label: '参展商' },
+        { value: '5.5万', label: '采购商' },
+        { value: '超30亿美元', label: '意向成交金额' }
+      ],
+    },
+    {
+      image: '1.png',
+      title: '第一届中国跨境电商交易会',
+      desc: '中国跨境电商交易会持续沉淀产业带、平台、服务商与采购商资源，推动跨境生态高效连接。',
+      buttonText: '了解更多',
+      stats: [
+        { value: '7.2万m²', label: '展会规模' },
+        { value: '33+', label: '平台' },
+        { value: '300+', label: '服务商' },
+        { value: '50+场', label: '行业论坛' },
+        { value: '33+个', label: '产业带' },
+        { value: '2000+', label: '参展商' },
+        { value: '6.2万', label: '采购商' },
+        { value: '超35亿美元', label: '意向成交金额' }
+      ],
+    },
   ],
 }
 
@@ -262,21 +346,11 @@ const firstExpoMarquee = {
           title: '办展规格高',
           text: '是跨境电商同类展会中唯一“中”字头，由商务部外贸发展事务局主办，办展级别高，组织规模大，多层品类齐，采购邀约广，产业要素全。',
         },
-      ],
-    },
-    {
-      image: '图层 128@2x.png',
-      features: [
         {
           icon: '组 19@2x(1).png',
           title: '认证权威',
           text: '全国跨境电商展会首个获得国际展览业协会(UFI)认证，中国贸促会官方评定为“中国跨境电商第一展”。',
         },
-      ],
-    },
-    {
-      image: '图层 128@2x.png',
-      features: [
         {
           icon: '组 19@2x(2).png',
           title: '影响力广',
@@ -284,6 +358,26 @@ const firstExpoMarquee = {
         },
       ],
     },
+    {
+      image: '图层 1.png',
+      features: [
+         {
+          icon: '组 5 拷贝 3.png',
+          title: '办展规格高',
+          text: '是跨境电商同类展会中唯一“中”字头，由商务部外贸发展事务局主办，办展级别高，组织规模大，多层品类齐，采购邀约广，产业要素全。',
+        },
+        {
+          icon: '组 5 拷贝 4.png',
+          title: '认证权威',
+          text: '全国跨境电商展会首个获得国际展览业协会(UFI)认证，中国贸促会官方评定为“中国跨境电商第一展”。',
+        },
+        {
+          icon: '组 5 拷贝 5.png',
+          title: '影响力广',
+          text: '同步联动中国侨联、中国一带一路网、中国国际电视台、中央电视台、新华社、人民日报、中新社、光明日报等深度聚焦关注的展会。',
+        },
+      ],
+    }
   ],
 }
 
@@ -298,21 +392,32 @@ const brandCaseMarquee = {
       date: '2025年10月20日-21日',
       location: '香港会议展览中心展览馆1A',
       text: '米多多角色：跨境电商展区组织、论坛策划、达人邀约',
+      link: 'https://mp.weixin.qq.com/s/mi5VtkBo1lOEHNT7NHUj9w',
     },
     {
-      image: '图层 126@2x.png',
-      title: '2024CBE杭州国际美容博览会',
-      date: '2024年9月11日-12日',
-      location: '杭州国际博览中心',
-      text: '新美妆跨境出海论坛主办，链接美妆品牌与跨境平台资源。',
+      image: '图层 114.png',
+      title: '2025 Mega Show东盟跨境电商展',
+      date: '2025年7月16日-18日',
+      location: '泰国·曼谷 国际贸易展览中心',
+      text: '米多多角色：跨境电商展区组织、论坛策划、达人邀约',
+      link: 'https://mp.weixin.qq.com/s/2PkXnM7B4QYyRIreGU6jDA',
     },
     {
-      image: '图层 127@2x.png',
-      title: '2026APES上海国际汽配展',
-      date: '2026年8月5日-7日',
-      location: '国家会展中心（上海）',
-      text: '跨境出海论坛主办，沉淀汽配产业带出海垂直行业商机。',
+      image: '图层 115.png',
+      title: '2023 MegaShow香港跨港跨境电商全...',
+      date: '2023年10月21日',
+      location: '香港会议展览中心',
+      text: '米多多角色：跨境电商全生态大会主办方',
+      link: 'https://mp.weixin.qq.com/s/ooZGh4OYWfinEBVem9cC5w',
     },
+    {
+      image: '图层 116.png',
+      title: '2018 Mega Show香港跨境电商选品大会',
+      date: '2018年10月20日',
+      location: '香港会议展览中心',
+      text: '米多多角色：跨境电商选品大会承办方',
+      link: 'https://mp.weixin.qq.com/s/baY4Z_G5QXethag5lhzT3A',
+    }
   ],
 }
 
@@ -551,6 +656,12 @@ const operations = [
   padding-bottom: 0;
 }
 
+.sub_title {
+  font-size: 26rpx;
+  color: #868999;
+  text-align: center;
+}
+
 .fair-swiper {
   height: 858rpx;
   margin-top: 48rpx;
@@ -656,7 +767,7 @@ const operations = [
 }
 
 .first-swiper {
-  height: 860rpx;
+  height: 1200rpx;
   margin-top: 54rpx;
 }
 
@@ -794,9 +905,11 @@ const operations = [
 .outline-button {
   margin-top: 28rpx;
   margin-left: 0;
-  color: #2868ff;
+  font-size: 22rpx;
+  color: #1E33B6;
   background: #ffffff;
-  border: 2rpx solid #2868ff;
+  border-radius: 30rpx;
+  border: 2rpx solid #2563EB;
 }
 
 .case-dots {
@@ -897,23 +1010,31 @@ const operations = [
 .summit-grid {
   margin-top: 48rpx;
   padding: 0 30rpx;
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+  display: flex;
+  gap: 16rpx;
+}
+
+.summit-column {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
   gap: 16rpx;
 }
 
 .summit-card {
   position: relative;
-  height: 194rpx;
   overflow: hidden;
   background: #dce6f4;
+  border-radius: 12rpx;
+  display: flex;
+  flex-direction: column;
 }
 
 .summit-card:nth-child(1),
 .summit-card:nth-child(3),
 .summit-card:nth-child(5),
 .summit-card:nth-child(7) {
-  height: 252rpx;
+  /* height: 252rpx; */
 }
 
 .summit-image {
@@ -977,7 +1098,7 @@ const operations = [
 }
 
 .advantage-section {
-  padding: 94rpx 0 86rpx;
+  padding: 94rpx 60rpx 86rpx;
   background: #f6f9fd;
 }
 

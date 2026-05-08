@@ -301,9 +301,12 @@ const clearHoveredOffice = () => {
 }
 
 .section-heading {
-  margin: 0;
+  z-index: 99;
+  position: absolute;
+  float: left;
+  left: 100px;
+  top: 100px;
   font-size: clamp(36px, 2.5vw, 48px);
-  line-height: 1.18;
   letter-spacing: 0;
   font-weight: 800;
 }
@@ -317,7 +320,7 @@ const clearHoveredOffice = () => {
 }
 
 .about-hero {
-  height: auto;
+  height: 900px;
   position: relative;
   background: #07131c var(--about-hero-bg) center top / cover no-repeat;
 }
@@ -580,7 +583,6 @@ const clearHoveredOffice = () => {
 }
 
 .group-section {
-  padding-top: 116px;
   background: #030b12;
 }
 
@@ -592,7 +594,6 @@ const clearHoveredOffice = () => {
 .group-map-wrapper {
   position: relative;
   width: 100%;
-  margin-top: 64px;
 }
 
 .group-map {

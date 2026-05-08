@@ -28,8 +28,8 @@ export const appRoutes = [
   {
     label: '关于我们',
     children: [
-      { label: '企业简介', path: '/about/company', externalUrl: "https://fjmidodo.com/aboutus"},
-      { label: '联系我们', path: '/about/contact', component: AboutUs },
+      { label: '企业简介', path: '/about/company', component: AboutUs},
+      { label: '联系我们', path: '/about/contact', externalUrl: "https://fjmidodo.com/aboutus"},
     ],
   },
   { label: '云建站管理', path: '/cloud-site' , externalUrl: "https://online.fjmidodo.com/"},

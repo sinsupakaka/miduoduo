@@ -31,6 +31,7 @@
       <swiper
         class="fair-swiper"
         circular
+        :current="activeFairIndex"
         :autoplay="fairMarquee.autoplay"
         :interval="fairMarquee.interval"
         :duration="fairMarquee.duration"
@@ -49,17 +50,17 @@
                   <text class="stat-label">{{ stat.label }}</text>
                 </view>
               </view>
+              <view v-if="fairMarquee.items.length > 1" class="fair-dots">
+                <view
+                  v-for="(_, index) in fairMarquee.items"
+                  :key="index"
+                  :class="{ active: index === activeFairIndex }"
+                ></view>
+              </view>
             </view>
           </view>
         </swiper-item>
       </swiper>
-      <view v-if="fairMarquee.items.length > 1" class="module-dots">
-        <view
-          v-for="(_, index) in fairMarquee.items"
-          :key="index"
-          :class="{ active: index === activeFairIndex }"
-        ></view>
-      </view>
     </view>
 
     <view class="section first-section">
@@ -204,7 +205,7 @@ import { asset as resolveAsset } from '../utils/assets'
 
 const asset = (name) => resolveAsset(name, '数字展会服务')
 
-const activeFairIndex = ref(0)
+const activeFairIndex = ref(4)
 const activeFirstExpoIndex = ref(0)
 const activeCaseIndex = ref(0)
 
@@ -221,8 +222,83 @@ const fairMarquee = {
   items: [
     {
       image: '图层 130@2x.png',
+      title: '第一届中国跨境电商交易会',
+      desc: '中国跨境电商交易会持续沉淀产业带、平台、服务商与采购商资源，推动跨境生态高效连接。',
+      buttonText: '了解更多',
+      stats: [
+        { value: '10万m²', label: '展会规模' },
+        { value: '60+', label: '平台' },
+        { value: '200+', label: '服务商' },
+        { value: '50+场', label: '行业论坛' },
+        { value: '80+个', label: '产业带' },
+        { value: '3347+', label: '参展商' },
+        { value: '115753+', label: '采购商' },
+      ],
+    },
+    {
+      image: '图层 130@2x.png',
+      title: '第二届中国跨境电商交易会',
+      desc: '中国跨境电商交易会持续沉淀产业带、平台、服务商与采购商资源，推动跨境生态高效连接。',
+      buttonText: '了解更多',
+      stats: [
+        { value: '10万m²', label: '展会规模' },
+        { value: '60+', label: '平台' },
+        { value: '200+', label: '服务商' },
+        { value: '50+场', label: '行业论坛' },
+        { value: '80+个', label: '产业带' },
+        { value: '3347+', label: '参展商' },
+        { value: '115753+', label: '采购商' },
+      ],
+    },
+    {
+      image: '图层 130@2x.png',
+      title: '第三届中国跨境电商交易会',
+      desc: '中国跨境电商交易会持续沉淀产业带、平台、服务商与采购商资源，推动跨境生态高效连接。',
+      buttonText: '了解更多',
+      stats: [
+        { value: '10万m²', label: '展会规模' },
+        { value: '60+', label: '平台' },
+        { value: '200+', label: '服务商' },
+        { value: '50+场', label: '行业论坛' },
+        { value: '80+个', label: '产业带' },
+        { value: '3347+', label: '参展商' },
+        { value: '115753+', label: '采购商' },
+      ],
+    },
+    {
+      image: '图层 130@2x.png',
+      title: '第四届中国跨境电商交易会',
+      desc: '中国跨境电商交易会持续沉淀产业带、平台、服务商与采购商资源，推动跨境生态高效连接。',
+      buttonText: '了解更多',
+      stats: [
+        { value: '10万m²', label: '展会规模' },
+        { value: '60+', label: '平台' },
+        { value: '200+', label: '服务商' },
+        { value: '50+场', label: '行业论坛' },
+        { value: '80+个', label: '产业带' },
+        { value: '3347+', label: '参展商' },
+        { value: '115753+', label: '采购商' },
+      ],
+    },
+    {
+      image: '图层 130@2x.png',
+      title: '第五届中国跨境电商交易会',
+      desc: '该展会是全国规模最大、影响力最广的行业活动，自创办以来，连续六届采购商与展位比例都超过20:1这一国际优质专业展标准，被中国贸促会评价为“中国跨境电商第一展”。',
+      buttonText: '了解更多',
+      stats: [
+        { value: '10万m²', label: '展会规模' },
+        { value: '60+', label: '平台' },
+        { value: '200+', label: '服务商' },
+        { value: '50+场', label: '行业论坛' },
+        { value: '80+个', label: '产业带' },
+        { value: '3347+', label: '参展商' },
+        { value: '115753+', label: '采购商' },
+      ],
+    },
+    {
+      image: '图层 130@2x.png',
       title: '第六届中国跨境电商交易会',
-      desc: '2026 中国跨境电商大会暨闽江数字贸易走廊创新发展大会',
+      desc: '该展会是全国规模最大、影响力最广的行业活动，自创办以来，连续六届采购商与展位比例都超过20:1这一国际优质专业展标准，被中国贸促会评价为“中国跨境电商第一展”。',
       buttonText: '了解更多',
       stats: [
         { value: '10万m²', label: '展会规模' },
@@ -539,10 +615,14 @@ const operations = [
   padding-bottom: 0;
 }
 
+.fair-swiper {
+  height: 858rpx;
+  margin-top: 48rpx;
+}
+
 .fair-card {
   position: relative;
-  min-height: 642rpx;
-  margin-top: 48rpx;
+  height: 100%;
   color: #ffffff;
   overflow: hidden;
   background: #132136;
@@ -558,35 +638,36 @@ const operations = [
 .fair-content {
   position: relative;
   z-index: 2;
-  padding: 76rpx 28rpx 48rpx;
+  min-height: 100%;
+  padding: 78rpx 28rpx 36rpx;
   text-align: center;
 }
 
 .fair-title {
   display: block;
   color: #ffffff;
-  font-size: 40rpx;
-  line-height: 1.18;
+  font-size: 48rpx;
+  line-height: 1.12;
   font-weight: 800;
 }
 
 .fair-desc {
   display: block;
-  margin: 22rpx auto 0;
-  max-width: 610rpx;
+  margin: 32rpx auto 0;
+  max-width: 620rpx;
   color: rgba(255, 255, 255, 0.8);
-  font-size: 22rpx;
-  line-height: 1.5;
+  font-size: 24rpx;
+  line-height: 1.55;
 }
 
 .light-button {
-  margin-top: 36rpx;
+  margin-top: 72rpx;
   color: #2868ff;
   background: #ffffff;
 }
 
 .stats-grid {
-  margin-top: 46rpx;
+  margin-top: 70rpx;
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
   row-gap: 24rpx;
@@ -601,18 +682,37 @@ const operations = [
 
 .stat-value {
   color: #ffffff;
-  font-size: 32rpx;
+  font-size: 42rpx;
   line-height: 1.1;
   font-weight: 800;
   white-space: nowrap;
 }
 
 .stat-label {
-  margin-top: 12rpx;
+  margin-top: 16rpx;
   color: rgba(255, 255, 255, 0.78);
-  font-size: 22rpx;
+  font-size: 24rpx;
   line-height: 1.2;
   white-space: nowrap;
+}
+
+.fair-dots {
+  position: absolute;
+  left: 86rpx;
+  right: 86rpx;
+  bottom: 38rpx;
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  gap: 20rpx;
+}
+
+.fair-dots view {
+  height: 5rpx;
+  background: rgba(255, 255, 255, 0.52);
+}
+
+.fair-dots .active {
+  background: #ffffff;
 }
 
 .first-section {

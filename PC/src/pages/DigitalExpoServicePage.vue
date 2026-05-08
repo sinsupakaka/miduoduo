@@ -60,7 +60,7 @@
             <div v-for="(slide, index) in firstExpoSlides" :key="`${slide.image}-${index}`" class="first-expo-slide">
               <article class="first-expo-card">
                 <div class="first-expo-media">
-                  <img class="first-expo-photo" :src="expoAsset(slide.image)" alt="" />
+                  
                 </div>
                 <div class="first-expo-features">
                   <article v-for="item in slide.features" :key="item.title" class="first-expo-feature">
@@ -70,6 +70,7 @@
                   </article>
                 </div>
               </article>
+              <img class="first-expo-photo" :src="expoAsset(slide.image)" alt="" />
             </div>
           </Carousel>
         </div>
@@ -562,7 +563,7 @@ const advantages = [
 .organize-card h3 {
   margin: 22px 0 0;
   color: #333;
-  font-size: 28px;
+  font-size: 30px;
   line-height: 1.42;
   font-weight: 800;
   white-space: pre-line;
@@ -574,12 +575,12 @@ const advantages = [
 .operation-copy p {
   margin: 0;
   color: #697180;
-  font-size: 16px;
+  font-size: 18px;
   line-height: 1.75;
 }
 
 .fair-section {
-  padding: 114px 0 0;
+  padding: 64px 0 0;
   background: #fff;
 }
 
@@ -613,7 +614,7 @@ const advantages = [
 }
 
 .fair-carousel {
-  margin-top: 72px;
+  margin-top: 36px;
 }
 
 .fair-carousel :deep(.slick-list) {
@@ -758,7 +759,7 @@ const advantages = [
 }
 
 .first-expo-section {
-  padding: 126px 0 130px;
+  padding: 48px 0 130px;
 }
 
 .first-expo-stage {
@@ -808,22 +809,23 @@ const advantages = [
   grid-template-columns: 580px minmax(0, 1fr);
   gap: 62px;
   align-items: center;
-  border-radius: 8px;
+  border-radius: 15px;
   background: #f5f8fc;
 }
 
 .first-expo-media {
   width: 650px;
-  margin-left: -192px;
+  margin-left: -12px;
   aspect-ratio: 1404 / 1064;
 }
 
 .first-expo-photo {
-  width: 100%;
-  height: 100%;
+  float: left;
+  position: absolute;
+  top: 41px;
+  width: 702px;
+  height: 532px;
   display: block;
-  object-fit: contain;
-  filter: drop-shadow(0 28px 34px rgba(14, 44, 91, .16));
 }
 
 .first-expo-features {
@@ -841,20 +843,6 @@ const advantages = [
   width: 86px;
   height: 72px;
   object-fit: contain;
-}
-
-.first-expo-feature h3 {
-  margin: 36px 0 24px;
-  color: #333;
-  font-size: 24px;
-  line-height: 1.25;
-  font-weight: 800;
-}
-
-.first-expo-feature p {
-  color: #6d7380;
-  font-size: 16px;
-  line-height: 1.9;
 }
 
 .case-section {
@@ -1396,9 +1384,7 @@ const advantages = [
     grid-template-columns: 1fr;
   }
 
-  .first-expo-feature {
-    max-width: none;
-  }
+
 
   .operation-row.reverse .operation-media {
     order: 0;

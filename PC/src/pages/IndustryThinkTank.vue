@@ -91,7 +91,7 @@
 
           <div class="media-stage">
             <button class="media-arrow left" type="button" aria-label="上一条">
-              <img :src="thinkTankAsset('形状 4 拷贝@2x.png')" alt="" />
+              <img :src="thinkTankAsset('形状 4@2x(1).png')" alt="" />
             </button>
 
             <div class="media-cards">
@@ -103,7 +103,7 @@
             </div>
 
             <button class="media-arrow right" type="button" aria-label="下一条">
-              <img :src="thinkTankAsset('形状 4@2x(1).png')" alt="" />
+              <img :src="thinkTankAsset('形状 4 拷贝@2x.png')" alt="" />
             </button>
           </div>
         </div>
@@ -335,7 +335,7 @@ const actionItems = [
 }
 
 .thinktank-hero {
-  min-height: 840px;
+  height: auto;
   position: relative;
   background: #051127 var(--thinktank-hero-bg) center top / cover no-repeat;
 }
@@ -851,153 +851,5 @@ const actionItems = [
   line-height: 1.7;
 }
 
-@media (max-width: 1400px) {
-  .editorial-grid,
-  .scene-block-top,
-  .scene-block-bottom,
-  .media-stage {
-    grid-template-columns: 1fr;
-  }
 
-  .media-card.left,
-  .media-card.right {
-    transform: none;
-  }
-
-  .media-arrow {
-    display: none;
-  }
-
-  .research-grid {
-    grid-template-columns: 1fr;
-    gap: 52px;
-  }
-
-  .scene-block-bottom .scene-cover {
-    order: -1;
-  }
-}
-
-@media (max-width: 1200px) {
-  .media-cards {
-    grid-template-columns: minmax(220px, 1fr) minmax(320px, 1.15fr) minmax(220px, 1fr);
-  }
-
-  .guide-bottom-grid {
-    grid-template-columns: minmax(0, 1fr) minmax(360px, 0.94fr);
-    gap: 24px;
-  }
-
-  .guide-pages {
-    gap: 24px;
-  }
-}
-
-@media (max-width: 1024px) {
-  .thinktank-hero {
-    min-height: 620px;
-    background-position: 62% center;
-  }
-
-  .hero-content {
-    min-height: 620px;
-    align-items: flex-start;
-    padding-top: 112px;
-  }
-
-  .partner-strip,
-  .scene-gallery.two-up {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-
-  .guide-pages {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 20px;
-  }
-
-  .guide-bottom-grid {
-    grid-template-columns: minmax(0, 1fr) minmax(300px, 0.9fr);
-    gap: 20px;
-  }
-
-  .guide-charts {
-    gap: 20px;
-  }
-
-  .table-row {
-    grid-template-columns: 1fr;
-  }
-
-  .cooperation-action {
-    flex-direction: column;
-    gap: 24px;
-  }
-}
-
-@media (max-width: 768px) {
-  .research-section,
-  .editorial-section,
-  .scene-section,
-  .cooperation-section {
-    padding: 72px 0;
-  }
-
-  .guide-section,
-  .media-section {
-    padding: 72px 0;
-  }
-
-  .research-copy h2,
-  .research-showcase h2 {
-    margin-bottom: 28px;
-  }
-
-  .hero-copy h2 {
-    margin: 20px 0 18px;
-  }
-
-  .hero-copy p {
-    font-size: 16px;
-    line-height: 1.85;
-  }
-
-  .partner-strip,
-  .guide-pages,
-  .scene-gallery.two-up {
-    grid-template-columns: 1fr;
-  }
-
-  .showcase-top,
-  .showcase-bottom,
-  .editorial-books,
-  .media-logos {
-    justify-content: center;
-  }
-
-  .editorial-books img,
-  .showcase-bottom img:nth-child(-n + 3) {
-    min-width: 0;
-    width: calc((100% - 24px - 220px) / 3);
-  }
-
-  .showcase-top img {
-    width: calc(25% - 9px);
-    min-width: 88px;
-    height: auto;
-  }
-
-  .showcase-bottom img:last-child {
-    width: 220px;
-  }
-
-  .media-cards {
-    grid-template-columns: 1fr;
-    gap: 24px;
-    max-width: 660px;
-  }
-
-  .partner-strip img {
-    border-radius: 14px;
-  }
-}
 </style>

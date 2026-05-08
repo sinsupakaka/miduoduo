@@ -718,24 +718,4 @@ const signupInfo = [
   line-height: 1.45;
 }
 
-@media (max-width: 1100px) {
-  .hero-points,
-  .loop-grid,
-  .highlight-grid,
-  .bonus-grid,
-  .audience-grid,
-  .signup-info,
-  .info-list {
-    grid-template-columns: 1fr;
-  }
-
-  .highlight-card.wide,
-  .info-list article:last-child {
-    grid-column: auto;
-  }
-
-  .signup-info {
-    gap: 56px;
-  }
-}
 </style>

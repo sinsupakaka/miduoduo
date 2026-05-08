@@ -7,21 +7,20 @@
         <div class="digital-container hero-inner">
           <h1>品牌出海营销一站式服务</h1>
 
+          <div class="hero-links">
+            <span>广告投放</span>
+            <span>达人营销</span>
+            <span>内容营销</span>
+            <span>电商运营</span>
+          </div>
           <p>
             依托国际化视野与技术数据双引擎，米多多数字营销覆盖全球主流媒体渠道，
-            提供广告投放、内容营销、达人营销、电商运营、社媒运营、品牌策略一体化
-            服务。
+            提供广告投放、内容营销、达人营销、电商运营、社媒运营、品牌策略一体化服务。
           </p>
           <p>
             以“技术提效、内容破圈、数据闭环”为方法论，助力品牌跨越文化壁垒，
             实现全球市场的声量与销量双增长。
           </p>
-          <div class="hero-links">
-            <span>「广告投放」</span>
-            <span>「达人营销」</span>
-            <span>「内容营销」</span>
-            <span>「电商运营」</span>
-          </div>
         </div>
       </section>
 
@@ -107,10 +106,6 @@
           <h2 class="section-title">核心合作伙伴</h2>
           <div class="partner-map">
             <img class="partner-bg" :src="digitalAsset('图层 59@2x.png')" alt="" />
-            <div class="partner-center">合作伙伴</div>
-            <div v-for="item in partnerLogos" :key="item.name" :class="['partner-logo', item.className]">
-              <img :src="digitalAsset(item.logo)" :alt="item.name" />
-            </div>
           </div>
         </div>
       </section>
@@ -293,7 +288,7 @@ const partnerLogos = [
 }
 
 .digital-hero {
-  height: 760px;
+  height: 844px;
   position: relative;
   display: flex;
   align-items: flex-start;
@@ -302,39 +297,40 @@ const partnerLogos = [
 }
 
 .hero-inner {
-  padding-top: 168px;
+  padding-top: 190px;
 }
 
 .hero-inner h1 {
-  max-width: 980px;
-  margin: 0 0 42px;
+  max-width: 1120px;
+  margin: 0 0 48px;
   color: #fff;
   font-size: 72px;
-  line-height: 1.12;
+  line-height: 1.18;
   letter-spacing: 0;
   font-weight: 800;
 }
 
 .hero-inner p {
-  max-width: 950px;
+  max-width: 700px;
   margin: 0;
-  color: rgba(255, 255, 255, .84);
-  font-size: 20px;
-  line-height: 1.78;
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 22px;
+  line-height: 2;
   font-weight: 400;
 }
 
 .hero-inner p + p {
-  margin-top: 6px;
+  margin-top: 20px;
 }
 
 .hero-links {
   display: flex;
   flex-wrap: wrap;
-  gap: 34px;
-  margin-top: 34px;
-  color: #75D8F6;
-  font-size: 22px;
+  gap: 28px;
+  margin-top: 0;
+  margin-bottom: 34px;
+  color: #42d9ff;
+  font-size: 28px;
   line-height: 1.2;
   font-weight: 400;
 }
@@ -342,6 +338,7 @@ const partnerLogos = [
 .hero-links span {
   display: inline-flex;
   white-space: nowrap;
+  letter-spacing: 0;
 }
 
 .ad-section {
@@ -807,178 +804,4 @@ const partnerLogos = [
   height: 100px;
 }
 
-@media (max-width: 1200px) {
-  .ad-inner {
-    grid-template-columns: 1fr;
-    gap: 52px;
-  }
-
-  .ad-title {
-    text-align: center;
-  }
-
-  .ad-title img {
-    margin-left: auto;
-    margin-right: auto;
-  }
-
-  .services-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .service-block,
-  .service-block:nth-child(2) .service-image,
-  .service-block:nth-child(2) .service-copy {
-    display: block;
-    grid-column: auto;
-    grid-row: auto;
-  }
-
-  .portfolio-strip {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    height: auto;
-    gap: 12px;
-  }
-
-  .portfolio-slide {
-    height: auto;
-  }
-
-  .portfolio-card {
-    height: 520px;
-    margin-left: 0;
-    clip-path: none;
-  }
-
-  .brand-grid {
-    grid-template-columns: repeat(4, minmax(0, 1fr));
-  }
-
-  .partner-map {
-    transform: scale(.82);
-    transform-origin: top center;
-    margin-bottom: -120px;
-  }
-}
-
-@media (max-width: 760px) {
-  .digital-container {
-    width: min(100% - 32px, 1540px);
-  }
-
-  .digital-hero {
-    height: auto;
-    min-height: 520px;
-  }
-
-  .hero-inner h1 {
-    font-size: 40px;
-  }
-
-  .hero-links {
-    gap: 12px 22px;
-  }
-
-  .hero-links span + span::before {
-    content: none;
-  }
-
-  .ad-section,
-  .services-section,
-  .portfolio-section,
-  .brand-section,
-  .partner-section {
-    padding: 72px 0;
-  }
-
-  .ad-feature-list {
-    grid-template-columns: 1fr;
-    gap: 34px;
-  }
-
-  .service-image,
-  .service-copy {
-    height: auto;
-    min-height: 420px;
-  }
-
-  .service-copy {
-    padding: 60px 28px;
-  }
-
-  .service-badge {
-    left: 22px;
-    top: 22px;
-    min-width: 0;
-    width: calc(100% - 44px);
-  }
-
-  .portfolio-strip {
-    grid-template-columns: 1fr;
-  }
-
-  .portfolio-card {
-    height: 430px;
-  }
-
-  .slider-arrow {
-    display: none;
-  }
-
-  .brand-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-
-  .partner-map {
-    width: 360px;
-    height: 420px;
-    transform: none;
-    margin-top: 44px;
-  }
-
-  .partner-bg {
-    width: 620px;
-  }
-
-  .partner-center {
-    width: 118px;
-    height: 118px;
-    font-size: 24px;
-  }
-
-  .partner-logo.google {
-    left: 18px;
-    top: 136px;
-    width: 98px;
-    height: 98px;
-  }
-
-  .partner-logo.tiktok {
-    right: 8px;
-    top: 62px;
-    width: 108px;
-    height: 108px;
-  }
-
-  .partner-logo.meta {
-    left: 5px;
-    bottom: 66px;
-    width: 84px;
-    height: 84px;
-  }
-
-  .partner-logo.amazon {
-    right: 78px;
-    top: 225px;
-    width: 78px;
-    height: 78px;
-  }
-
-  .partner-logo.criteo {
-    right: 10px;
-    bottom: 74px;
-    width: 70px;
-    height: 70px;
-  }
-}
 </style>

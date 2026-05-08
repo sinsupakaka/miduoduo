@@ -255,7 +255,7 @@ const schools = [
 }
 
 .business-hero {
-  min-height: 900px;
+  height: 900px;
   color: #fff;
   background: #2f68e8 var(--business-hero-bg) center / cover no-repeat;
 }
@@ -620,114 +620,5 @@ const schools = [
   background: #fff;
   font-size: 20px;
   font-weight: 800;
-}
-
-@media (max-width: 1200px) {
-  .business-hero {
-    min-height: 680px;
-    background-position: 60% center;
-  }
-
-  .seller-grid,
-  .education-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .seller-visual {
-    max-width: 760px;
-    justify-self: center;
-  }
-
-  .case-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-
-  .school-grid {
-    grid-template-columns: repeat(4, minmax(0, 1fr));
-  }
-}
-
-@media (max-width: 760px) {
-  .business-container {
-    width: min(100% - 32px, 1540px);
-  }
-
-  .section {
-    padding: 72px 0 80px;
-  }
-
-  .business-hero {
-    min-height: 560px;
-    background-position: 68% center;
-  }
-
-  .business-hero h1 {
-    margin-bottom: 42px;
-  }
-
-  .hero-tags {
-    gap: 14px;
-  }
-
-  .hero-tags span {
-    min-width: 132px;
-    height: 52px;
-    padding: 0 18px;
-    font-size: 18px;
-  }
-
-  .section-subtitle {
-    margin-top: 42px;
-  }
-
-  .platform-list {
-    gap: 16px;
-  }
-
-  .platform-logo {
-    min-width: 180px;
-    height: 58px;
-    font-size: 28px;
-  }
-
-  .service-card,
-  .education-card {
-    padding: 28px 22px;
-    grid-template-columns: 42px minmax(0, 1fr);
-    gap: 18px;
-  }
-
-  .service-card img,
-  .education-card img {
-    width: 42px;
-    height: 42px;
-  }
-
-  .case-grid,
-  .school-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .talent-panel {
-    min-height: auto;
-    padding: 44px 20px 80px;
-  }
-
-  .school-grid {
-    gap: 16px;
-  }
-
-  .ecology-graph {
-    width: min(100% - 24px, 1516px);
-    margin-top: 48px;
-  }
-
-  .business-cta {
-    padding: 82px 0 88px;
-  }
-
-  .business-cta button {
-    width: 100%;
-  }
 }
 </style>
